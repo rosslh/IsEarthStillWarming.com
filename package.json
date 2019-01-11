@@ -1,0 +1,31 @@
+{
+  "name": "global-warming-primer",
+  "private": true,
+  "scripts": {
+    "start": "react-static start",
+    "stage": "react-static build --staging",
+    "build": "react-static build",
+    "bundle": "react-static bundle",
+    "export": "react-static export",
+    "serve": "serve dist -p 3000"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "apexcharts": "^2.5.0",
+    "axios": "^0.18.0",
+    "csvtojson": "^2.0.8",
+    "emotion": "^9.2.12",
+    "modern-normalize": "^0.5.0",
+    "node-column-parser": "^1.0.1",
+    "react": "^16.6.3",
+    "react-apexcharts": "^1.2.0",
+    "react-dom": "^16.6.3",
+    "react-hot-loader": "^4.3.12",
+    "react-static": "^6.0.2"
+  },
+  "devDependencies": {
+    "eslint-config-react-tools": "1.x.x",
+    "babel-plugin-emotion": "^9.2.11",
+    "serve": "10.1.1"
+  }
+}
