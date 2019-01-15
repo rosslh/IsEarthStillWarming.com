@@ -1,7 +1,6 @@
 import React from "react";
-import { Root, Routes } from "react-static";
+import { Root, Routes, Head } from "react-static";
 import { Link } from "@reach/router";
-import { Head } from "react-static";
 import "../node_modules/modern-normalize/modern-normalize.css";
 
 function App() {
@@ -32,14 +31,6 @@ function App() {
           sizes="16x16"
           href={require("./assets/favicon-16x16.png")}
         />
-        <link rel="manifest" href={require("./assets/site.webmanifest")} />
-        <link
-          rel="mask-icon"
-          href={require("./assets/safari-pinned-tab.svg")}
-          color="#cc0000"
-        />
-        <meta name="msapplication-TileColor" content="#ffc40d" />
-        <meta name="theme-color" content="#fffafa" />
         <title>Is Earth still warming?</title>
       </Head>
       <div
