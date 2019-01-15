@@ -20,7 +20,7 @@ const Stamp = ({ children, green }) => (
         border: 0.5rem double ${getColor(green)};
         transform: rotate(${green ? "-" : ""}3deg);
         font-size: 2rem;
-        margin: 0 1.5rem 1.5rem;
+        margin: 0.5rem 2rem 2rem;
       `}
     >
       {children}
