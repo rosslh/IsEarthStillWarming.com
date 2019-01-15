@@ -53,9 +53,7 @@ function App() {
           >
             <Link to="/">Home</Link>
             {/* <Link to="/about">About</Link> */}
-            <Link to="https://github.com/rosslh/global-warming-primer">
-              Github
-            </Link>
+            <a href="https://github.com/rosslh/global-warming-primer">Github</a>
           </nav>
           <div>
             <Routes />
