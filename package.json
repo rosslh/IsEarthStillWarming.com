@@ -21,7 +21,8 @@
     "react-apexcharts": "^1.2.0",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
-    "react-static": "^6.0.20"
+    "react-static": "^6.0.20",
+    "unitransform": "^1.0.5"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",

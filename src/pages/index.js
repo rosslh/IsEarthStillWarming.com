@@ -5,6 +5,7 @@ import risks from "../assets/risks.png";
 import Cite from "../components/cite";
 import RefList from "../components/reflist";
 import Counter from "../components/counter";
+import Stamp from "../components/stamp";
 
 class Home extends Component {
   constructor(props) {
@@ -13,25 +14,27 @@ class Home extends Component {
   }
   isEarthWarming() {
     const warmedBy = this.props.tenYearWarming;
+    const citation = <Cite name="tempData" />;
     if (warmedBy > 0.1) {
       return (
         <p>
-          <em>Yes</em>. Over the past 10 years, the Earth's temperature has
-          risen by {this.props.tenYearWarming}°C.
+          <Stamp>Yes</Stamp>. Over the past 10 years, the Earth's temperature
+          has risen by {this.props.tenYearWarming}°C.{citation}
         </p>
       );
     } else if (warmedBy > 0) {
       return (
         <p>
-          <em>Not signicantly.</em>. Over the past 10 years, the Earth's
-          temperature has only risen by {this.props.tenYearWarming}°C.
+          <Stamp green>Not signicantly.</Stamp>. Over the past 10 years, the
+          Earth's temperature has only risen by {this.props.tenYearWarming}°C.
+          {citation}
         </p>
       );
     }
     return (
       <p>
-        <em>No</em>. Over the past 10 years, the Earth's temperature has dropped
-        by {Math.abs(this.props.tenYearWarming)}°C.
+        <Stamp green>No</Stamp>. Over the past 10 years, the Earth's temperature
+        has dropped by {Math.abs(this.props.tenYearWarming)}°C.{citation}
       </p>
     );
   }
@@ -97,13 +100,12 @@ class Home extends Component {
           }
         `}
       >
-        <h1>Earth's changing climate</h1>
+        <h2>Is Earth still warming?</h2>
+        {this.isEarthWarming()}
         <Counter
           currentCo2={this.props.latestCo2Value}
           currentTemp={this.props.latestTempValue}
         />
-        <h2>Is Earth still warming?</h2>
-        {this.isEarthWarming()}
         <h2>What is global warming?</h2>
         <p>
           Global warming is the trend of the Earth's temperature rising at an
@@ -121,7 +123,7 @@ class Home extends Component {
         </p>
         <p>
           Since the mid 1950s, the Earth's temperature has had a clear positive
-          tendency (see fig. 1).
+          trend (see fig. 1).
         </p>
         <div css={figureWrapperStyle}>
           <Chart
