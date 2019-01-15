@@ -2,14 +2,11 @@
 
 
 // Plugins
-const plugins = [(() => {
-  const plugin = {"location":"/Users/student/Projects/global-climate-indicators","nodeLocation":null,"browserLocation":null,"options":{},"hooks":{}}
-  return {
-    ...plugin,
-    plugins: [],
-    hooks: {}
-  }
-})()]
+const plugins = [{
+  location: "/Users/student/Projects/global-climate-indicators",
+  plugins: [],
+  hooks: {}
+}]
 
 // Export em!
 export default plugins

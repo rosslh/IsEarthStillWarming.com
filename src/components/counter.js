@@ -5,7 +5,7 @@ const Counter = ({ currentCo2, currentTemp }) => {
     <div
       css={`
         background-color: #fafafa;
-        border: 1px solid #eee;
+        border: 1px solid #ccc;
         padding: 0 1rem;
         border-radius: 6px;
         text-align: center;

@@ -1,5 +1,5 @@
 {
-  "name": "global-warming-primer",
+  "name": "isearthstillwarming.com",
   "private": true,
   "scripts": {
     "start": "react-static start",
@@ -21,7 +21,7 @@
     "react-apexcharts": "^1.2.0",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
-    "react-static": "^6.0.2"
+    "react-static": "^6.0.20"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",

@@ -53,7 +53,13 @@ function App() {
           >
             <Link to="/">Home</Link>
             {/* <Link to="/about">About</Link> */}
-            <a href="https://github.com/rosslh/global-warming-primer">Github</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/rosslh/isearthstillwarming.com"
+            >
+              Github
+            </a>
           </nav>
           <div>
             <Routes />
