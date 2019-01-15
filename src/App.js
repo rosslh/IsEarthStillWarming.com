@@ -1,7 +1,7 @@
 import React from "react";
 import { Root, Routes, Head } from "react-static";
 import { Link } from "@reach/router";
-import "../node_modules/modern-normalize/modern-normalize.css";
+import "modern-normalize/modern-normalize.css";
 
 function App() {
   return (

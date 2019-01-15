@@ -7,7 +7,8 @@
     "build": "react-static build",
     "bundle": "react-static bundle",
     "export": "react-static export",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "prettier": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -25,8 +26,9 @@
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
-    "eslint-config-react-tools": "1.x.x",
     "babel-plugin-emotion": "^9.2.11",
+    "eslint-config-react-tools": "1.x.x",
+    "prettier": "1.15.3",
     "serve": "10.1.1"
   }
 }
