@@ -15,26 +15,39 @@ class Home extends Component {
   isEarthWarming() {
     const warmedBy = this.props.tenYearWarming;
     const citation = <Cite name="tempData" />;
+    const currentYear = new Date().getFullYear();
+    const target = this.props.latestTempValue >= 1.5 ? 2 : 1.5;
+    const projectedYear = Math.trunc(
+      currentYear +
+        (target - this.props.latestTempValue) / (this.props.tenYearWarming / 10)
+    );
     if (warmedBy > 0.1) {
       return (
         <p>
-          <Stamp>Yes</Stamp>. Over the past 10 years, the Earth's temperature
-          has risen by {this.props.tenYearWarming}°C.{citation}
+          <Stamp>Yes</Stamp>
+          Over the past 10 years, the Earth's average temperature has risen by{" "}
+          {this.props.tenYearWarming}°C.{citation}{" "}
+          {this.props.latestTempValue < 2
+            ? `At this rate, the Earth's temperature will surpase the +${target}°C
+              limit set by the Paris Climate Agreement by ${projectedYear}.`
+            : ""}
         </p>
       );
     } else if (warmedBy > 0) {
       return (
         <p>
-          <Stamp green>Not signicantly.</Stamp>. Over the past 10 years, the
-          Earth's temperature has only risen by {this.props.tenYearWarming}°C.
+          <Stamp green>Not signicantly.</Stamp>
+          Over the past 10 years, the Earth's temperature has only risen by{" "}
+          {this.props.tenYearWarming}°C.
           {citation}
         </p>
       );
     }
     return (
       <p>
-        <Stamp green>No</Stamp>. Over the past 10 years, the Earth's temperature
-        has dropped by {Math.abs(this.props.tenYearWarming)}°C.{citation}
+        <Stamp green>No</Stamp>
+        Over the past 10 years, the Earth's temperature has dropped by{" "}
+        {Math.abs(this.props.tenYearWarming)}°C.{citation}
       </p>
     );
   }
