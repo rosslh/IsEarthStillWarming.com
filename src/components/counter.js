@@ -7,13 +7,19 @@ const Counter = ({ currentCo2, currentTemp }) => {
         background-color: #fafafa;
         border: 1px solid #ccc;
         padding: 0 1rem;
-        margin: 2rem 0;
+        margin: 2.5rem 0;
         border-radius: 6px;
         text-align: center;
         box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
       `}
     >
-      <h2>Climate vital signs</h2>
+      <h2
+        css={`
+          margin-top: 0;
+        `}
+      >
+        Climate vital signs
+      </h2>
       <div
         css={`
         display: flex;
