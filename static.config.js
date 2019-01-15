@@ -19,10 +19,7 @@ const getData = async () => {
         !isNaN(x.field2) &&
         dateFromYear(x.field1) > minYear
     )
-    .map(x => ({
-      year: dateFromYear(x.field1),
-      co2: Math.trunc(Number(x.field2))
-    }));
+    .map(x => [dateFromYear(x.field1), Math.trunc(Number(x.field2))]);
 
   let { data: temp } = await axios.get(
     "https://climate.nasa.gov/system/internal_resources/details/original/647_Global_Temperature_Data_File.txt"
@@ -41,10 +38,7 @@ const getData = async () => {
         !isNaN(x.field3) &&
         dateFromYear(x.field1) > minYear
     )
-    .map(x => ({
-      year: dateFromYear(x.field1),
-      temp: Number(x.field3)
-    }));
+    .map(x => [dateFromYear(x.field1), Number(x.field3)]);
   return { temp, co2 };
 };
 
@@ -54,12 +48,12 @@ export default {
   }),
   getRoutes: async () => {
     const { temp, co2 } = await getData();
-    const latestCo2Year = Math.max(...co2.map(x => x.year));
-    const latestTempYear = Math.max(...temp.map(x => x.year));
+    const latestCo2Year = Math.max(...co2.map(x => x[0]));
+    const latestTempYear = Math.max(...temp.map(x => x[0]));
     const tenYearWarming =
       Math.round(
-        (temp.find(x => x.year === latestTempYear).temp -
-          temp.find(x => x.year === latestTempYear - 10).temp) *
+        (temp.find(x => x[0] === latestTempYear)[1] -
+          temp.find(x => x[0] === latestTempYear - 10)[1]) *
           100
       ) / 100;
     return [
@@ -67,13 +61,13 @@ export default {
         path: "/",
         component: "src/pages/index.js",
         getData: () => ({
-          co2: co2.map(x => [x.year, x.co2]),
-          temp: temp.map(x => [x.year, x.temp]),
+          co2,
+          temp,
           latestCo2Year,
           latestTempYear,
           tenYearWarming,
-          latestCo2Value: co2.find(x => x.year === latestCo2Year).co2,
-          latestTempValue: temp.find(x => x.year === latestTempYear).temp
+          latestCo2Value: co2.find(x => x[0] === latestCo2Year)[1],
+          latestTempValue: temp.find(x => x[0] === latestTempYear)[1]
         })
       }
     ];

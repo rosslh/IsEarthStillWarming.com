@@ -58,7 +58,7 @@ function App() {
               rel="noopener noreferrer"
               href="https://github.com/rosslh/isearthstillwarming.com"
             >
-              Github
+              GitHub
             </a>
           </nav>
           <div>
