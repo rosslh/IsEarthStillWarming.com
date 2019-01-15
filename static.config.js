@@ -56,6 +56,12 @@ export default {
     const { temp, co2 } = await getData();
     const latestCo2Year = Math.max(...co2.map(x => x.year));
     const latestTempYear = Math.max(...temp.map(x => x.year));
+    const tenYearWarming =
+      Math.round(
+        (temp.find(x => x.year === latestTempYear).temp -
+          temp.find(x => x.year === latestTempYear - 10).temp) *
+          100
+      ) / 100;
     return [
       {
         path: "/",
@@ -65,6 +71,7 @@ export default {
           temp: temp.map(x => [x.year, x.temp]),
           latestCo2Year,
           latestTempYear,
+          tenYearWarming,
           latestCo2Value: co2.find(x => x.year === latestCo2Year).co2,
           latestTempValue: temp.find(x => x.year === latestTempYear).temp
         })

@@ -11,6 +11,30 @@ class Home extends Component {
     super(props);
     this.state = {};
   }
+  isEarthWarming() {
+    const warmedBy = this.props.tenYearWarming;
+    if (warmedBy > 0.1) {
+      return (
+        <p>
+          <em>Yes</em>. Over the past 10 years, the Earth's temperature has
+          risen by {this.props.tenYearWarming}°C.
+        </p>
+      );
+    } else if (warmedBy > 0) {
+      return (
+        <p>
+          <em>Not signicantly.</em>. Over the past 10 years, the Earth's
+          temperature has only risen by {this.props.tenYearWarming}°C.
+        </p>
+      );
+    }
+    return (
+      <p>
+        <em>No</em>. Over the past 10 years, the Earth's temperature has dropped
+        by {Math.abs(this.props.tenYearWarming)}°C.
+      </p>
+    );
+  }
   render() {
     const figureWrapperStyle = `
       width: 80%;
@@ -78,6 +102,8 @@ class Home extends Component {
           currentCo2={this.props.latestCo2Value}
           currentTemp={this.props.latestTempValue}
         />
+        <h2>Is Earth still warming?</h2>
+        {this.isEarthWarming()}
         <h2>What is global warming?</h2>
         <p>
           Global warming is the trend of the Earth's temperature rising at an

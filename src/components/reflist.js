@@ -27,12 +27,6 @@ export const citations = [
     url: "https://climate.nasa.gov/"
   },
   {
-    name: "ucs",
-    citation: `"Here's How We Know That the Earth's Temperature Is Rising." Union of Concerned Scientists, Union of Concerned Scientists, <https://www.ucsusa.org/global-warming/science-and-impacts/science/temperature-is-rising/>.`,
-    url:
-      "https://www.ucsusa.org/global-warming/science-and-impacts/science/temperature-is-rising"
-  },
-  {
     name: "co2After1958",
     citation:
       "C. D. Keeling, S. C. Piper, R. B. Bacastow, M. Wahlen, T. P. Whorf, M. Heimann, and H. A. Meijer, Exchanges of atmospheric CO2 and 13CO2 with the terrestrial biosphere and oceans from 1978 to 2000. I. Global aspects, SIO Reference Series, No. 01-06, Scripps Institution of Oceanography, San Diego, 88 pages, 2001. <http://escholarship.org/uc/item/09v319r9>.",
