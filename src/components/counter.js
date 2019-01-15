@@ -4,10 +4,12 @@ const Counter = ({ currentCo2, currentTemp }) => {
   return (
     <div
       css={`
-        background-color: #eee;
+        background-color: #fafafa;
+        border: 1px solid #eee;
         padding: 0 1rem;
         border-radius: 6px;
         text-align: center;
+        box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
       `}
     >
       <h2>Climate vital signs</h2>

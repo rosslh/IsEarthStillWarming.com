@@ -121,7 +121,7 @@ class Home extends Component {
         </p>
         <p>
           Since the mid 1950s, the Earth's temperature has had a clear positive
-          trend (see fig. 1).
+          tendency (see fig. 1).
         </p>
         <div css={figureWrapperStyle}>
           <Chart
