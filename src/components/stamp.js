@@ -12,7 +12,7 @@ const Stamp = ({ children, green }) => (
         display: inline-block;
         padding: 0.2rem 0.8rem;
         text-transform: uppercase;
-        border-radius: 1rem;
+        border-radius: 12% / 22%;
         letter-spacing: 2px;
         font-family: Courier, Lucida Sans Typewriter, Lucida Typewriter,
           monospace !important;

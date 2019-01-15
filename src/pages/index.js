@@ -28,7 +28,7 @@ class Home extends Component {
           Over the past 10 years, the Earth's average temperature has risen by{" "}
           {this.props.tenYearWarming}°C.{citation}{" "}
           {this.props.latestTempValue < 2
-            ? `At this rate, the Earth's temperature will surpase the +${target}°C
+            ? `At this rate, global warming will surpass the +${target}°C
               limit set by the Paris Climate Agreement by ${projectedYear}.`
             : ""}
         </p>
@@ -62,6 +62,9 @@ class Home extends Component {
       >strong {
         display: block;
         text-align: center;
+      }
+      @media (max-width: 700px) {
+        width: 100%;
       }
     `;
     const options = {
