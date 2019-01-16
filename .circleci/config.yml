@@ -1,20 +1,12 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2.2
-orbs:
-  cypress: cypress-io/cypress@1.0.0
+version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.11
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
     steps:
-      - run: "npm i"
-      - cypress/install:
-          build: "react-static build" # run a custom app build step
-      - cypress/run:
-          requires:
-            - cypress/install
-          group: "all tests" # name this group "all tests" on the dashboard
-          start: "npm run buildTestServer" # start server before running tests
+      - checkout
+      - run: npm ci
+      - run: $(npm bin)/react-static build && $(npm bin)/serve dist -p 3939
+      - run: $(npm bin)/cypress run

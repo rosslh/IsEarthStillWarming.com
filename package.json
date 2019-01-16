@@ -10,8 +10,8 @@
     "serve": "serve dist -p 3000",
     "prettier": "prettier --write \"src/**/*.js\"",
     "cyTest": "cypress run",
-    "buildTestServer": "serve dist -p 3939",
-    "test": "react-static build && server-test buildTestServer 3939 cyTest"
+    "buildTestServer": "react-static build && serve dist -p 3939",
+    "test": "server-test buildTestServer 3939 cyTest"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
