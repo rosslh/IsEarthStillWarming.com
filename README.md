@@ -1,4 +1,6 @@
-# Global warming primer
+# IsEarthStillWarming.com
+
+[![CircleCI](https://circleci.com/gh/rosslh/IsEarthStillWarming.com/tree/master.svg?style=svg)](https://circleci.com/gh/rosslh/IsEarthStillWarming.com/tree/master)
 
 ## Scope
 
