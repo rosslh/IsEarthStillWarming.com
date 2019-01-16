@@ -162,16 +162,9 @@ class Home extends Component {
           the atmosphere. This CO2 is produced by burning fossil fuels, mostly
           from electricity production, agriculture, industry, and vehicles with
           internal combustion engines.
-          <Cite name="emissionsData" />
-        </p>
-        <p>
-          Since CO2 abundance in the atmosphere is directly linked to the
-          Earth's temperature increase, limiting atmospheric carbon has been
-          identified as vital to mitigating global warming. As part of the Kyoto
-          Protocol climate convention, scientists have identified 450ppm as a
-          good upper limit for carbon concentration in order to keep global
-          warming below +2°C. As of {this.props.latestCo2Year}, the atmosphere's
-          carbon concentration is {this.props.latestCo2Value}ppm (see fig. 2).
+          <Cite name="emissionsData" /> As of {this.props.latestCo2Year}, the
+          atmosphere's carbon concentration is {this.props.latestCo2Value}ppm
+          (see fig. 2).
           <Cite name="co2After1958" />
         </p>
         <div css={figureWrapperStyle}>
@@ -202,6 +195,14 @@ class Home extends Component {
             <Cite name="co2Before1958" />
           </strong>
         </div>
+        <p>
+          Since CO2 abundance in the atmosphere is directly linked to the
+          Earth's temperature increase, limiting atmospheric carbon has been
+          identified as vital to mitigating global warming. As part of the Kyoto
+          Protocol climate convention, scientists have identified 450ppm as a
+          good upper limit for carbon concentration in order to keep global
+          warming below +2°C.
+        </p>
         <h2>Effects of global warming</h2>
         <p>
           Global warming will impact a wide range of issues including health,
