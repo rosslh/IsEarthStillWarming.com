@@ -21,33 +21,46 @@ class Home extends Component {
       currentYear +
         (target - this.props.latestTempValue) / (this.props.tenYearWarming / 10)
     );
+    const styles = `
+      display: flex;
+      > p {
+        padding-left: 1rem;
+        margin: 0;
+      }
+    `;
     if (warmedBy > 0.1) {
       return (
-        <p>
+        <p css={styles}>
           <Stamp>Yes</Stamp>
-          Over the past 10 years, the Earth's average temperature has risen by{" "}
-          {this.props.tenYearWarming}°C.{citation}{" "}
-          {this.props.latestTempValue < 2
-            ? `At this rate, global warming will surpass the +${target}°C
+          <p>
+            Over the past 10 years, the Earth's average temperature has risen by{" "}
+            {this.props.tenYearWarming}°C.{citation}{" "}
+            {this.props.latestTempValue < 2
+              ? `At this rate, global warming will surpass the +${target}°C
               limit set by the Paris Climate Agreement by ${projectedYear}.`
-            : ""}
+              : ""}
+          </p>
         </p>
       );
     } else if (warmedBy > 0) {
       return (
-        <p>
+        <p css={styles}>
           <Stamp green>Not signicantly.</Stamp>
-          Over the past 10 years, the Earth's temperature has only risen by{" "}
-          {this.props.tenYearWarming}°C.
-          {citation}
+          <p>
+            Over the past 10 years, the Earth's temperature has only risen by{" "}
+            {this.props.tenYearWarming}°C.
+            {citation}
+          </p>
         </p>
       );
     }
     return (
-      <p>
+      <p css={styles}>
         <Stamp green>No</Stamp>
-        Over the past 10 years, the Earth's temperature has dropped by{" "}
-        {Math.abs(this.props.tenYearWarming)}°C.{citation}
+        <p>
+          Over the past 10 years, the Earth's temperature has dropped by{" "}
+          {Math.abs(this.props.tenYearWarming)}°C.{citation}
+        </p>
       </p>
     );
   }
