@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Counter = ({ currentCo2, currentTemp }) => (
   <div
@@ -42,14 +43,19 @@ const Counter = ({ currentCo2, currentTemp }) => (
     >
       <div>
         <div>Atmospheric CO2</div>
-        <strong>{currentCo2}ppm</strong>
+        <strong id="currentCo2Counter">{currentCo2}ppm</strong>
       </div>
       <div>
         <div>Global temperature deviation from average</div>
-        <strong>+{currentTemp}°C</strong>
+        <strong id="currentTempCounter">+{currentTemp}°C</strong>
       </div>
     </div>
   </div>
 );
+
+Counter.propTypes = {
+  currentCo2: PropTypes.number.isRequired,
+  currentTemp: PropTypes.number.isRequired
+};
 
 export default Counter;

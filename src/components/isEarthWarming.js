@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Stamp from "./stamp";
 import Cite from "./cite";
 
@@ -25,39 +27,45 @@ const IsEarthWarming = props => {
     `;
   if (warmedBy > 0.1) {
     return (
-      <p css={styles}>
+      <div css={styles}>
         <Stamp>Yes</Stamp>
         <p>
           Over the past 10 years, Earth's average temperature has risen by{" "}
-          {props.tenYearWarming}°C.{citation}{" "}
+          <span id="tenYearWarming">{props.tenYearWarming}</span>°C.{citation}{" "}
           {props.latestTempValue < 2
             ? `At this rate, global warming will surpass the +${target}°C
               limit set by the Paris Climate Agreement by ${projectedYear}.`
             : ""}
         </p>
-      </p>
+      </div>
     );
   } else if (warmedBy > 0) {
     return (
-      <p css={styles}>
+      <div css={styles}>
         <Stamp green>Not signicantly.</Stamp>
         <p>
           Over the past 10 years, Earth's temperature has only risen by{" "}
-          {props.tenYearWarming}°C.
+          <span id="tenYearWarming">{props.tenYearWarming}</span>°C.
           {citation}
         </p>
-      </p>
+      </div>
     );
   }
   return (
-    <p css={styles}>
+    <div css={styles}>
       <Stamp green>No</Stamp>
       <p>
         Over the past 10 years, Earth's temperature has dropped by{" "}
-        {Math.abs(props.tenYearWarming)}°C.{citation}
+        <span id="tenYearWarming">{Math.abs(props.tenYearWarming)}</span>°C.
+        {citation}
       </p>
-    </p>
+    </div>
   );
+};
+
+IsEarthWarming.propTypes = {
+  tenYearWarming: PropTypes.number.isRequired,
+  latestTempValue: PropTypes.number.isRequired
 };
 
 export default IsEarthWarming;

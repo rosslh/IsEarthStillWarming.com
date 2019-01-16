@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouteData } from "react-static";
 import Chart from "react-apexcharts";
 import risks from "../assets/risks.png";
@@ -6,6 +7,7 @@ import Cite from "../components/cite";
 import RefList from "../components/reflist";
 import Counter from "../components/counter";
 import IsEarthWarming from "../components/isEarthWarming";
+import CO2 from "../components/co2";
 
 class Home extends Component {
   constructor(props) {
@@ -92,8 +94,8 @@ class Home extends Component {
         <p>
           Though gradual changes to Earth's climate have happened in the past,
           this latest trend has been primarily caused by the release of carbon
-          dioxide (CO2) into the atmosphere by burning fossil fuels.
-          <Cite name="nasa" /> CO2 is a <em>greenhouse gas</em>, meaning it
+          dioxide (<CO2 />) into the atmosphere by burning fossil fuels.
+          <Cite name="nasa" /> <CO2 /> is a <em>greenhouse gas</em>, meaning it
           traps heat in Earth's atmosphere rather than allowing it to radiate
           into space.
           <Cite name="nasa" />
@@ -131,8 +133,10 @@ class Home extends Component {
         </div>
         <p>
           The amount Earth has warmed is measured against the average
-          pre-industrial global temperature. As of {this.props.latestTempYear},
-          Earth's temperature is approximately {this.props.latestTempValue}
+          pre-industrial global temperature. As of{" "}
+          <span id="latestTempYear">{this.props.latestTempYear}</span>, Earth's
+          temperature is approximately{" "}
+          <span id="latestTempValue">{this.props.latestTempValue}</span>
           °C above pre-industrial levels.
           <Cite name="tempData" /> If the planet's temperature continues to
           rise, we can expect many environmental and societal impacts, the most
@@ -158,13 +162,15 @@ class Home extends Component {
           <Cite name="1.5C" />
         </p>
         <p>
-          The primary cause of global warming is the human emission of CO2 into
-          the atmosphere. This CO2 is produced by burning fossil fuels, mostly
-          from electricity production, agriculture, industry, and vehicles with
-          internal combustion engines.
-          <Cite name="emissionsData" /> As of {this.props.latestCo2Year}, the
-          atmosphere's carbon concentration is {this.props.latestCo2Value}ppm
-          (see fig. 2).
+          The primary cause of global warming is the human emission of <CO2 />{" "}
+          into the atmosphere. This <CO2 /> is produced by burning fossil fuels,
+          mostly from electricity production, agriculture, industry, and
+          vehicles with internal combustion engines.
+          <Cite name="emissionsData" /> As of{" "}
+          <span id="latestCo2Year">{this.props.latestCo2Year}</span>, the
+          atmosphere's carbon concentration is{" "}
+          <span id="latestCo2Value">{this.props.latestCo2Value}</span>ppm (see
+          fig. 2).
           <Cite name="co2After1958" />
         </p>
         <div css={figureWrapperStyle}>
@@ -196,7 +202,7 @@ class Home extends Component {
           </strong>
         </div>
         <p>
-          Since CO2 abundance in the atmosphere is directly linked to the
+          Since <CO2 /> abundance in the atmosphere is directly linked to the
           Earth's temperature increase, limiting atmospheric carbon has been
           identified as vital to mitigating global warming. As part of the Kyoto
           Protocol climate convention, scientists have identified 450ppm as a
@@ -231,11 +237,27 @@ class Home extends Component {
             <Cite name="1.5C" />
           </strong>
         </div>
+        <p>
+          Other already-visible impacts of global warming include worldwide
+          glacier and sea ice melting, which contributes to sea level rise.
+          <Cite name="natGeo" /> Some regions have experienced severe drought,
+          leading to food-and-water shortages as well as wildfires.
+          <Cite name="natGeo" />
+        </p>
         <h2>Works Cited</h2>
         <RefList />
       </article>
     );
   }
 }
+
+Home.propTypes = {
+  latestCo2Value: PropTypes.number,
+  latestTempValue: PropTypes.number,
+  temp: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+  latestTempYear: PropTypes.number,
+  latestCo2Year: PropTypes.number,
+  co2: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
+};
 
 export default withRouteData(Home);

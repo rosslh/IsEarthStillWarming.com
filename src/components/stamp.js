@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { rotate } from "unitransform";
 
 const getColor = isGreen => (isGreen ? rotate("#b7292f", 115) : "#b7292f");
@@ -6,6 +8,7 @@ const getColor = isGreen => (isGreen ? rotate("#b7292f", 115) : "#b7292f");
 const Stamp = ({ children, green }) => (
   <div>
     <div
+      id="stamp"
       css={`
         font-size: 3rem;
         font-weight: bold;
@@ -20,12 +23,17 @@ const Stamp = ({ children, green }) => (
         border: 0.5rem double ${getColor(green)};
         transform: rotate(${green ? "-" : ""}3deg);
         font-size: 2rem;
-        margin: 0.5rem 2rem 2rem;
+        margin: 0.8rem 2rem;
       `}
     >
       {children}
     </div>
   </div>
 );
+
+Stamp.protoTypes = {
+  green: PropTypes.bool,
+  children: PropTypes.any.isRequired
+};
 
 export default Stamp;

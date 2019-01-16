@@ -50,6 +50,12 @@ export const citations = [
     name: "emissionsData",
     citation: `“Global Greenhouse Gas Emissions Data.” Global Greenhouse Gas Emissions Data, Environmental Protection Agency, 13 Apr. 2017, <https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data>.`,
     url: "https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data"
+  },
+  {
+    name: "natGeo",
+    citation: ``,
+    url:
+      "https://www.nationalgeographic.com/environment/global-warming/global-warming-effects/"
   }
 ];
 const RefList = () => (

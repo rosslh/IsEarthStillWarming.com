@@ -8,7 +8,10 @@
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000",
-    "prettier": "prettier --write \"src/**/*.js\""
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "cyTest": "cypress run",
+    "buildTestServer": "react-static build && serve dist -p 3939",
+    "test": "server-test buildTestServer 3939 cyTest"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -18,6 +21,7 @@
     "emotion": "^9.2.12",
     "modern-normalize": "^0.5.0",
     "node-column-parser": "^1.0.1",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-apexcharts": "^1.2.0",
     "react-dom": "^16.6.3",
@@ -27,8 +31,11 @@
   },
   "devDependencies": {
     "babel-plugin-emotion": "^9.2.11",
+    "cypress": "^3.1.4",
     "eslint-config-react-tools": "1.x.x",
+    "eslint-plugin-cypress": "^2.2.0",
     "prettier": "1.15.3",
-    "serve": "10.1.1"
+    "serve": "10.1.1",
+    "start-server-and-test": "^1.7.11"
   }
 }
