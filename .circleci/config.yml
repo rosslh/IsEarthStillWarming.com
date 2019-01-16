@@ -5,11 +5,12 @@
 version: 2.2
 orbs:
   cypress: cypress-io/cypress@1.0.0
-workflows:
+jobs:
   build:
     docker:
       - image: circleci/node:8.11
-    jobs:
+    steps:
+      - run: "npm i"
       - cypress/install:
           build: "react-static build" # run a custom app build step
       - cypress/run:
