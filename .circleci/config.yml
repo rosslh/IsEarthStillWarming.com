@@ -8,5 +8,8 @@ jobs:
     steps:
       - checkout
       - run: npm ci
-      - run: $(npm bin)/react-static build && $(npm bin)/serve dist -p 3939
+      - run: $(npm bin)/react-static build
+      - run:
+          command: $(npm bin)/serve dist -p 3939
+          background: true
       - run: $(npm bin)/cypress run
