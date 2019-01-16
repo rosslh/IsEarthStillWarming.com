@@ -9,4 +9,5 @@ jobs:
       - image: circleci/node:8.11
     steps:
       - checkout
+      - run: npm i
       - run: npm run test
