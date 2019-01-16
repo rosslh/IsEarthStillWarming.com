@@ -53,7 +53,7 @@ export const citations = [
   },
   {
     name: "natGeo",
-    citation: ``,
+    citation: `“Global Warming Effects.” National Geographic, National Geographic, 14 Jan. 2019, www.nationalgeographic.com/environment/global-warming/global-warming-effects/.`,
     url:
       "https://www.nationalgeographic.com/environment/global-warming/global-warming-effects/"
   }
