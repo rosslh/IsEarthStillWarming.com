@@ -19,7 +19,6 @@ const IsEarthWarming = props => {
         display: inline-block;
         flex-grow: 1;
         flex-shrink: 1;
-        padding-left: 1rem;
         margin: 0;
         flex-basis: 400px;
       }
