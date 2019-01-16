@@ -5,64 +5,12 @@ import risks from "../assets/risks.png";
 import Cite from "../components/cite";
 import RefList from "../components/reflist";
 import Counter from "../components/counter";
-import Stamp from "../components/stamp";
+import IsEarthWarming from "../components/isEarthWarming";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
-  isEarthWarming() {
-    const warmedBy = this.props.tenYearWarming;
-    const citation = <Cite name="tempData" />;
-    const currentYear = new Date().getFullYear();
-    const target = this.props.latestTempValue >= 1.5 ? 2 : 1.5;
-    const projectedYear = Math.trunc(
-      currentYear +
-        (target - this.props.latestTempValue) / (this.props.tenYearWarming / 10)
-    );
-    const styles = `
-      display: flex;
-      > p {
-        padding-left: 1rem;
-        margin: 0;
-      }
-    `;
-    if (warmedBy > 0.1) {
-      return (
-        <p css={styles}>
-          <Stamp>Yes</Stamp>
-          <p>
-            Over the past 10 years, the Earth's average temperature has risen by{" "}
-            {this.props.tenYearWarming}°C.{citation}{" "}
-            {this.props.latestTempValue < 2
-              ? `At this rate, global warming will surpass the +${target}°C
-              limit set by the Paris Climate Agreement by ${projectedYear}.`
-              : ""}
-          </p>
-        </p>
-      );
-    } else if (warmedBy > 0) {
-      return (
-        <p css={styles}>
-          <Stamp green>Not signicantly.</Stamp>
-          <p>
-            Over the past 10 years, the Earth's temperature has only risen by{" "}
-            {this.props.tenYearWarming}°C.
-            {citation}
-          </p>
-        </p>
-      );
-    }
-    return (
-      <p css={styles}>
-        <Stamp green>No</Stamp>
-        <p>
-          Over the past 10 years, the Earth's temperature has dropped by{" "}
-          {Math.abs(this.props.tenYearWarming)}°C.{citation}
-        </p>
-      </p>
-    );
   }
   render() {
     const figureWrapperStyle = `
@@ -134,7 +82,7 @@ class Home extends Component {
           currentTemp={this.props.latestTempValue}
         />
         <h2>Is Earth still warming?</h2>
-        {this.isEarthWarming()}
+        <IsEarthWarming {...this.props} />
         <h2>What is global warming?</h2>
         <p>
           Global warming is the trend of the Earth's temperature rising at an
