@@ -2,12 +2,18 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2.1
-jobs:
+version: 2.2
+orbs:
+  cypress: cypress-io/cypress@1.0.0
+workflows:
   build:
     docker:
       - image: circleci/node:8.11
-    steps:
-      - checkout
-      - run: npm i
-      - run: npm run test
+    jobs:
+      - cypress/install:
+          build: "react-static build" # run a custom app build step
+      - cypress/run:
+          requires:
+            - cypress/install
+          group: "all tests" # name this group "all tests" on the dashboard
+          start: "npm run buildTestServer" # start server before running tests
