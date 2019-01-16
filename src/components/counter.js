@@ -4,22 +4,12 @@ import PropTypes from "prop-types";
 const Counter = ({ currentCo2, currentTemp }) => (
   <div
     css={`
-      background-color: #fafafa;
-      border: 1px solid #ccc;
-      padding: 0 1rem;
-      margin: 2.5rem 0;
+      padding: 1rem;
+      margin: 0;
       border-radius: 6px;
       text-align: center;
-      box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
     `}
   >
-    <h2
-      css={`
-        margin-top: 0;
-      `}
-    >
-      Climate vital signs
-    </h2>
     <div
       css={`
         display: flex;
@@ -46,7 +36,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
         <strong id="currentCo2Counter">{currentCo2}ppm</strong>
       </div>
       <div>
-        <div>Global temperature deviation from average</div>
+        <div>Global temperature anomoly</div>
         <strong id="currentTempCounter">+{currentTemp}°C</strong>
       </div>
     </div>
