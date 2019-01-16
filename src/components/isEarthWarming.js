@@ -28,7 +28,7 @@ const IsEarthWarming = props => {
       <p css={styles}>
         <Stamp>Yes</Stamp>
         <p>
-          Over the past 10 years, the Earth's average temperature has risen by{" "}
+          Over the past 10 years, Earth's average temperature has risen by{" "}
           {props.tenYearWarming}°C.{citation}{" "}
           {props.latestTempValue < 2
             ? `At this rate, global warming will surpass the +${target}°C
@@ -42,7 +42,7 @@ const IsEarthWarming = props => {
       <p css={styles}>
         <Stamp green>Not signicantly.</Stamp>
         <p>
-          Over the past 10 years, the Earth's temperature has only risen by{" "}
+          Over the past 10 years, Earth's temperature has only risen by{" "}
           {props.tenYearWarming}°C.
           {citation}
         </p>
@@ -53,7 +53,7 @@ const IsEarthWarming = props => {
     <p css={styles}>
       <Stamp green>No</Stamp>
       <p>
-        Over the past 10 years, the Earth's temperature has dropped by{" "}
+        Over the past 10 years, Earth's temperature has dropped by{" "}
         {Math.abs(props.tenYearWarming)}°C.{citation}
       </p>
     </p>

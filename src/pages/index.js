@@ -85,21 +85,21 @@ class Home extends Component {
         <IsEarthWarming {...this.props} />
         <h2>What is global warming?</h2>
         <p>
-          Global warming is the trend of the Earth's temperature rising at an
+          Global warming is the trend of Earth's temperature rising at an
           unprecidented rate starting in the mid 20th century.
           <Cite name="nasa" />
         </p>
         <p>
-          Though gradual changes to the Earth's climate have happened in the
-          past, this latest trend has been primarily caused by the release of
-          carbon dioxide (CO2) into the atmosphere by burning fossil fuels.
+          Though gradual changes to Earth's climate have happened in the past,
+          this latest trend has been primarily caused by the release of carbon
+          dioxide (CO2) into the atmosphere by burning fossil fuels.
           <Cite name="nasa" /> CO2 is a <em>greenhouse gas</em>, meaning it
           traps heat in Earth's atmosphere rather than allowing it to radiate
           into space.
           <Cite name="nasa" />
         </p>
         <p>
-          Since the mid 1950s, the Earth's temperature has had a clear positive
+          Since the mid 1950s, Earth's temperature has had a clear positive
           trend (see fig. 1).
         </p>
         <div css={figureWrapperStyle}>
@@ -130,9 +130,9 @@ class Home extends Component {
           </strong>
         </div>
         <p>
-          The amount the Earth has warmed is measured against the average
+          The amount Earth has warmed is measured against the average
           pre-industrial global temperature. As of {this.props.latestTempYear},
-          the Earth's temperature is approximately {this.props.latestTempValue}
+          Earth's temperature is approximately {this.props.latestTempValue}
           °C above pre-industrial levels.
           <Cite name="tempData" /> If the planet's temperature continues to
           rise, we can expect many environmental and societal impacts, the most
@@ -209,7 +209,7 @@ class Home extends Component {
           livelihoods, food security, water supply, human security, and economic
           growth.
           <Cite name="1.5C" /> The severity of these impacts is determined by
-          how hot the Earth gets; reaching 2°C above the pre-industrial average
+          how hot Earth gets; reaching 2°C above the pre-industrial average
           would put millions more people at risk than if global warming was
           limited to 1.5°C.
           <Cite name="1.5C" /> Generally speaking, "countries in the tropics and
