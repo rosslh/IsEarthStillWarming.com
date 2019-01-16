@@ -129,12 +129,12 @@ class Home extends Component {
           }
         `}
       >
-        <h2>Is Earth still warming?</h2>
-        {this.isEarthWarming()}
         <Counter
           currentCo2={this.props.latestCo2Value}
           currentTemp={this.props.latestTempValue}
         />
+        <h2>Is Earth still warming?</h2>
+        {this.isEarthWarming()}
         <h2>What is global warming?</h2>
         <p>
           Global warming is the trend of the Earth's temperature rising at an
