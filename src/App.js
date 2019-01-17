@@ -1,6 +1,6 @@
-import React from "react";
-import { Root, Routes, Head } from "react-static";
-import "modern-normalize/modern-normalize.css";
+import React from 'react';
+import { Root, Routes, Head } from 'react-static';
+import 'modern-normalize/modern-normalize.css';
 
 function App() {
   return (
@@ -19,34 +19,34 @@ function App() {
         <link
           rel="apple-touch-icon"
           sizes="120x120"
-          href={require("./assets/apple-touch-icon.png")}
+          href={require('./assets/apple-touch-icon.png')}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={require("./assets/favicon-32x32.png")}
+          href={require('./assets/favicon-32x32.png')}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={require("./assets/favicon-16x16.png")}
+          href={require('./assets/favicon-16x16.png')}
         />
         <title>Global warming information and data</title>
       </Head>
       <div
         css={`
-          @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i");
+          @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i');
           line-height: 1.6;
           *:not(p) {
-            font-family: "Open Sans", sans-serif;
+            font-family: 'Open Sans', sans-serif;
           }
           p {
-            font-family: "Spectral", serif;
+            font-family: 'Spectral', serif;
             font-size: 18px;
             * {
-              font-family: "Spectral", serif;
+              font-family: 'Spectral', serif;
             }
           }
           h1 {

@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withRouteData } from "react-static";
-import Chart from "react-apexcharts";
-import risks from "../assets/risks.png";
-import Cite from "../components/cite";
-import RefList from "../components/reflist";
-import IsEarthWarming from "../components/isEarthWarming";
-import Header from "../components/header";
-import CO2 from "../components/co2";
-import ContentWrapper from "../components/contentWrapper";
-import { red } from "../assets/colors";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withRouteData } from 'react-static';
+import Chart from 'react-apexcharts';
+import risks from '../assets/risks.png';
+import Cite from '../components/cite';
+import RefList from '../components/reflist';
+import IsEarthWarming from '../components/isEarthWarming';
+import Header from '../components/header';
+import CO2 from '../components/co2';
+import ContentWrapper from '../components/contentWrapper';
+import { red } from '../assets/colors';
 
 class Home extends Component {
   constructor(props) {
@@ -33,12 +33,12 @@ class Home extends Component {
     `;
     const options = {
       fill: {
-        type: "gradient",
+        type: 'gradient',
         gradient: {
-          shade: "dark",
+          shade: 'dark',
           gradientToColors: [red],
           shadeIntensity: 0,
-          type: "vertical",
+          type: 'vertical',
           opacityFrom: 1,
           opacityTo: 1,
           stops: [50, 100, 100]
@@ -47,17 +47,17 @@ class Home extends Component {
       theme: {
         monochrome: {
           enabled: true,
-          color: "#f5bf00"
+          color: '#f5bf00'
         }
       },
       plotOptions: {
         line: {
-          curve: "smooth"
+          curve: 'smooth'
         }
       },
       markers: {
         size: 0,
-        style: "full"
+        style: 'full'
       },
       chart: {
         zoom: {
@@ -120,7 +120,7 @@ class Home extends Component {
                 type="line"
                 series={[
                   {
-                    name: "global temp",
+                    name: 'global temp',
                     data: this.props.temp
                   }
                 ]}
@@ -128,12 +128,12 @@ class Home extends Component {
                   ...options,
                   yaxis: {
                     title: {
-                      text: "Temperature anomoly"
+                      text: 'Temperature anomoly'
                     }
                   },
                   xaxis: {
                     title: {
-                      text: "Year"
+                      text: 'Year'
                     }
                   }
                 }}
@@ -144,9 +144,9 @@ class Home extends Component {
             </div>
             <p>
               The amount Earth has warmed is measured against the average
-              pre-industrial global temperature. As of{" "}
+              pre-industrial global temperature. As of{' '}
               <span id="latestTempYear">{this.props.latestTempYear}</span>,
-              Earth's temperature is approximately{" "}
+              Earth's temperature is approximately{' '}
               <span id="latestTempValue">{this.props.latestTempValue}</span>
               °C above pre-industrial levels.
               <Cite name="tempData" /> If the planet's temperature continues to
@@ -173,13 +173,13 @@ class Home extends Component {
               <Cite name="1.5C" />
             </p>
             <p>
-              The primary cause of global warming is the human emission of{" "}
+              The primary cause of global warming is the human emission of{' '}
               <CO2 /> into the atmosphere. This <CO2 /> is produced by burning
               fossil fuels, mostly from electricity production, agriculture,
               industry, and vehicles with internal combustion engines.
-              <Cite name="emissionsData" /> As of{" "}
+              <Cite name="emissionsData" /> As of{' '}
               <span id="latestCo2Year">{this.props.latestCo2Year}</span>, the
-              atmosphere's carbon concentration is{" "}
+              atmosphere's carbon concentration is{' '}
               <span id="latestCo2Value">{this.props.latestCo2Value}</span>ppm
               (see fig. 2).
               <Cite name="co2After1958" />
@@ -189,7 +189,7 @@ class Home extends Component {
                 type="line"
                 series={[
                   {
-                    name: "global carbon",
+                    name: 'global carbon',
                     data: this.props.co2
                   }
                 ]}
@@ -197,12 +197,12 @@ class Home extends Component {
                   ...options,
                   yaxis: {
                     title: {
-                      text: "Carbon dioxide concentration in atmosphere"
+                      text: 'Carbon dioxide concentration in atmosphere'
                     }
                   },
                   xaxis: {
                     title: {
-                      text: "Year"
+                      text: 'Year'
                     }
                   }
                 }}

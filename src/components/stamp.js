@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { rotate } from "unitransform";
-import { red } from "../assets/colors";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { rotate } from 'unitransform';
+import { red } from '../assets/colors';
 
 const getColor = isGreen => (isGreen ? rotate(red, 115) : red);
 
@@ -23,7 +23,7 @@ const Stamp = ({ children, green }) => (
           monospace !important;
         color: ${getColor(green)};
         border: 0.5rem double ${getColor(green)};
-        transform: rotate(${green ? "-" : ""}3deg);
+        transform: rotate(${green ? '-' : ''}3deg);
         font-size: 2rem;
         margin: 0.8rem 2rem;
       `}
