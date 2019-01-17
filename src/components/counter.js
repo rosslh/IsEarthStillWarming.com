@@ -37,7 +37,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
         <strong id="currentCo2Counter">{currentCo2}ppm</strong>
       </div>
       <div>
-        <div>Global temperature anomoly</div>
+        <div>Global temperature anomaly</div>
         <strong id="currentTempCounter">+{currentTemp}°C</strong>
       </div>
     </div>
