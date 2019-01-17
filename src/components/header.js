@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "@reach/router";
 import Counter from "../components/counter";
 import { red, redDark } from "../assets/colors";
 
@@ -14,6 +13,7 @@ const Header = props => (
       box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
       border-radius: 0% 0% 30% 30% / 0% 0% 5% 5%;
       border-bottom: 4px solid ${redDark};
+      padding: 0.75rem 0;
     `}
   >
     <div
