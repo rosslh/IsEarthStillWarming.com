@@ -72,6 +72,7 @@ const RefList = () => (
           text-indent: -2rem;
           margin-left: 2rem;
           padding-bottom: 1.5rem;
+          word-break: break-all;
         `}
         key={x.name}
         id={`ref-${x.name}`}
