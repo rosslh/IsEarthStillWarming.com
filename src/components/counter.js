@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContentWrapper from './contentWrapper';
+import CO2 from './co2';
 
 const Counter = ({ currentCo2, currentTemp }) => (
   <ContentWrapper
@@ -32,7 +33,9 @@ const Counter = ({ currentCo2, currentTemp }) => (
       `}
     >
       <div>
-        <div>Atmospheric CO2</div>
+        <div>
+          Atmospheric <CO2 />
+        </div>
         <strong id="currentCo2Counter">{currentCo2}ppm</strong>
       </div>
       <div>
