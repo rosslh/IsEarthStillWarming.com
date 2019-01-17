@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { rotate } from "unitransform";
+import { red } from "../assets/colors";
 
-const getColor = isGreen => (isGreen ? rotate("#b7292f", 115) : "#b7292f");
+const getColor = isGreen => (isGreen ? rotate(red, 115) : red);
 
 const Stamp = ({ children, green }) => (
   <div>

@@ -18,18 +18,17 @@ class Home extends Component {
   }
   render() {
     const figureWrapperStyle = `
-      width: 80%;
+      width: 70%;
       margin: 0 auto 2rem;
       > img {
         width: 100%;
-        margin: 1em auto;
       }
       >strong {
         display: block;
         text-align: center;
       }
       @media (max-width: 700px) {
-        width: 100%;
+        width: 95%;
       }
     `;
     const options = {
@@ -81,7 +80,6 @@ class Home extends Component {
               svg {
                 margin: 0 auto;
                 display: block;
-                padding: 2rem;
                 .mg-active-datapoint-container {
                   transform: translate(-200px, 0);
                 }
