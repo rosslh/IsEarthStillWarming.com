@@ -13,9 +13,10 @@ const Header = props => (
       a {
         color: white !important;
       }
-      box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
-      box-shadow: inset 0 -6rem 12rem -6rem ${redDark}44;
+      box-shadow: inset 0 -6rem 12rem -6rem ${redDark}44,
+        0px 4px 8px 0px rgba(34, 34, 34, 0.3);
       border-radius: 0% 0% 30% 30% / 0% 0% 5% 5%;
+      z-index: 4;
       margin-bottom: 1.5rem;
     `}
   >
