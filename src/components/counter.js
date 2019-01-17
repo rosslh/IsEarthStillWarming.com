@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ContentWrapper from "./contentWrapper";
 
 const Counter = ({ currentCo2, currentTemp }) => (
-  <div
-    css={`
+  <ContentWrapper
+    style={`
       padding: 0;
       margin-top: 2rem;
       border-radius: 6px;
@@ -40,7 +41,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
         <strong id="currentTempCounter">+{currentTemp}°C</strong>
       </div>
     </div>
-  </div>
+  </ContentWrapper>
 );
 
 Counter.propTypes = {
