@@ -6,7 +6,10 @@ function App() {
   return (
     <Root>
       <Head>
-        <meta property="og:title" content="Is Earth still warming?" />
+        <meta
+          property="og:title"
+          content="Global warming information and data"
+        />
         <meta
           property="og:description"
           content="Up-to-date global climate information"
@@ -30,7 +33,7 @@ function App() {
           sizes="16x16"
           href={require("./assets/favicon-16x16.png")}
         />
-        <title>Is Earth still warming?</title>
+        <title>Global warming information and data</title>
       </Head>
       <div
         css={`
