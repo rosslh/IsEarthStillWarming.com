@@ -128,7 +128,7 @@ class Home extends Component {
                   ...options,
                   yaxis: {
                     title: {
-                      text: 'Temperature anomoly'
+                      text: "Temperature anomaly"
                     }
                   },
                   xaxis: {
