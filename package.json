@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "apexcharts": "^2.5.0",
+    "apexcharts": "^3.1.0",
     "axios": "^0.18.0",
     "csvtojson": "^2.0.8",
-    "emotion": "^9.2.12",
+    "emotion": "^10.0.6",
     "modern-normalize": "^0.5.0",
     "node-column-parser": "^1.0.1",
     "prop-types": "^15.6.2",
@@ -30,7 +30,7 @@
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
-    "babel-plugin-emotion": "^9.2.11",
+    "babel-plugin-emotion": "^10.0.6",
     "cypress": "^3.1.4",
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-cypress": "^2.2.0",
