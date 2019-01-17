@@ -1,4 +1,6 @@
 import React from "react";
+import { lighten } from "unitransform";
+
 import Counter from "../components/counter";
 import { red, redDark } from "../assets/colors";
 import ContentWrapper from "./contentWrapper";
@@ -14,7 +16,6 @@ const Header = props => (
       box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
       box-shadow: inset 0 -6rem 12rem -6rem ${redDark}44;
       border-radius: 0% 0% 30% 30% / 0% 0% 5% 5%;
-      z-index: 3;
     `}
   >
     <div
@@ -63,6 +64,19 @@ const Header = props => (
       </ContentWrapper>
     </div>
     <Counter {...props} />
+    <div
+      css={`
+        color: ${lighten(red, 40)};
+        font-size: 15px !important;
+        text-align: center;
+        margin: 0;
+        padding: 2rem;
+        font-family: "Open Sans", sans-serif !important;
+      `}
+    >
+      This website is kept up-to-date with climate data provided by NASA and
+      Scripps Institution of Oceanography
+    </div>
   </header>
 );
 

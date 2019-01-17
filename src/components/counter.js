@@ -6,7 +6,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
   <ContentWrapper
     style={`
       padding: 0;
-      margin-top: 2rem;
+      margin-top: 3rem;
       border-radius: 6px;
       text-align: center;
     `}
@@ -19,7 +19,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
         > div {
           flex-grow: 1
           min-height: 80px;
-          padding: 0 1.5rem 2rem;
+          padding: 0 1.5rem 0;
           > div {
             font-size: 0.9rem;
           }
