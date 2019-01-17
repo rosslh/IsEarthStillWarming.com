@@ -92,7 +92,7 @@ class Home extends Component {
                 padding-top: 0;
               `}
             >
-              Have we stopped global warming yet?
+              Is global warming still happening?
             </h2>
             <IsEarthWarming {...this.props} />
             <h2>What is global warming?</h2>
