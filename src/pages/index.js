@@ -78,7 +78,6 @@ class Home extends Component {
         <ContentWrapper>
           <article
             css={`
-              padding: 0 2rem 1rem;
               svg {
                 margin: 0 auto;
                 display: block;
