@@ -16,6 +16,7 @@ const Header = props => (
       box-shadow: 0px 4px 8px 0px rgba(34, 34, 34, 0.2);
       box-shadow: inset 0 -6rem 12rem -6rem ${redDark}44;
       border-radius: 0% 0% 30% 30% / 0% 0% 5% 5%;
+      margin-bottom: 1.5rem;
     `}
   >
     <div
