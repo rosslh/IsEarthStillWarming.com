@@ -1,9 +1,9 @@
-import React from "react";
-import { lighten } from "unitransform";
+import React from 'react';
+import { lighten } from 'unitransform';
 
-import Counter from "../components/counter";
-import { red, redDark } from "../assets/colors";
-import ContentWrapper from "./contentWrapper";
+import Counter from '../components/counter';
+import { red, redDark } from '../assets/colors';
+import ContentWrapper from './contentWrapper';
 
 const Header = props => (
   <header
@@ -71,9 +71,9 @@ const Header = props => (
         color: ${lighten(red, 40)};
         font-size: 15px !important;
         text-align: center;
-        margin: 0;
+        margin-top: 0.5rem;
         padding: 2rem;
-        font-family: "Open Sans", sans-serif !important;
+        font-family: 'Open Sans', sans-serif !important;
       `}
     >
       This website is kept up-to-date with climate data provided by NASA and

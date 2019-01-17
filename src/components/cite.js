@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import React, { memo } from "react";
-import { citations } from "./reflist";
+import React, { memo } from 'react';
+import { citations } from './reflist';
 
 const Cite = ({ name }) => (
   <sup

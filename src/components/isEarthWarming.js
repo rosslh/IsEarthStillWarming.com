@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Stamp from "./stamp";
-import Cite from "./cite";
+import Stamp from './stamp';
+import Cite from './cite';
 
 const IsEarthWarming = props => {
   const warmedBy = props.tenYearWarming;
@@ -28,14 +28,14 @@ const IsEarthWarming = props => {
   if (warmedBy > 0.1) {
     return (
       <div css={styles}>
-        <Stamp>No</Stamp>
+        <Stamp>Yes</Stamp>
         <p>
-          Over the past 10 years, Earth's average temperature has risen by{" "}
-          <span id="tenYearWarming">{props.tenYearWarming}</span>°C.{citation}{" "}
+          Over the past 10 years, Earth's average temperature has risen by{' '}
+          <span id="tenYearWarming">{props.tenYearWarming}</span>°C.{citation}{' '}
           {props.latestTempValue < 2
             ? `At this rate, global warming will surpass the +${target}°C
               limit set by the Paris Climate Agreement by ${projectedYear}.`
-            : ""}
+            : ''}
         </p>
       </div>
     );
@@ -44,7 +44,7 @@ const IsEarthWarming = props => {
       <div css={styles}>
         <Stamp green>Maybe?</Stamp>
         <p>
-          Over the past 10 years, Earth's temperature has only risen by{" "}
+          Over the past 10 years, Earth's temperature has only risen by{' '}
           <span id="tenYearWarming">{props.tenYearWarming}</span>°C.
           {citation}
         </p>
@@ -53,9 +53,9 @@ const IsEarthWarming = props => {
   }
   return (
     <div css={styles}>
-      <Stamp green>Yes</Stamp>
+      <Stamp green>No</Stamp>
       <p>
-        Over the past 10 years, Earth's temperature has dropped by{" "}
+        Over the past 10 years, Earth's temperature has dropped by{' '}
         <span id="tenYearWarming">{Math.abs(props.tenYearWarming)}</span>°C.
         {citation}
       </p>

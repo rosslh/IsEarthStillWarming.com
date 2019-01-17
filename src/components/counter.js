@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ContentWrapper from "./contentWrapper";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ContentWrapper from './contentWrapper';
+import CO2 from './co2';
 
 const Counter = ({ currentCo2, currentTemp }) => (
   <ContentWrapper
     style={`
       padding: 0;
-      margin-top: 2.5rem;
-      border-radius: 6px;
+      margin-top: .5rem;
       text-align: center;
     `}
   >
@@ -19,7 +19,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
         > div {
           flex-grow: 1
           min-height: 80px;
-          padding: 0 1.5rem 0;
+          padding: 2rem 1.5rem 0;
           > div {
             font-size: 0.9rem;
           }
@@ -33,7 +33,9 @@ const Counter = ({ currentCo2, currentTemp }) => (
       `}
     >
       <div>
-        <div>Atmospheric CO2</div>
+        <div>
+          Atmospheric <CO2 />
+        </div>
         <strong id="currentCo2Counter">{currentCo2}ppm</strong>
       </div>
       <div>
