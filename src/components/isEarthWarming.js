@@ -28,7 +28,7 @@ const IsEarthWarming = props => {
   if (warmedBy > 0.1) {
     return (
       <div css={styles}>
-        <Stamp>Yes</Stamp>
+        <Stamp>No</Stamp>
         <p>
           Over the past 10 years, Earth's average temperature has risen by{" "}
           <span id="tenYearWarming">{props.tenYearWarming}</span>°C.{citation}{" "}
@@ -42,7 +42,7 @@ const IsEarthWarming = props => {
   } else if (warmedBy > 0) {
     return (
       <div css={styles}>
-        <Stamp green>Not signicantly.</Stamp>
+        <Stamp green>Maybe?</Stamp>
         <p>
           Over the past 10 years, Earth's temperature has only risen by{" "}
           <span id="tenYearWarming">{props.tenYearWarming}</span>°C.
@@ -53,7 +53,7 @@ const IsEarthWarming = props => {
   }
   return (
     <div css={styles}>
-      <Stamp green>No</Stamp>
+      <Stamp green>Yes</Stamp>
       <p>
         Over the past 10 years, Earth's temperature has dropped by{" "}
         <span id="tenYearWarming">{Math.abs(props.tenYearWarming)}</span>°C.

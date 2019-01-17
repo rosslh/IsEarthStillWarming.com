@@ -86,7 +86,7 @@ class Home extends Component {
               }
             `}
           >
-            <h2>Is Earth still warming?</h2>
+            <h2>Have we stopped global warming yet?</h2>
             <IsEarthWarming {...this.props} />
             <h2>What is global warming?</h2>
             <p>

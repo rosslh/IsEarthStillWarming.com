@@ -11,6 +11,8 @@ const Stamp = ({ children, green }) => (
       id="stamp"
       css={`
         font-size: 3rem;
+        min-width: 7rem;
+        text-align: center;
         font-weight: bold;
         display: inline-block;
         padding: 0.2rem 0.8rem;
