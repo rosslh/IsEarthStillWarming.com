@@ -32,22 +32,10 @@ class Home extends Component {
       }
     `;
     const options = {
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'dark',
-          gradientToColors: [red],
-          shadeIntensity: 0,
-          type: 'vertical',
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [50, 100, 100]
-        }
-      },
       theme: {
         monochrome: {
           enabled: true,
-          color: '#f5bf00'
+          color: red
         }
       },
       plotOptions: {
