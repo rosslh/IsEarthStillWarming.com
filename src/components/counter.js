@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const Counter = ({ currentCo2, currentTemp }) => (
   <div
     css={`
-      padding: 1rem;
-      margin: 0;
+      padding: 0;
+      margin-top: 2rem;
       border-radius: 6px;
       text-align: center;
     `}

@@ -1,4 +1,4 @@
-import { darken } from "unitransform";
+import { darken, saturate } from "unitransform";
 
-export const red = "#bf2222";
-export const redDark = darken(red, 10);
+export const red = "#b51a16";
+export const redDark = saturate(darken(red, 12), 5);
