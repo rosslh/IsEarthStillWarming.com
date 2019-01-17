@@ -98,7 +98,7 @@ class Home extends Component {
             <h2>What is global warming?</h2>
             <p>
               Global warming is the trend of Earth's temperature rising at an
-              unprecidented rate starting in the mid 20th century.
+              unprecedented rate starting in the mid 20th century.
               <Cite name="nasa" />
             </p>
             <p>
@@ -154,7 +154,7 @@ class Home extends Component {
               most significant of which we will explain in this paper.
             </p>
             <p>
-              In late 2015, 184 nations were party to the Paris Climate Acord, a
+              In late 2015, 184 nations were party to the Paris Climate Accord, a
               UN agreement dealing with reducing greenhouse gas emissions in an
               effort to mitigate global warming. The stated goal of the
               agreement is to limit the average global temperature to 1.5°C
