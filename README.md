@@ -1,6 +1,7 @@
 # IsEarthStillWarming.com
 
-[![CircleCI](https://circleci.com/gh/rosslh/IsEarthStillWarming.com/tree/master.svg?style=svg)](https://circleci.com/gh/rosslh/IsEarthStillWarming.com/tree/master) [![Greenkeeper badge](https://badges.greenkeeper.io/rosslh/IsEarthStillWarming.com.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/rosslh/IsEarthStillWarming.com.svg?style=shield)](https://circleci.com/gh/rosslh/IsEarthStillWarming.com)
+[![Greenkeeper badge](https://badges.greenkeeper.io/rosslh/IsEarthStillWarming.com.svg)](https://greenkeeper.io/)
 
 ## Scope
 
