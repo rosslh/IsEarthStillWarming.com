@@ -18,17 +18,27 @@ class Home extends Component {
   }
   render() {
     const figureWrapperStyle = `
-      width: 70%;
-      margin: 0 auto 2rem;
-      > img {
-        width: 100%;
+      width: 80%;
+      margin: 3rem auto;
+      >div{
+        padding 1rem 1.5rem 0;
+        box-shadow:rgba(00, 00, 00, 0.2) 0px 6px 16px 0px;
+        border-radius: 5px;
+        > img {
+          width: 100%;
+        }
+      @media (max-width: 700px) {
+        padding: 0;
+        box-shadow: none;
+      }
       }
       >strong {
+        margin-top: 1.5rem;
         display: block;
         text-align: center;
       }
       @media (max-width: 700px) {
-        width: 95%;
+        width: 98%;
       }
     `;
     const options = {
@@ -48,6 +58,7 @@ class Home extends Component {
         style: 'full'
       },
       chart: {
+        fontFamily: 'Open Sans',
         zoom: {
           enabled: false
         },
@@ -56,6 +67,7 @@ class Home extends Component {
         }
       }
     };
+    const chartFontSize = '14px';
     return (
       <>
         <Header
@@ -104,28 +116,48 @@ class Home extends Component {
               trend (see fig. 1).
             </p>
             <div css={figureWrapperStyle}>
-              <Chart
-                type="line"
-                series={[
-                  {
-                    name: 'global temp',
-                    data: this.props.temp
-                  }
-                ]}
-                options={{
-                  ...options,
-                  yaxis: {
-                    title: {
-                      text: "Temperature anomaly"
+              <div>
+                <Chart
+                  type="line"
+                  series={[
+                    {
+                      name: 'global temp',
+                      data: this.props.temp
                     }
-                  },
-                  xaxis: {
-                    title: {
-                      text: 'Year'
+                  ]}
+                  options={{
+                    ...options,
+                    yaxis: {
+                      title: {
+                        text: 'Temperature anomaly',
+                        style: {
+                          fontSize: chartFontSize
+                        }
+                      },
+                      labels: {
+                        formatter: value =>
+                          `${value < -0.01 ? '-' : '+'}${Math.round(
+                            value * 100
+                          ) / 100}°C`
+                      },
+                      style: {
+                        fontSize: chartFontSize
+                      }
+                    },
+                    xaxis: {
+                      title: {
+                        text: 'Year',
+                        style: {
+                          fontSize: chartFontSize
+                        }
+                      },
+                      style: {
+                        fontSize: chartFontSize
+                      }
                     }
-                  }
-                }}
-              />
+                  }}
+                />
+              </div>
               <strong>
                 Figure 1<Cite name="tempData" />
               </strong>
@@ -142,9 +174,9 @@ class Home extends Component {
               most significant of which we will explain in this paper.
             </p>
             <p>
-              In late 2015, 184 nations were party to the Paris Climate Accord, a
-              UN agreement dealing with reducing greenhouse gas emissions in an
-              effort to mitigate global warming. The stated goal of the
+              In late 2015, 184 nations were party to the Paris Climate Accord,
+              a UN agreement dealing with reducing greenhouse gas emissions in
+              an effort to mitigate global warming. The stated goal of the
               agreement is to limit the average global temperature to 1.5°C
               above pre-industrial levels.
               <Cite name="1.5C" />
@@ -173,28 +205,45 @@ class Home extends Component {
               <Cite name="co2After1958" />
             </p>
             <div css={figureWrapperStyle}>
-              <Chart
-                type="line"
-                series={[
-                  {
-                    name: 'global carbon',
-                    data: this.props.co2
-                  }
-                ]}
-                options={{
-                  ...options,
-                  yaxis: {
-                    title: {
-                      text: 'Carbon dioxide concentration in atmosphere'
+              <div>
+                <Chart
+                  type="line"
+                  series={[
+                    {
+                      name: 'global carbon',
+                      data: this.props.co2
                     }
-                  },
-                  xaxis: {
-                    title: {
-                      text: 'Year'
+                  ]}
+                  options={{
+                    ...options,
+                    yaxis: {
+                      title: {
+                        text: 'CO2 concentration in atmosphere',
+                        style: {
+                          fontSize: chartFontSize
+                        }
+                      },
+                      labels: {
+                        formatter: value => `${Math.round(value)}ppm`
+                      },
+                      style: {
+                        fontSize: chartFontSize
+                      }
+                    },
+                    xaxis: {
+                      title: {
+                        text: 'Year',
+                        style: {
+                          fontSize: chartFontSize
+                        }
+                      },
+                      style: {
+                        fontSize: chartFontSize
+                      }
                     }
-                  }
-                }}
-              />
+                  }}
+                />
+              </div>
               <strong>
                 Figure 2<Cite name="co2After1958" />
                 <Cite name="co2Before1958" />
@@ -230,7 +279,9 @@ class Home extends Component {
               on a large scale (see fig. 3).
             </p>
             <div css={figureWrapperStyle}>
-              <img src={risks} alt="risks of climate change" />
+              <div>
+                <img src={risks} alt="risks of climate change" />
+              </div>
               <strong>
                 Figure 3<Cite name="guardian" />
                 <Cite name="1.5C" />
