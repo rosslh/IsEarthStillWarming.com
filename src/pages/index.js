@@ -136,7 +136,7 @@ class Home extends Component {
                       },
                       labels: {
                         formatter: value =>
-                          `${value < -0.01 ? '-' : '+'}${Math.round(
+                          `${value < -0.01 ? '' : '+'}${Math.round(
                             value * 100
                           ) / 100}°C`
                       },
