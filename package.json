@@ -1,5 +1,6 @@
 {
   "name": "isearthstillwarming.com",
+  "version": "v1.0.0",
   "private": true,
   "scripts": {
     "start": "react-static start",
