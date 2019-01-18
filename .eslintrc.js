@@ -1,20 +1,21 @@
 module.exports = {
-  extends: "react-tools",
-  plugins: ["cypress"],
+  extends: 'react-tools',
+  plugins: ['cypress'],
   env: {
-    "cypress/globals": true
+    'cypress/globals': true
   },
   rules: {
-    "jsx-a11y/anchor-is-valid": [
-      "error",
+    'jsx-a11y/anchor-is-valid': [
+      'error',
       {
-        components: ["Link"],
-        specialLink: ["to"]
+        components: ['Link'],
+        specialLink: ['to']
       }
     ],
-    "react/jsx-curly-brace-presence": 0,
-    "no-restricted-globals": 0,
-    indent: ["error", 2],
-    "import/no-extraneous-dependencies": 0
+    'react/jsx-curly-brace-presence': 0,
+    'no-restricted-globals': 0,
+    indent: ['error', 2],
+    'import/no-extraneous-dependencies': 0,
+    'react/prop-types': 1
   }
 };
