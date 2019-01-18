@@ -4,6 +4,7 @@ import { lighten } from 'unitransform';
 import Counter from '../components/counter';
 import { red, redDark } from '../assets/colors';
 import ContentWrapper from './contentWrapper';
+import fire from '../assets/fire-icon.svg';
 
 const Header = props => (
   <header
@@ -15,9 +16,8 @@ const Header = props => (
       }
       box-shadow: inset 0 -6rem 12rem -6rem ${redDark}44,
         0px 4px 8px 0px rgba(34, 34, 34, 0.3);
-      border-radius: 0% 0% 30% 30% / 0% 0% 5% 5%;
-      z-index: 4;
-      margin-bottom: 1.5rem;
+      border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+      margin-bottom: 1.75rem;
     `}
   >
     <div
@@ -39,9 +39,19 @@ const Header = props => (
             padding: 0 !important;
             line-height: 40px;
             font-size: 20px;
+            display: flex;
+            align-items: center;
             font-weight: 600;
           `}
         >
+          <img
+            css={`
+              margin-right: 0.6rem;
+            `}
+            alt="fire icon"
+            height="20px"
+            src={fire}
+          />{' '}
           IsEarthStillWarming.com
         </h1>
         <nav
@@ -72,7 +82,7 @@ const Header = props => (
         font-size: 15px !important;
         text-align: center;
         margin-top: 0.5rem;
-        padding: 2rem;
+        padding: 1.5rem 0 2.5rem;
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
