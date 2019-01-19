@@ -59,6 +59,7 @@ const getData = async () => {
 };
 
 export default {
+  plugins: [['react-static-plugin-google-analytics', { id: 'UA-93549235-2' }]],
   getRoutes: async () => {
     const {
       temp,
