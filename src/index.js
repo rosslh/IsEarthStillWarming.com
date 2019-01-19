@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as Sentry from '@sentry/browser';
+import { init } from '@sentry/browser';
 
 // Your top level component
 import App from './App';
 
-Sentry.init({
+init({
   dsn: 'https://020ed36db0db45279f5de4762f97698d@sentry.io/1374977'
 });
 
