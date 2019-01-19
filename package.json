@@ -17,26 +17,26 @@
 	"dependencies": {
 		"@reach/router": "^1.2.1",
 		"@sentry/browser": "^4.5.2",
-		"apexcharts": "^2.5.0",
+		"chart.js": "^2.7.3",
+		"emotion": "^9.2.12",
 		"modern-normalize": "^0.5.0",
 		"prop-types": "^15.6.2",
 		"react": "^16.6.3",
-		"react-apexcharts": "^1.2.0",
+		"react-chartjs-2": "^2.7.4",
 		"react-dom": "^16.6.3",
 		"react-hot-loader": "^4.3.12",
 		"react-static": "^6.0.20",
-		"emotion": "^9.2.12",
 		"unitransform": "^1.0.5"
 	},
 	"devDependencies": {
+		"axios": "^0.18.0",
 		"babel-plugin-emotion": "^9.2.11",
+		"csvtojson": "^2.0.8",
 		"cypress": "^3.1.4",
 		"eslint-config-react-tools": "1.x.x",
 		"eslint-plugin-cypress": "^2.2.0",
 		"prettier": "1.15.3",
 		"serve": "10.1.1",
-		"start-server-and-test": "^1.7.11",
-		"axios": "^0.18.0",
-		"csvtojson": "^2.0.8"
+		"start-server-and-test": "^1.7.11"
 	}
 }
