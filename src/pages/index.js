@@ -17,6 +17,7 @@ class Home extends Component {
     this.state = {};
   }
   render() {
+    throw new Error('Sentry test error');
     const figureWrapperStyle = `
       width: 80%;
       margin: 3rem auto;
