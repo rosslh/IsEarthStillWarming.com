@@ -1,6 +1,6 @@
 {
   "name": "isearthstillwarming.com",
-  "version": "v1.0.2",
+  "version": "v1.0.3",
   "private": true,
   "scripts": {
     "start": "react-static start",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "@sentry/browser": "^4.5.2",
     "apexcharts": "^2.5.0",
     "axios": "^0.18.0",
     "csvtojson": "^2.0.8",
