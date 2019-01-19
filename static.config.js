@@ -5,24 +5,7 @@ const dateFromYear = year => Math.trunc(Number(year));
 
 const minYear = 1700;
 
-const getData = async () => {
-  let { data: co2 } = await axios.get(
-    'http://scrippsco2.ucsd.edu/assets/data/atmospheric/merged_ice_core_mlo_spo/merged_ice_core_yearly.csv'
-  );
-
-  co2 = await csv({ noheader: true }).fromString(co2.replace(/".*"\n/g, ''));
-
-  co2 = co2
-    .filter(
-      x =>
-        x.field1 &&
-        x.field2 &&
-        !isNaN(x.field1) &&
-        !isNaN(x.field2) &&
-        dateFromYear(x.field1) > minYear
-    )
-    .map(x => [dateFromYear(x.field1), Math.trunc(Number(x.field2))]);
-
+const getTemp = async () => {
   let { data: temp } = await axios.get(
     'https://climate.nasa.gov/system/internal_resources/details/original/647_Global_Temperature_Data_File.txt'
   );
@@ -44,8 +27,6 @@ const getData = async () => {
     )
     .map(x => [dateFromYear(x.field1), Number(x.field3)]);
 
-  const latestCo2Year = Math.max(...co2.map(x => x[0]));
-
   const latestTempYear = Math.max(...temp.map(x => x[0]));
 
   const tenYearWarming =
@@ -55,18 +36,38 @@ const getData = async () => {
         100
     ) / 100;
 
-  return { temp, co2, latestCo2Year, latestTempYear, tenYearWarming };
+  return { temp, latestTempYear, tenYearWarming };
+};
+
+const getCo2 = async () => {
+  let { data: co2 } = await axios.get(
+    'http://scrippsco2.ucsd.edu/assets/data/atmospheric/merged_ice_core_mlo_spo/merged_ice_core_yearly.csv'
+  );
+
+  co2 = await csv({ noheader: true }).fromString(co2.replace(/".*"\n/g, ''));
+
+  co2 = co2
+    .filter(
+      x =>
+        x.field1 &&
+        x.field2 &&
+        !isNaN(x.field1) &&
+        !isNaN(x.field2) &&
+        dateFromYear(x.field1) > minYear
+    )
+    .map(x => [dateFromYear(x.field1), Math.trunc(Number(x.field2))]);
+
+  const latestCo2Year = Math.max(...co2.map(x => x[0]));
+
+  return { co2, latestCo2Year };
 };
 
 export default {
   getRoutes: async () => {
-    const {
-      temp,
-      co2,
-      latestCo2Year,
-      latestTempYear,
-      tenYearWarming
-    } = await getData();
+    const { temp, latestTempYear, tenYearWarming } = await getTemp();
+
+    const { co2, latestCo2Year } = await getCo2();
+
     return [
       {
         path: '/',
