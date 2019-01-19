@@ -1,6 +1,6 @@
 {
   "name": "isearthstillwarming.com",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "private": true,
   "scripts": {
     "start": "react-static start",
@@ -28,6 +28,7 @@
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
     "react-static": "^6.0.20",
+    "react-static-plugin-google-analytics": "0.0.0",
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
