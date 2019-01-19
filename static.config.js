@@ -25,14 +25,14 @@ const getTemp = async () => {
         !isNaN(x.field3) &&
         dateFromYear(x.field1) > minYear
     )
-    .map(x => [dateFromYear(x.field1), Number(x.field3)]);
+    .map(x => ({ x: dateFromYear(x.field1), y: Number(x.field3) }));
 
-  const latestTempYear = Math.max(...temp.map(x => x[0]));
+  const latestTempYear = Math.max(...temp.map(value => value.x));
 
   const tenYearWarming =
     Math.round(
-      (temp.find(x => x[0] === latestTempYear)[1] -
-        temp.find(x => x[0] === latestTempYear - 10)[1]) *
+      (temp.find(value => value.x === latestTempYear).y -
+        temp.find(value => value.x === latestTempYear - 10).y) *
         100
     ) / 100;
 
@@ -55,9 +55,9 @@ const getCo2 = async () => {
         !isNaN(x.field2) &&
         dateFromYear(x.field1) > minYear
     )
-    .map(x => [dateFromYear(x.field1), Math.trunc(Number(x.field2))]);
+    .map(x => ({ x: dateFromYear(x.field1), y: Math.trunc(Number(x.field2)) }));
 
-  const latestCo2Year = Math.max(...co2.map(x => x[0]));
+  const latestCo2Year = Math.max(...co2.map(val => val.x));
 
   return { co2, latestCo2Year };
 };
@@ -78,8 +78,8 @@ export default {
           latestCo2Year,
           latestTempYear,
           tenYearWarming,
-          latestCo2Value: co2.find(x => x[0] === latestCo2Year)[1],
-          latestTempValue: temp.find(x => x[0] === latestTempYear)[1]
+          latestCo2Value: co2.find(value => value.x === latestCo2Year).y,
+          latestTempValue: temp.find(value => value.x === latestTempYear).y
         })
       }
     ];

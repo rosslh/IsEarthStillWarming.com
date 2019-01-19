@@ -16,6 +16,6 @@ module.exports = {
     'no-restricted-globals': 0,
     indent: ['error', 2],
     'import/no-extraneous-dependencies': 0,
-    'react/prop-types': 1
+    'react/prop-types': 2
   }
 };

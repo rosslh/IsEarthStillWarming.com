@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { lighten, desaturate } from 'unitransform';
 import { withRouteData } from 'react-static';
-import Chart from 'react-apexcharts';
+import { Scatter } from 'react-chartjs-2';
 import risks from '../assets/risks.png';
 import Cite from '../components/cite';
 import RefList from '../components/reflist';
@@ -21,7 +22,7 @@ class Home extends Component {
       width: 80%;
       margin: 3rem auto;
       >div{
-        padding 1rem 1.5rem 0;
+        padding 1.5rem;
         box-shadow:rgba(00, 00, 00, 0.2) 0px 6px 16px 0px;
         border-radius: 5px;
         > img {
@@ -41,33 +42,10 @@ class Home extends Component {
         width: 98%;
       }
     `;
-    const options = {
-      theme: {
-        monochrome: {
-          enabled: true,
-          color: red
-        }
-      },
-      plotOptions: {
-        line: {
-          curve: 'smooth'
-        }
-      },
-      markers: {
-        size: 0,
-        style: 'full'
-      },
-      chart: {
-        fontFamily: 'Open Sans',
-        zoom: {
-          enabled: false
-        },
-        toolbar: {
-          show: false
-        }
-      }
+    const datasetOptions = {
+      borderColor: lighten(red, 10),
+      backgroundColor: desaturate(lighten(red, 20), 30)
     };
-    const chartFontSize = '14px';
     return (
       <>
         <Header
@@ -117,43 +95,29 @@ class Home extends Component {
             </p>
             <div css={figureWrapperStyle}>
               <div>
-                <Chart
-                  type="line"
-                  series={[
-                    {
-                      name: 'global temp',
-                      data: this.props.temp
-                    }
-                  ]}
+                <Scatter
+                  data={{
+                    datasets: [
+                      {
+                        label: 'Global average temperature',
+                        data: this.props.temp,
+                        ...datasetOptions
+                      }
+                    ]
+                  }}
                   options={{
-                    ...options,
-                    yaxis: {
-                      title: {
-                        text: 'Temperature anomaly',
-                        style: {
-                          fontSize: chartFontSize
+                    scales: {
+                      yAxes: [
+                        {
+                          ticks: {
+                            callback: value => `${value}°C`
+                          },
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Global average temperature'
+                          }
                         }
-                      },
-                      labels: {
-                        formatter: value =>
-                          `${value < -0.01 ? '' : '+'}${Math.round(
-                            value * 100
-                          ) / 100}°C`
-                      },
-                      style: {
-                        fontSize: chartFontSize
-                      }
-                    },
-                    xaxis: {
-                      title: {
-                        text: 'Year',
-                        style: {
-                          fontSize: chartFontSize
-                        }
-                      },
-                      style: {
-                        fontSize: chartFontSize
-                      }
+                      ]
                     }
                   }}
                 />
@@ -206,40 +170,29 @@ class Home extends Component {
             </p>
             <div css={figureWrapperStyle}>
               <div>
-                <Chart
-                  type="line"
-                  series={[
-                    {
-                      name: 'global carbon',
-                      data: this.props.co2
-                    }
-                  ]}
+                <Scatter
+                  data={{
+                    datasets: [
+                      {
+                        label: 'Atmospheric CO2',
+                        data: this.props.co2,
+                        ...datasetOptions
+                      }
+                    ]
+                  }}
                   options={{
-                    ...options,
-                    yaxis: {
-                      title: {
-                        text: 'CO2 concentration in atmosphere',
-                        style: {
-                          fontSize: chartFontSize
+                    scales: {
+                      yAxes: [
+                        {
+                          ticks: {
+                            callback: value => `${value}ppm`
+                          },
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Atmospheric CO2 concentration'
+                          }
                         }
-                      },
-                      labels: {
-                        formatter: value => `${Math.round(value)}ppm`
-                      },
-                      style: {
-                        fontSize: chartFontSize
-                      }
-                    },
-                    xaxis: {
-                      title: {
-                        text: 'Year',
-                        style: {
-                          fontSize: chartFontSize
-                        }
-                      },
-                      style: {
-                        fontSize: chartFontSize
-                      }
+                      ]
                     }
                   }}
                 />
