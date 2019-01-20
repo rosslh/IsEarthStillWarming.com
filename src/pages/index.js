@@ -106,6 +106,9 @@ class Home extends Component {
                     ]
                   }}
                   options={{
+                    legend: {
+                      display: false
+                    },
                     scales: {
                       yAxes: [
                         {
@@ -181,6 +184,9 @@ class Home extends Component {
                     ]
                   }}
                   options={{
+                    legend: {
+                      display: false
+                    },
                     scales: {
                       yAxes: [
                         {
