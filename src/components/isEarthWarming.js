@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { css } from "@emotion/core";
 import Stamp from './stamp';
 import Cite from './cite';
 
@@ -12,7 +12,7 @@ const IsEarthWarming = props => {
   const projectedYear = Math.trunc(
     currentYear + (target - props.latestTempValue) / (props.tenYearWarming / 10)
   );
-  const styles = `
+  const styles = css`
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Root, Routes, Head } from 'react-static';
 import { withScope, captureException } from '@sentry/browser';
+import { css } from "@emotion/core";
 import 'modern-normalize/modern-normalize.css';
 
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
           <title>Global warming information and data</title>
         </Head>
         <div
-          css={`
+          css={css`
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i');
             line-height: 1.6;
             *:not(p) {

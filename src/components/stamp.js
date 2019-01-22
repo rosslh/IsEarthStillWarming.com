@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { css } from "@emotion/core";
 import { rotate } from 'unitransform';
 import { red } from '../assets/colors';
 
@@ -9,7 +10,7 @@ const Stamp = ({ children, green }) => (
   <div>
     <div
       id="stamp"
-      css={`
+      css={css`
         font-size: 3rem;
         min-width: 7rem;
         text-align: center;
@@ -33,7 +34,7 @@ const Stamp = ({ children, green }) => (
   </div>
 );
 
-Stamp.protoTypes = {
+Stamp.propTypes = {
   green: PropTypes.bool,
   children: PropTypes.any.isRequired
 };

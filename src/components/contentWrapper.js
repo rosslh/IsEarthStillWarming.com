@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { css } from "@emotion/core";
 
 const ContentWrapper = ({ children, style }) => (
   <div
-    css={`
+    css={css`
       max-width: 850px;
       width: 80%;
       margin: 0 auto;

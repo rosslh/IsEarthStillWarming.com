@@ -1,4 +1,6 @@
 {
-  "presets": ["react-static/babelPreset.js"],
-  "plugins": ["emotion"]
+  "presets": [
+    "react-static/babel-preset.js",
+    "@emotion/babel-preset-css-prop"
+  ]
 }

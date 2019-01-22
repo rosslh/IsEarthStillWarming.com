@@ -1,4 +1,5 @@
 import React from 'react';
+import { css } from "@emotion/core";
 
 export const citations = [
   {
@@ -60,7 +61,7 @@ export const citations = [
 ];
 const RefList = () => (
   <ol
-    css={`
+    css={css`
       list-style-position: inside;
       margin: 0;
       padding: 0;
@@ -68,7 +69,7 @@ const RefList = () => (
   >
     {citations.map(x => (
       <li
-        css={`
+        css={css`
           text-indent: -2rem;
           margin-left: 2rem;
           padding-bottom: 1.5rem;

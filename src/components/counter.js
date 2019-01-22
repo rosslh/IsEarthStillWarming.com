@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { css } from "@emotion/core";
 import ContentWrapper from './contentWrapper';
 import CO2 from './co2';
 
@@ -12,7 +13,7 @@ const Counter = ({ currentCo2, currentTemp }) => (
     `}
   >
     <div
-      css={`
+      css={css`
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;

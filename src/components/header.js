@@ -1,5 +1,6 @@
 import React from 'react';
 import { lighten } from 'unitransform';
+import { css } from "@emotion/core";
 
 import Counter from '../components/counter';
 import { red, redDark } from '../assets/colors';
@@ -8,7 +9,7 @@ import fire from '../assets/fire-icon.svg';
 
 const Header = props => (
   <header
-    css={`
+    css={css`
       background-color: ${red};
       color: white !important;
       a {
@@ -21,7 +22,7 @@ const Header = props => (
     `}
   >
     <div
-      css={`
+      css={css`
         background-color: ${redDark};
       `}
     >
@@ -34,7 +35,7 @@ const Header = props => (
         `}
       >
         <h1
-          css={`
+          css={css`
             margin: 0;
             padding: 0 !important;
             line-height: 40px;
@@ -45,7 +46,7 @@ const Header = props => (
           `}
         >
           <img
-            css={`
+            css={css`
               margin-right: 0.6rem;
             `}
             alt="fire icon"
@@ -55,7 +56,7 @@ const Header = props => (
           IsEarthStillWarming.com
         </h1>
         <nav
-          css={`
+          css={css`
             a {
               display: inline-block;
               margin: 0 6px;
@@ -77,7 +78,7 @@ const Header = props => (
     </div>
     <Counter {...props} />
     <div
-      css={`
+      css={css`
         color: ${lighten(red, 40)};
         font-size: 15px !important;
         text-align: center;
