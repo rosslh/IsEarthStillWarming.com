@@ -7,13 +7,13 @@ const minYear = 1700;
 
 const getTemp = async () => {
   let { data: temp } = await axios.get(
-    'https://climate.nasa.gov/system/internal_resources/details/original/647_Global_Temperature_Data_File.txt'
+    `https://climate.nasa.gov/system/internal_resources/details/original/647_Global_Temperature_Data_File.txt`
   );
 
   temp = await csv({ noheader: true }).fromString(
     temp
-      .replace(/[\t\v\f\r \u00a0\u2000-\u200b\u2028-\u2029\u3000]+/g, ',')
-      .replace(/,,+/g, ',')
+      .replace(/[\t\v\f\r \u00a0\u2000-\u200b\u2028-\u2029\u3000]+/g, `,`)
+      .replace(/,,+/g, `,`)
   );
 
   temp = temp
@@ -41,10 +41,10 @@ const getTemp = async () => {
 
 const getCo2 = async () => {
   let { data: co2 } = await axios.get(
-    'http://scrippsco2.ucsd.edu/assets/data/atmospheric/merged_ice_core_mlo_spo/merged_ice_core_yearly.csv'
+    `http://scrippsco2.ucsd.edu/assets/data/atmospheric/merged_ice_core_mlo_spo/merged_ice_core_yearly.csv`
   );
 
-  co2 = await csv({ noheader: true }).fromString(co2.replace(/".*"\n/g, ''));
+  co2 = await csv({ noheader: true }).fromString(co2.replace(/".*"\n/g, ``));
 
   co2 = co2
     .filter(
@@ -70,8 +70,8 @@ export default {
 
     return [
       {
-        path: '/',
-        component: 'src/pages/index.js',
+        path: `/`,
+        component: `src/pages/index.js`,
         getData: () => ({
           co2,
           temp,

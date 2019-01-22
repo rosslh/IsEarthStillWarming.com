@@ -1,6 +1,12 @@
 {
   "name": "isearthstillwarming.com",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format",
+      "pre-push": "npm run format"
+    }
+  },
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
@@ -8,7 +14,7 @@
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000",
-    "prettier": "prettier --write \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.js\" && eslint --fix \"src/**/*.js\"",
     "cyTest": "cypress run",
     "buildTestServer": "react-static build && serve dist -p 3939",
     "test": "server-test buildTestServer 3939 cyTest"
@@ -34,7 +40,8 @@
     "cypress": "^3.1.4",
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-cypress": "^2.2.0",
-    "prettier": "1.15.3",
+    "husky": "^1.3.1",
+    "prettier": "^1.16.0",
     "serve": "10.1.1",
     "start-server-and-test": "^1.7.11"
   }

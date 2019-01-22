@@ -1,6 +1,6 @@
 module.exports = {
   extends: 'react-tools',
-  plugins: ['cypress'],
+  plugins: ['eslint-plugin-cypress'],
   env: {
     'cypress/globals': true
   },
@@ -15,6 +15,7 @@ module.exports = {
     'react/jsx-curly-brace-presence': 0,
     'no-restricted-globals': 0,
     indent: ['error', 2],
+    quotes: ["error", "backtick"],
     'import/no-extraneous-dependencies': 0,
     'react/prop-types': 2
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 import ContentWrapper from './contentWrapper';
 import CO2 from './co2';
 

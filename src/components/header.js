@@ -1,6 +1,6 @@
 import React from 'react';
 import { lighten } from 'unitransform';
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 
 import Counter from '../components/counter';
 import { red, redDark } from '../assets/colors';
@@ -52,7 +52,8 @@ const Header = props => (
             alt="fire icon"
             height="20px"
             src={fire}
-          />{' '}
+          />
+          {` `}
           IsEarthStillWarming.com
         </h1>
         <nav

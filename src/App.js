@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Root, Routes, Head } from 'react-static';
 import { withScope, captureException } from '@sentry/browser';
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 import 'modern-normalize/modern-normalize.css';
 
 class App extends Component {
@@ -30,19 +30,19 @@ class App extends Component {
           <link
             rel="apple-touch-icon"
             sizes="120x120"
-            href={require('./assets/apple-touch-icon.png')}
+            href={require(`./assets/apple-touch-icon.png`)}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href={require('./assets/favicon-32x32.png')}
+            href={require(`./assets/favicon-32x32.png`)}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href={require('./assets/favicon-16x16.png')}
+            href={require(`./assets/favicon-16x16.png`)}
           />
           <title>Global warming information and data</title>
         </Head>

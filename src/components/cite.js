@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 import React, { memo } from 'react';
 import { citations } from './reflist';
 

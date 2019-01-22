@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { lighten, desaturate } from 'unitransform';
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 import { withRouteData } from 'react-static';
 import { Scatter } from 'react-chartjs-2';
 import risks from '../assets/risks.png';
@@ -48,7 +48,7 @@ class Home extends Component {
       backgroundColor: desaturate(lighten(red, 20), 30)
     };
     return (
-      <>
+      <Fragment>
         <Header
           currentCo2={this.props.latestCo2Value}
           currentTemp={this.props.latestTempValue}
@@ -100,7 +100,7 @@ class Home extends Component {
                   data={{
                     datasets: [
                       {
-                        label: 'Global average temperature',
+                        label: `Global average temperature`,
                         data: this.props.temp,
                         ...datasetOptions
                       }
@@ -118,7 +118,7 @@ class Home extends Component {
                           },
                           scaleLabel: {
                             display: true,
-                            labelString: 'Global average temperature'
+                            labelString: `Global average temperature`
                           }
                         }
                       ]
@@ -132,9 +132,9 @@ class Home extends Component {
             </div>
             <p>
               The amount Earth has warmed is measured against the average
-              pre-industrial global temperature. As of{' '}
+              pre-industrial global temperature. As of{` `}
               <span id="latestTempYear">{this.props.latestTempYear}</span>,
-              Earth's temperature is approximately{' '}
+              Earth's temperature is approximately{` `}
               <span id="latestTempValue">{this.props.latestTempValue}</span>
               °C above pre-industrial levels.
               <Cite name="tempData" /> If the planet's temperature continues to
@@ -161,13 +161,13 @@ class Home extends Component {
               <Cite name="1.5C" />
             </p>
             <p>
-              The primary cause of global warming is the human emission of{' '}
+              The primary cause of global warming is the human emission of{` `}
               <CO2 /> into the atmosphere. This <CO2 /> is produced by burning
               fossil fuels, mostly from electricity production, agriculture,
               industry, and vehicles with internal combustion engines.
-              <Cite name="emissionsData" /> As of{' '}
+              <Cite name="emissionsData" /> As of{` `}
               <span id="latestCo2Year">{this.props.latestCo2Year}</span>, the
-              atmosphere's carbon concentration is{' '}
+              atmosphere's carbon concentration is{` `}
               <span id="latestCo2Value">{this.props.latestCo2Value}</span>ppm
               (see fig. 2).
               <Cite name="co2After1958" />
@@ -178,7 +178,7 @@ class Home extends Component {
                   data={{
                     datasets: [
                       {
-                        label: 'Atmospheric CO2',
+                        label: `Atmospheric CO2`,
                         data: this.props.co2,
                         ...datasetOptions
                       }
@@ -196,7 +196,7 @@ class Home extends Component {
                           },
                           scaleLabel: {
                             display: true,
-                            labelString: 'Atmospheric CO2 concentration'
+                            labelString: `Atmospheric CO2 concentration`
                           }
                         }
                       ]
@@ -258,7 +258,7 @@ class Home extends Component {
             <RefList />
           </article>
         </ContentWrapper>
-      </>
+      </Fragment>
     );
   }
 }
