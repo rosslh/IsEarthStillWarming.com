@@ -20,7 +20,6 @@
     "test": "server-test buildTestServer 3939 cyTest"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^10.0.6",
     "@emotion/core": "^10.0.6",
     "@reach/router": "^1.2.1",
     "@sentry/browser": "^4.5.2",
@@ -35,6 +34,7 @@
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.6",
     "axios": "^0.18.0",
     "csvtojson": "^2.0.8",
     "cypress": "^3.1.4",
