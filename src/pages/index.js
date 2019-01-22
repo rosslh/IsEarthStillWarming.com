@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { lighten, desaturate } from 'unitransform';
+import { css } from "@emotion/core";
 import { withRouteData } from 'react-static';
 import { Scatter } from 'react-chartjs-2';
 import risks from '../assets/risks.png';
@@ -18,7 +19,7 @@ class Home extends Component {
     this.state = {};
   }
   render() {
-    const figureWrapperStyle = `
+    const figureWrapperStyle = css`
       width: 80%;
       margin: 3rem auto;
       >div{
@@ -54,7 +55,7 @@ class Home extends Component {
         />
         <ContentWrapper>
           <article
-            css={`
+            css={css`
               svg {
                 margin: 0 auto;
                 display: block;
@@ -65,7 +66,7 @@ class Home extends Component {
             `}
           >
             <h2
-              css={`
+              css={css`
                 margin-top: 0;
                 padding-top: 0;
               `}

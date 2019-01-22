@@ -1,6 +1,6 @@
 {
   "name": "isearthstillwarming.com",
-  "version": "v1.1.0",
+  "version": "v1.1.1",
   "private": true,
   "scripts": {
     "start": "react-static start",
@@ -15,10 +15,11 @@
     "test": "server-test buildTestServer 3939 cyTest"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.6",
+    "@emotion/core": "^10.0.6",
     "@reach/router": "^1.2.1",
     "@sentry/browser": "^4.5.2",
     "chart.js": "^2.7.3",
-    "emotion": "^9.2.12",
     "modern-normalize": "^0.5.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
@@ -30,7 +31,6 @@
   },
   "devDependencies": {
     "axios": "^0.18.0",
-    "babel-plugin-emotion": "^9.2.11",
     "csvtojson": "^2.0.8",
     "cypress": "^3.1.4",
     "eslint-config-react-tools": "1.x.x",
