@@ -7,7 +7,7 @@ jobs:
           TERM: xterm
     steps:
       - checkout
-      - run: npm ci
+      - run: npm i
       - run: $(npm bin)/react-static build
       - run:
           command: $(npm bin)/serve dist -p 3939
