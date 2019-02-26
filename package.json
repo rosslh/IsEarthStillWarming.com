@@ -43,7 +43,7 @@
     "axios": "^0.18.0",
     "csvtojson": "^2.0.8",
     "cypress": "^3.1.4",
-    "eslint-config-prettier": "^3.6.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-cypress": "^2.2.0",
     "eslint-plugin-import": "^2.15.0",
