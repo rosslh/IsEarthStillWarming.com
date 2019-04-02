@@ -35,7 +35,7 @@
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
-    "react-static": "^6.0.20",
+    "react-static": "^7.0.0",
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
