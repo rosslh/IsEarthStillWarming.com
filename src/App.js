@@ -4,6 +4,8 @@ import { withScope, captureException } from '@sentry/browser';
 import { css } from '@emotion/core';
 import 'modern-normalize/modern-normalize.css';
 
+import siteImage from './assets/siteImage.png';
+
 class App extends Component {
   componentDidCatch(error, errorInfo) {
     withScope(scope => {
@@ -13,10 +15,29 @@ class App extends Component {
       captureException(error);
     });
   }
+
   render() {
     return (
       <Root>
         <Head>
+          <title>Global warming information and data</title>
+          <meta
+            name="description"
+            content="Up-to-date global climate information"
+          />
+
+          <meta itemProp="name" content="Global warming information and data" />
+          <meta
+            itemProp="description"
+            content="Up-to-date global climate information"
+          />
+          <meta
+            itemProp="image"
+            content={`https://isearthstillwarming.com/${siteImage}`}
+          />
+
+          <meta property="og:url" content="https://isearthstillwarming.com" />
+          <meta property="og:type" content="website" />
           <meta
             property="og:title"
             content="Global warming information and data"
@@ -25,7 +46,25 @@ class App extends Component {
             property="og:description"
             content="Up-to-date global climate information"
           />
-          <meta property="og:url" content="https://isearthstillwarming.com" />
+          <meta
+            property="og:image"
+            content={`https://isearthstillwarming.com/${siteImage}`}
+          />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Global warming information and data"
+          />
+          <meta
+            name="twitter:description"
+            content="Up-to-date global climate information"
+          />
+          <meta
+            name="twitter:image"
+            content={`https://isearthstillwarming.com/${siteImage}`}
+          />
+
           <meta charSet="UTF-8" />
           <link
             rel="apple-touch-icon"
@@ -44,7 +83,6 @@ class App extends Component {
             sizes="16x16"
             href={require(`./assets/favicon-16x16.png`)}
           />
-          <title>Global warming information and data</title>
         </Head>
         <div
           css={css`
