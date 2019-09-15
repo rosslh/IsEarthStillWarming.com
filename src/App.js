@@ -1,15 +1,13 @@
-import React from "react";
-import { Root, Routes, addPrefetchExcludes, Head } from "react-static";
+import React from 'react';
+import { Root, Routes, addPrefetchExcludes, Head } from 'react-static';
 //
-import { Router, Link } from "@reach/router";
+import { Router, Link } from '@reach/router';
 
-import { css } from "@emotion/core";
-import "modern-normalize/modern-normalize.css";
-
-import siteImage from "../public/assets/siteImage.png";
+import { css } from '@emotion/core';
+import 'modern-normalize/modern-normalize.css';
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(["dynamic"]);
+addPrefetchExcludes(['dynamic']);
 
 function App() {
   return (
@@ -28,7 +26,7 @@ function App() {
         />
         <meta
           itemProp="image"
-          content={`https://isearthstillwarming.com/${siteImage}`}
+          content="https://isearthstillwarming.com/assets/siteImage.png"
         />
 
         <meta property="og:url" content="https://isearthstillwarming.com" />
@@ -43,7 +41,7 @@ function App() {
         />
         <meta
           property="og:image"
-          content={`https://isearthstillwarming.com/${siteImage}`}
+          content="https://isearthstillwarming.com/assets/siteImage.png"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -57,7 +55,7 @@ function App() {
         />
         <meta
           name="twitter:image"
-          content={`https://isearthstillwarming.com/${siteImage}`}
+          content="https://isearthstillwarming.com/assets/siteImage.png"
         />
 
         <meta charSet="UTF-8" />
@@ -81,16 +79,16 @@ function App() {
       </Head>
       <div
         css={css`
-          @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i");
+          @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i');
           line-height: 1.6;
           *:not(p) {
-            font-family: "Open Sans", sans-serif;
+            font-family: 'Open Sans', sans-serif;
           }
           p {
-            font-family: "Spectral", serif;
+            font-family: 'Spectral', serif;
             font-size: 18px;
             * {
-              font-family: "Spectral", serif;
+              font-family: 'Spectral', serif;
             }
           }
           h1 {

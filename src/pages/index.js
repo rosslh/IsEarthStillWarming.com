@@ -4,7 +4,6 @@ import { lighten, desaturate } from 'unitransform';
 import { css } from '@emotion/core';
 import { withRouteData } from 'react-static';
 import { Scatter } from 'react-chartjs-2';
-import risks from '../../public/assets/risks.png';
 import Cite from '../components/cite';
 import RefList from '../components/reflist';
 import IsEarthWarming from '../components/isEarthWarming';
@@ -240,7 +239,7 @@ class Home extends Component {
             </p>
             <div css={figureWrapperStyle}>
               <div>
-                <img src={risks} alt="risks of climate change" />
+                <img src={'assets/risks.png'} alt="risks of climate change" />
               </div>
               <strong>
                 Figure 3<Cite name="guardian" />
