@@ -4,14 +4,14 @@ import { lighten, desaturate } from 'unitransform';
 import { css } from '@emotion/core';
 import { withRouteData } from 'react-static';
 import { Scatter } from 'react-chartjs-2';
-import risks from '../assets/risks.png';
+import risks from '../../public/assets/risks.png';
 import Cite from '../components/cite';
 import RefList from '../components/reflist';
 import IsEarthWarming from '../components/isEarthWarming';
 import Header from '../components/header';
 import CO2 from '../components/co2';
 import ContentWrapper from '../components/contentWrapper';
-import { red } from '../assets/colors';
+import { red } from '../utils/colors';
 
 class Home extends Component {
   constructor(props) {

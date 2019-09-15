@@ -6,7 +6,7 @@ import { Router, Link } from "@reach/router";
 import { css } from "@emotion/core";
 import "modern-normalize/modern-normalize.css";
 
-import siteImage from "./assets/siteImage.png";
+import siteImage from "../public/assets/siteImage.png";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(["dynamic"]);
@@ -64,19 +64,19 @@ function App() {
         <link
           rel="apple-touch-icon"
           sizes="120x120"
-          href={require(`./assets/apple-touch-icon.png`)}
+          href={require(`../public/assets/apple-touch-icon.png`)}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={require(`./assets/favicon-32x32.png`)}
+          href={require(`../public/assets/favicon-32x32.png`)}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={require(`./assets/favicon-16x16.png`)}
+          href={require(`../public/assets/favicon-16x16.png`)}
         />
       </Head>
       <div

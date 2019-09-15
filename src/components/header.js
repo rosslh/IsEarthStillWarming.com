@@ -3,9 +3,9 @@ import { lighten } from 'unitransform';
 import { css } from '@emotion/core';
 
 import Counter from '../components/counter';
-import { red, redDark } from '../assets/colors';
+import { red, redDark } from '../utils/colors';
 import ContentWrapper from './contentWrapper';
-import fire from '../assets/fire-icon.svg';
+import fire from '../../public/assets/fire-icon.svg';
 
 const Header = props => (
   <header

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 import { rotate } from 'unitransform';
-import { red } from '../assets/colors';
+import { red } from '../utils/colors';
 
 const getColor = isGreen => (isGreen ? rotate(red, 115) : red);
 
