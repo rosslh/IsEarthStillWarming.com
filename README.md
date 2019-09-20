@@ -1,6 +1,9 @@
 # IsEarthStillWarming.com
 
-[![CircleCI](https://circleci.com/gh/rosslh/IsEarthStillWarming.com.svg?style=shield)](https://circleci.com/gh/rosslh/IsEarthStillWarming.com)
+[![GitHub Actions](https://github.com/rosslh/IsEarthStillWarming.com
+/workflows/Test/badge.svg
+)](https://github.com/rosslh/IsEarthStillWarming.com
+/actions)
 
 ## Scope
 
