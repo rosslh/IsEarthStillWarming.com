@@ -1,6 +1,7 @@
 # IsEarthStillWarming.com
 
-[![GitHub Actions](https://github.com/rosslh/IsEarthStillWarming.com/workflows/Tests/badge.svg)](https://github.com/rosslh/IsEarthStillWarming.com/actions)[![Netlify Status](https://api.netlify.com/api/v1/badges/2a39ad88-4c75-4139-897c-8f5a76802fad/deploy-status)](https://app.netlify.com/sites/isearthstillwarming/deploys)
+[![GitHub Actions](https://github.com/rosslh/IsEarthStillWarming.com/workflows/Tests/badge.svg)](https://github.com/rosslh/IsEarthStillWarming.com/actions)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2a39ad88-4c75-4139-897c-8f5a76802fad/deploy-status)](https://app.netlify.com/sites/isearthstillwarming/deploys)
 
 ## Scope
 
