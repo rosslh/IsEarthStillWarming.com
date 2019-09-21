@@ -38,7 +38,7 @@
     "chart.js": "^2.7.3",
     "modern-normalize": "^0.5.0",
     "prop-types": "^15.6.2",
-    "react-chartjs-2": "^2.7.4",
+    "react-chartjs-2": "^2.8.0",
     "react-hot-loader": "^4.3.12",
     "unitransform": "^1.0.5"
   },
