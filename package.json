@@ -21,7 +21,7 @@
     "serve": "serve dist -p 3000",
     "format": "eslint --fix \"src/**/*.js\"",
     "cyTest": "cypress run",
-    "buildTestServer": "react-static build && serve dist -p 3939",
+    "buildTestServer": "serve dist -p 3939",
     "test": "server-test buildTestServer 3939 cyTest"
   },
   "dependencies": {

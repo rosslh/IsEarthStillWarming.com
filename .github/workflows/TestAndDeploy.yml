@@ -1,0 +1,25 @@
+name: Test and deploy
+on:
+  push: []
+  schedule:
+    - cron: '30 10 * * *'
+
+jobs:
+  testAndDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install and build
+        run: |
+          npm install
+          npm run build
+      - name: test
+        run: |
+          npm run test
+      - name: deploy
+        run: |
+          curl -X POST -d {} https://api.netlify.com/build_hooks/5d857cb3dbb168856b45f7b6
