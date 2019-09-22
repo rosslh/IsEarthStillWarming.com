@@ -1,13 +1,13 @@
-name: Test and deploy
+name: Tests
 on:
   push:
     branches:
-      - master # Push events on master branc
-  schedule:
-    - cron: '* */12 * * *'
+      - '*' # matches every branch
+      - '*/*' # matches every branch containing a '/'
+      - '!master' # excludes master
 
 jobs:
-  TestAndDeploy:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
