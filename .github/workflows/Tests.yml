@@ -2,8 +2,9 @@ name: Tests
 on:
   push:
     branches:
-      - '*' # matches every branch
-      - '*/*' # matches every branch containing a '/'
+      - '*'
+      - '*/*'
+      - "dependabot/*/*/*"
       - '!master' # excludes master
 
 jobs:
