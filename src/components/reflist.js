@@ -5,7 +5,7 @@ export const citations = [
   {
     name: `1.5C`,
     citation: `IPCC, 2018: Summary for Policymakers. In: Global warming of 1.5°C. An IPCC Special Report on the impacts of global warming of 1.5°C above pre-industrial levels and related global greenhouse gas emission pathways, in the context of strengthening the global response to the threat of climate change, sustainable development, and efforts to eradicate poverty [V. Masson-Delmotte, P. Zhai, H. O. Pörtner, D. Roberts, J. Skea, P.R. Shukla, A. Pirani, W. Moufouma-Okia, C. Péan, R. Pidcock, S. Connors, J. B. R. Matthews, Y. Chen, X. Zhou, M. I. Gomis, E. Lonnoy, T. Maycock, M. Tignor, T. Waterfield (eds.)]. World Meteorological Organization, Geneva, Switzerland, 32 pp.`,
-    url: `https://www.ipcc.ch/sr15/chapter/summary-for-policy-makers/`
+    url: `https://www.ipcc.ch/sr15/chapter/spm/`
   },
   {
     name: `1.5C-press-release`,
