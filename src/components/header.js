@@ -88,8 +88,8 @@ const Header = props => (
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
-      This website is kept up-to-date with climate data provided by NASA and
-      Scripps Institution of Oceanography
+      This website is kept up-to-date with climate data provided by <a href="https://www.nasa.gov/" target="_blank" rel="noopener">NASA</a> and
+      <a href="https://scripps.ucsd.edu/" target="_blank" rel="noopener">Scripps Institution of Oceanography</a>
     </div>
   </header>
 );
