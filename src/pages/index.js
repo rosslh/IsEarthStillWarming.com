@@ -265,10 +265,10 @@ class Home extends Component {
 Home.propTypes = {
   latestCo2Value: PropTypes.number,
   latestTempValue: PropTypes.number,
-  temp: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+  temp: PropTypes.arrayOf(PropTypes.object),
   latestTempYear: PropTypes.number,
   latestCo2Year: PropTypes.number,
-  co2: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
+  co2: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default withRouteData(Home);
