@@ -60,7 +60,7 @@
     "csvtojson": "^2.0.8",
     "cypress": "^3.1.4",
     "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-cypress": "^2.2.0",
+    "eslint-plugin-cypress": "^2.7.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.0.0",
     "prettier": "^1.16.0",
