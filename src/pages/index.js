@@ -50,6 +50,7 @@ class Home extends Component {
       <Fragment>
         <Header
           currentCo2={this.props.latestCo2Value}
+          currentSlr={this.props.latestSlrValue}
           currentTemp={this.props.latestTempValue}
         />
         <ContentWrapper>
