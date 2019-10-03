@@ -33,7 +33,7 @@
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sitemap": "^7.2.0",
     "react-static-plugin-source-filesystem": "^7.2.0",
-    "@emotion/core": "^10.0.6",
+    "@emotion/core": "^10.0.20",
     "@sentry/browser": "^5.0.0",
     "chart.js": "^2.7.3",
     "modern-normalize": "^0.5.0",
