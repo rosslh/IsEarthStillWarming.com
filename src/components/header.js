@@ -61,7 +61,7 @@ const Header = props => (
             a {
               display: inline-block;
               margin: 0 6px;
-              &:first-child {
+              &:first-of-type {
                 margin-left: 0;
               }
             }
