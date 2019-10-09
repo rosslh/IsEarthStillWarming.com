@@ -11,6 +11,7 @@ import Header from '../components/header';
 import CO2 from '../components/co2';
 import ContentWrapper from '../components/contentWrapper';
 import { red } from '../utils/colors';
+import ShareLinks from '../components/shareLinks';
 
 class Home extends Component {
   constructor(props) {
@@ -74,6 +75,7 @@ class Home extends Component {
               Is global warming still happening?
             </h2>
             <IsEarthWarming {...this.props} />
+            <ShareLinks />
             <h2>What is global warming?</h2>
             <p>
               Global warming is the trend of Earth{`'`}s temperature rising at

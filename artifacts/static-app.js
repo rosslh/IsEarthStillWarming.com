@@ -110,7 +110,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 32);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -154,11 +154,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _utils = __webpack_require__(13);
+var _utils = __webpack_require__(12);
 
 var requireById = function requireById(id) {
   if (!(0, _utils.isWebpack)() && typeof id === 'string') {
-    return __webpack_require__(36)("" + id);
+    return __webpack_require__(34)("" + id);
   }
 
   return __webpack_require__('' + id);
@@ -173,7 +173,7 @@ exports["default"] = requireById;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
 
-var _typeof = __webpack_require__(12);
+var _typeof = __webpack_require__(11);
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -212,7 +212,7 @@ var _createClass = function () {
   };
 }();
 
-var _requireUniversalModule = __webpack_require__(35);
+var _requireUniversalModule = __webpack_require__(33);
 
 Object.defineProperty(exports, 'CHUNK_NAMES', {
   enumerable: true,
@@ -227,7 +227,7 @@ Object.defineProperty(exports, 'MODULE_IDS', {
   }
 });
 
-var _reportChunks = __webpack_require__(37);
+var _reportChunks = __webpack_require__(35);
 
 Object.defineProperty(exports, 'ReportChunks', {
   enumerable: true,
@@ -245,17 +245,17 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _hoistNonReactStatics = __webpack_require__(19);
+var _hoistNonReactStatics = __webpack_require__(18);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-var _vm = __webpack_require__(38);
+var _vm = __webpack_require__(36);
 
 var _requireUniversalModule2 = _interopRequireDefault(_requireUniversalModule);
 
-var _utils = __webpack_require__(13);
+var _utils = __webpack_require__(12);
 
-var _helpers = __webpack_require__(39);
+var _helpers = __webpack_require__(37);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -650,7 +650,7 @@ function universal(asyncModule) {
     report: _propTypes2["default"].func
   }, _temp;
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)(module)))
 
 /***/ }),
 /* 7 */
@@ -675,26 +675,23 @@ module.exports = require("babel-plugin-universal-import/universalImport");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_static__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var react_static__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_static__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(23);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_reach_router__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var modern_normalize_modern_normalize_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(48);
+/* harmony import */ var modern_normalize_modern_normalize_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46);
 /* harmony import */ var modern_normalize_modern_normalize_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(modern_normalize_modern_normalize_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _assets_siteImage_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
-/* harmony import */ var _assets_siteImage_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_siteImage_png__WEBPACK_IMPORTED_MODULE_5__);
 
 
  //
 
 
 
-
  // Any routes that start with 'dynamic' will be treated as non-static routes
 
-Object(react_static__WEBPACK_IMPORTED_MODULE_2__["addPrefetchExcludes"])(["dynamic"]);
+Object(react_static__WEBPACK_IMPORTED_MODULE_2__["addPrefetchExcludes"])(['dynamic']);
 
 var _ref =  true ? {
-  name: "goxtt6",
-  styles: "@import url(\"https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i\");line-height:1.6;*:not(p){font-family:\"Open Sans\",sans-serif;}p{font-family:\"Spectral\",serif;font-size:18px;*{font-family:\"Spectral\",serif;}}h1{padding:1.75rem 0 1rem;}h2{padding:1.75rem 0 0;font-weight:600;}h3{padding:0.75rem 0 0;font-weight:600;}"
+  name: "10t3lln",
+  styles: "@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i');line-height:1.6;*:not(p){font-family:'Open Sans',sans-serif;}p{font-family:'Spectral',serif;font-size:18px;*{font-family:'Spectral',serif;}}h1{padding:1.75rem 0 1rem;}h2{padding:1.75rem 0 0;font-weight:600;}h3{padding:0.75rem 0 0;font-weight:600;}"
 } : undefined;
 
 function App() {
@@ -709,7 +706,7 @@ function App() {
     content: "Up-to-date global climate information"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("meta", {
     itemProp: "image",
-    content: "https://isearthstillwarming.com/".concat(_assets_siteImage_png__WEBPACK_IMPORTED_MODULE_5___default.a)
+    content: "https://isearthstillwarming.com/assets/siteImage.png"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("meta", {
     property: "og:url",
     content: "https://isearthstillwarming.com"
@@ -724,7 +721,7 @@ function App() {
     content: "Up-to-date global climate information"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("meta", {
     property: "og:image",
-    content: "https://isearthstillwarming.com/".concat(_assets_siteImage_png__WEBPACK_IMPORTED_MODULE_5___default.a)
+    content: "https://isearthstillwarming.com/assets/siteImage.png"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("meta", {
     name: "twitter:card",
     content: "summary_large_image"
@@ -736,23 +733,23 @@ function App() {
     content: "Up-to-date global climate information"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("meta", {
     name: "twitter:image",
-    content: "https://isearthstillwarming.com/".concat(_assets_siteImage_png__WEBPACK_IMPORTED_MODULE_5___default.a)
+    content: "https://isearthstillwarming.com/assets/siteImage.png"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("meta", {
     charSet: "UTF-8"
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("link", {
     rel: "apple-touch-icon",
     sizes: "120x120",
-    href: __webpack_require__(49)
+    href: __webpack_require__(47)
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("link", {
     rel: "icon",
     type: "image/png",
     sizes: "32x32",
-    href: __webpack_require__(50)
+    href: __webpack_require__(48)
   }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("link", {
     rel: "icon",
     type: "image/png",
     sizes: "16x16",
-    href: __webpack_require__(51)
+    href: __webpack_require__(49)
   })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
     css: _ref
   }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.Suspense, {
@@ -766,12 +763,6 @@ function App() {
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "a2585d05f904cb3b2f3e82c8d695bb28.png";
-
-/***/ }),
-/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = function (module) {
@@ -800,19 +791,19 @@ module.exports = function (module) {
 };
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/typeof");
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _typeof2 = __webpack_require__(12);
+var _typeof2 = __webpack_require__(11);
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -972,19 +963,19 @@ var cacheProm = exports.cacheProm = function cacheProm(pr, chunkName, props, pro
 };
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-chartjs-2");
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1000,13 +991,13 @@ var plugins = [{
 /* harmony default export */ __webpack_exports__["default"] = (plugins);
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("/home/ross/Projects/IsEarthStillWarming2/node_modules/react-static/lib/browser");
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1043,7 +1034,7 @@ var universalOptions = {
 var t_0 = _home_ross_Projects_IsEarthStillWarming2_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_4___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({
   id: "/home/ross/Projects/IsEarthStillWarming2/node_modules/react-static/lib/browser/components/Default404",
   load: function load() {
-    return Promise.all([Promise.resolve(/* import() */).then(__webpack_require__.t.bind(null, 20, 7))]).then(function (proms) {
+    return Promise.all([Promise.resolve(/* import() */).then(__webpack_require__.t.bind(null, 19, 7))]).then(function (proms) {
       return proms[0];
     });
   },
@@ -1051,7 +1042,7 @@ var t_0 = _home_ross_Projects_IsEarthStillWarming2_node_modules_react_universal_
     return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname, '/home/ross/Projects/IsEarthStillWarming2/node_modules/react-static/lib/browser/components/Default404');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(20);
+    return /*require.resolve*/(19);
   },
   chunkName: function chunkName() {
     return "home/ross/Projects/IsEarthStillWarming2/node_modules/react-static/lib/browser/components/Default404";
@@ -1061,7 +1052,7 @@ t_0.template = '/home/ross/Projects/IsEarthStillWarming2/node_modules/react-stat
 var t_1 = _home_ross_Projects_IsEarthStillWarming2_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_4___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({
   id: "/home/ross/Projects/IsEarthStillWarming2/src/pages/index.js",
   load: function load() {
-    return Promise.all([Promise.resolve(/* import() | home/ross/Projects/IsEarthStillWarming2/src/pages/index */).then(__webpack_require__.bind(null, 21))]).then(function (proms) {
+    return Promise.all([Promise.resolve(/* import() | home/ross/Projects/IsEarthStillWarming2/src/pages/index */).then(__webpack_require__.bind(null, 20))]).then(function (proms) {
       return proms[0];
     });
   },
@@ -1069,7 +1060,7 @@ var t_1 = _home_ross_Projects_IsEarthStillWarming2_node_modules_react_universal_
     return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname, '/home/ross/Projects/IsEarthStillWarming2/src/pages/index.js');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(21);
+    return /*require.resolve*/(20);
   },
   chunkName: function chunkName() {
     return "home/ross/Projects/IsEarthStillWarming2/src/pages/index";
@@ -1086,46 +1077,46 @@ var notFoundTemplate = "/home/ross/Projects/IsEarthStillWarming2/node_modules/re
 /* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("hoist-non-react-statics");
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("/home/ross/Projects/IsEarthStillWarming2/node_modules/react-static/lib/browser/components/Default404");
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: external "@babel/runtime/helpers/defineProperty"
-var defineProperty_ = __webpack_require__(24);
+var defineProperty_ = __webpack_require__(23);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty_);
 
 // EXTERNAL MODULE: external "@babel/runtime/helpers/classCallCheck"
-var classCallCheck_ = __webpack_require__(25);
+var classCallCheck_ = __webpack_require__(24);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck_);
 
 // EXTERNAL MODULE: external "@babel/runtime/helpers/createClass"
-var createClass_ = __webpack_require__(26);
+var createClass_ = __webpack_require__(25);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass_);
 
 // EXTERNAL MODULE: external "@babel/runtime/helpers/possibleConstructorReturn"
-var possibleConstructorReturn_ = __webpack_require__(27);
+var possibleConstructorReturn_ = __webpack_require__(26);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn_);
 
 // EXTERNAL MODULE: external "@babel/runtime/helpers/getPrototypeOf"
-var getPrototypeOf_ = __webpack_require__(28);
+var getPrototypeOf_ = __webpack_require__(27);
 var getPrototypeOf_default = /*#__PURE__*/__webpack_require__.n(getPrototypeOf_);
 
 // EXTERNAL MODULE: external "@babel/runtime/helpers/inherits"
-var inherits_ = __webpack_require__(29);
+var inherits_ = __webpack_require__(28);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits_);
 
 // EXTERNAL MODULE: external "@emotion/core"
@@ -1144,11 +1135,7 @@ var external_unitransform_ = __webpack_require__(2);
 var external_react_static_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: external "react-chartjs-2"
-var external_react_chartjs_2_ = __webpack_require__(15);
-
-// EXTERNAL MODULE: /home/ross/Projects/IsEarthStillWarming2/src/assets/risks.png
-var risks = __webpack_require__(30);
-var risks_default = /*#__PURE__*/__webpack_require__.n(risks);
+var external_react_chartjs_2_ = __webpack_require__(14);
 
 // CONCATENATED MODULE: /home/ross/Projects/IsEarthStillWarming2/src/components/reflist.js
 
@@ -1242,7 +1229,7 @@ var cite_Cite = function Cite(_ref2) {
 };
 
 /* harmony default export */ var cite = (Object(external_react_["memo"])(cite_Cite));
-// CONCATENATED MODULE: /home/ross/Projects/IsEarthStillWarming2/src/assets/colors.js
+// CONCATENATED MODULE: /home/ross/Projects/IsEarthStillWarming2/src/utils/colors.js
 
 var red = "#c10000";
 var redDark = Object(external_unitransform_["saturate"])(Object(external_unitransform_["darken"])(red, 12), 5);
@@ -1372,8 +1359,8 @@ var counter_Counter = function Counter(_ref2) {
 };
 
 /* harmony default export */ var counter = (counter_Counter);
-// EXTERNAL MODULE: /home/ross/Projects/IsEarthStillWarming2/src/assets/fire-icon.svg
-var fire_icon = __webpack_require__(31);
+// EXTERNAL MODULE: /home/ross/Projects/IsEarthStillWarming2/public/assets/fire-icon.svg
+var fire_icon = __webpack_require__(29);
 var fire_icon_default = /*#__PURE__*/__webpack_require__.n(fire_icon);
 
 // CONCATENATED MODULE: /home/ross/Projects/IsEarthStillWarming2/src/components/header.js
@@ -1445,7 +1432,6 @@ var header_Header = function Header(props) {
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 
 
 
@@ -1603,7 +1589,7 @@ function (_Component) {
       }), " The most immediate risk to the environment is the dying-off of coral reefs- a process that has already started on a large scale (see fig. 3)."), Object(core_["jsx"])("div", {
         css: figureWrapperStyle
       }, Object(core_["jsx"])("div", null, Object(core_["jsx"])("img", {
-        src: risks_default.a,
+        src: 'assets/risks.png',
         alt: "risks of climate change"
       })), Object(core_["jsx"])("strong", null, "Figure 3", Object(core_["jsx"])(cite, {
         name: "guardian"
@@ -1623,108 +1609,102 @@ function (_Component) {
 /* harmony default export */ var pages = __webpack_exports__["default"] = (Object(external_react_static_["withRouteData"])(pages_Home));
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-hot-loader");
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("@reach/router");
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/defineProperty");
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/classCallCheck");
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/createClass");
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/possibleConstructorReturn");
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/getPrototypeOf");
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/inherits");
 
 /***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "42f9f33f5c65a1a7f242acf0d1fe9b0c.png";
-
-/***/ }),
-/* 31 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0YS1wcmVmaXg9ImZhciIgZGF0YS1pY29uPSJmaXJlLWFsdCIgcm9sZT0iaW1nIiAKICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj4KICA8cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMzIzLjU2IDUxLjJjLTIwLjggMTkuMy0zOS41OCAzOS41OS01Ni4yMiA1OS45N0MyNDAuMDggNzMuNjIgMjA2LjI4IDM1LjUzIDE2OCAwIDY5Ljc0IDkxLjE3IDAgMjA5Ljk2IDAgMjgxLjYgMCA0MDguODUgMTAwLjI5IDUxMiAyMjQgNTEyczIyNC0xMDMuMTUgMjI0LTIzMC40YzAtNTMuMjctNTEuOTgtMTYzLjE0LTEyNC40NC0yMzAuNHpNMjI0IDQ2NGMtOTcuMDUgMC0xNzYtODEuODMtMTc2LTE4Mi40IDAtNDUuMzcgNDQuMy0xMzMuMjEgMTIwLjE2LTIxNC4wOSAyMi4zNCAyMy4zNiA0Mi44MiA0Ny43MiA2MC4zNCA3MS44NmwzNi42MiA1MC40NCAzOS40MS00OC4yOWM1LjgzLTcuMTUgMTEuODUtMTQuMTUgMTguMDEtMjAuOTdDMzY4Ljg5IDE3Ny45NiA0MDAgMjUwLjQyIDQwMCAyODEuNiA0MDAgMzgyLjE3IDMyMS4wNSA0NjQgMjI0IDQ2NHptODkuNDctMjIwLjg0bC01MS4zIDU4LjUyUzE4MS43NSAxOTguOTggMTc1LjY5IDE5MkMxMzMuMjcgMjQyLjg2IDExMiAyNzIuNjIgMTEyIDMwNi40MSAxMTIgMzc0LjIzIDE2My4zNyA0MTYgMjI2LjUgNDE2YzI1LjI2IDAgNDguNjItNy44NyA2Ny41OC0yMS4xMyA0My4wOC0zMC4xNCA1My4xOC04OC41OCAyOS4yNi0xMzQuMjQtMi45NS01LjYyLTYuMjQtMTEuNDgtOS44Ny0xNy40N3oiIGNsYXNzPSIiPjwvcGF0aD4KPC9zdmc+"
 
 /***/ }),
-/* 32 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(33);
-__webpack_require__(34);
-module.exports = __webpack_require__(40);
+__webpack_require__(31);
+__webpack_require__(32);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
-/* 33 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
 /* eslint-disable import/no-dynamic-require */
 
-var plugins = __webpack_require__(16)["default"];
+var plugins = __webpack_require__(15)["default"];
 
-var _require = __webpack_require__(17),
+var _require = __webpack_require__(16),
     registerPlugins = _require.registerPlugins;
 
 registerPlugins(plugins);
 
 if (typeof document !== 'undefined' && module && module.hot) {
   module.hot.accept("/home/ross/Projects/IsEarthStillWarming2/artifacts/react-static-browser-plugins.js", function () {
-    registerPlugins(__webpack_require__(16)["default"]);
+    registerPlugins(__webpack_require__(15)["default"]);
   });
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)(module)))
 
 /***/ }),
-/* 34 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
 /* eslint-disable import/no-dynamic-require */
 
-var _require = __webpack_require__(17),
+var _require = __webpack_require__(16),
     registerTemplates = _require.registerTemplates;
 
-var _require2 = __webpack_require__(18),
+var _require2 = __webpack_require__(17),
     templates = _require2["default"],
     notFoundTemplate = _require2.notFoundTemplate;
 
@@ -1732,17 +1712,17 @@ registerTemplates(templates, notFoundTemplate);
 
 if (typeof document !== 'undefined' && module && module.hot) {
   module.hot.accept("/home/ross/Projects/IsEarthStillWarming2/artifacts/react-static-templates.js", function () {
-    var _require3 = __webpack_require__(18),
+    var _require3 = __webpack_require__(17),
         templates = _require3["default"],
         notFoundTemplate = _require3.notFoundTemplate;
 
     registerTemplates(templates, notFoundTemplate);
   });
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)(module)))
 
 /***/ }),
-/* 35 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1769,7 +1749,7 @@ var _extends = Object.assign || function (target) {
 
 exports["default"] = requireUniversalModule;
 
-var _utils = __webpack_require__(13);
+var _utils = __webpack_require__(12);
 
 var CHUNK_NAMES = exports.CHUNK_NAMES = new Set();
 var MODULE_IDS = exports.MODULE_IDS = new Set();
@@ -1953,7 +1933,7 @@ var getConfig = function getConfig(isDynamic, universalConfig, options, props) {
 };
 
 /***/ }),
-/* 36 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -1981,16 +1961,16 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 36;
+webpackContext.id = 34;
 
 /***/ }),
-/* 37 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _typeof = __webpack_require__(12);
+var _typeof = __webpack_require__(11);
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -2093,13 +2073,13 @@ ReportChunks.childContextTypes = {
 exports["default"] = ReportChunks;
 
 /***/ }),
-/* 38 */
+/* 36 */
 /***/ (function(module, exports) {
 
 module.exports = require("vm");
 
 /***/ }),
-/* 39 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2110,7 +2090,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.__handleAfter = exports.__update = undefined;
 
-var _hoistNonReactStatics = __webpack_require__(19);
+var _hoistNonReactStatics = __webpack_require__(18);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
@@ -2166,28 +2146,28 @@ var __handleAfter = exports.__handleAfter = function __handleAfter(props, state,
 };
 
 /***/ }),
-/* 40 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _interopRequireWildcard = __webpack_require__(41);
+var _interopRequireWildcard = __webpack_require__(39);
 
-var _interopRequireDefault = __webpack_require__(42);
+var _interopRequireDefault = __webpack_require__(40);
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _extends2 = _interopRequireDefault(__webpack_require__(43));
+var _extends2 = _interopRequireDefault(__webpack_require__(41));
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(44));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(42));
 
 var React = _interopRequireWildcard(__webpack_require__(1));
 
-var _useStaticInfo = __webpack_require__(45);
+var _useStaticInfo = __webpack_require__(43);
 /* eslint-disable import/no-dynamic-require */
 
 
@@ -2208,7 +2188,7 @@ function Suspense(_ref) {
 React.Suspense = Suspense;
 React["default"].Suspense = Suspense;
 
-var App = __webpack_require__(46)["default"];
+var App = __webpack_require__(44)["default"];
 
 var _default = function _default(staticInfo) {
   return function (props) {
@@ -2221,37 +2201,37 @@ var _default = function _default(staticInfo) {
 exports["default"] = _default;
 
 /***/ }),
-/* 41 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/interopRequireWildcard");
 
 /***/ }),
-/* 42 */
+/* 40 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/interopRequireDefault");
 
 /***/ }),
-/* 43 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/extends");
 
 /***/ }),
-/* 44 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/objectWithoutProperties");
 
 /***/ }),
-/* 45 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = require("/home/ross/Projects/IsEarthStillWarming2/node_modules/react-static/lib/browser/hooks/useStaticInfo");
 
 /***/ }),
-/* 46 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2260,9 +2240,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
+/* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21);
 /* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_hot_loader__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
 
@@ -2291,10 +2271,10 @@ if (typeof document !== 'undefined') {
     });
   }
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(47)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(45)(module)))
 
 /***/ }),
-/* 47 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = function (originalModule) {
@@ -2324,25 +2304,25 @@ module.exports = function (originalModule) {
 };
 
 /***/ }),
-/* 48 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = require("modern-normalize/modern-normalize.css");
 
 /***/ }),
-/* 49 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 50 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 51 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB41BMVEUAAAC+DCHBDSPGGyDCECLADCPCDiTRPBfPNBm/CSTGRyHOMxm5ACnHHx7URBXbVhDqggTeXw1XAFNTAFXACyTCDyPBCyS9BSXNKBy5ACPADSPBDSPDEyHHHh/BDCPCDiPBDiPJJhzPNBnSPxbBDCPDESLGGCHDECLZUhHYThLNMBq9BSa+ByXDESLJHh/LIh7DECLjbwndXA6/ByXKKBzFGiDHGSDPKxzPLBzFFSHrhwPZVBHACyPEFiHIIB7URBXUQxXTQhXJHh/SNRnVOxjLJB3BDiPDECLCECLPNhjSPhbfYw3fZA3IHR/WQBfbTxXYRRXRNBnOKxzGGSDcWw/eXw3BDSO/CSTaVxDROxfJIR7dWBflchneVxHbThPWPhjHGyDNMBrJJB27ACjADCPCDyPEEiLGGSDUOhfjbRbwniHofRbjbBbeXRrNKRzEEyLBDiPBDCPACyTDESLLIh7UOhrcTxPogBj4xCz4wyz1tinmeR/TNxjLIh6/CSTEEiLMJR3hbSLvnSX4wy3xqSneYR/DESLMJB3leyTBDCPJHh7DECLOLhzkeCLzti34yTHOLhyvACfFFx3VTSLebSj92jP70zL5zDL92zT+3TP92jT5yzLdXB73wi/93DT+3jP///+kAsNwAAAAlXRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAk2HxwnjZswZwMutN99R40FAQeT4+JjSm4uOi626el7EDF0FgcGlFqe7+7SgJKkUTVrf5P08/Lw8almLAQyME7D9/j29fTBPSoDD7O/zfP5/Pr59+7QqQ8Wy/f3+Pv+/v369fYPwPj6/P79+Yn7/CXGJpHY8fiSAxo3RvoBCk4AAAABYktHRKBe076gAAAAB3RJTUUH4wEPFhol2oULNAAAAOxJREFUGNNjYAABRiYpaRlZZhYGKGBlk5NXUFRSZofymZhUVNXUNTS1OCB8Tm0dXT19A0MjYy4mEJ+bx8TUzNzC0sraxtaOFyjAZ+/g6OTs4urm7uHpBTKFX8Dbx9fPPyAwKDgkVBBoYlh4RGRUdExsXHxCYlIyEwNTSmpaekZmVnZObl5+QSFQoKi4pLSsvKKyqrqmtrgIKFBX39DY1Dx16rSW1ob6OqCAUFt7x/QZM2fOmt3R3ibMxCAi2tk1Z+68+fPnzZ3T1SkqxsAgLtHd09vX39/XO6FbQhzsdsmJkyZPmTJ50kRJBiwAAMAAP1wQFsKgAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTAxLTE1VDIyOjI2OjM3KzAxOjAw2dttagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wMS0xNVQyMjoyNjozNyswMTowMKiG1dYAAAAbdEVYdFNvZnR3YXJlAEFQTkcgQXNzZW1ibGVyIDMuMF5FLBwAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII="
