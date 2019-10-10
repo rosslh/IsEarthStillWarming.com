@@ -56,6 +56,16 @@ export const citations = [
     name: `viralIncubation`,
     citation: `"Review: dengue fever in mainland China". American Journal of Tropical Medicine and Hygiene. 83 (3). Wu, J.Y.; Lun, Z.R.; James, A.A.; Chen, X.G. (2010).`,
     url: `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929067`
+  },
+  {
+    name: `ipcc`,
+    citation: `Meehl, G.A., T.F. Stocker, W.D. Collins, P. Friedlingstein, A.T. Gaye, J.M. Gregory, A. Kitoh, R. Knutti, J.M. Murphy, A. Noda, S.C.B. Raper, I.G. Watterson, A.J. Weaver and Z.-C. Zhao, 2007: Global Climate Projections. In: Climate Change 2007: The Physical Science Basis. Contribution of Working Group I to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change [Solomon, S., D. Qin, M. Manning, Z. Chen, M. Marquis, K.B. Averyt, M. Tignor and H.L. Miller (eds.)]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA`,
+    url: `https://archive.ipcc.ch/publications_and_data/ar4/wg1/en/ch10.html`
+  },
+  {
+    name: `who`,
+    citation: `"Global Health Risks." World Health Organization, 2009.`,
+    url: `https://www.who.int/healthinfo/global_burden_disease/GlobalHealthRisks_report_part2.pdf`
   }
 ];
 const RefList = () => (
