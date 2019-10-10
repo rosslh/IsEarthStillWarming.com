@@ -3,7 +3,7 @@
 
 // Plugins
 const plugins = [{
-        location: "/home/ross/Projects/IsEarthStillWarming2",
+        location: "/home/harrison/playground/IsEarthStillWarming.com",
         plugins: [],
         hooks: {}
       }]

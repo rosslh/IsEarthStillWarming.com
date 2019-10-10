@@ -46,6 +46,16 @@ export const citations = [
     name: `natGeo`,
     citation: `“Global Warming Effects.” National Geographic, National Geographic, 14 Jan. 2019, www.nationalgeographic.com/environment/global-warming/global-warming-effects/.`,
     url: `https://www.nationalgeographic.com/environment/global-warming/global-warming-effects/`
+  },
+  {
+    name: `pathogenMigration`,
+    citation: `"Crop pests and pathogens move polewards in a warming world". Nature Climate Change. Daniel P. Bebber; Mark A. T. Ramotowski; Sarah J. Gurr (2013). `,
+    url: `https://www.nature.com/articles/nclimate1990`
+  },
+  {
+    name: `viralIncubation`,
+    citation: `"Review: dengue fever in mainland China". American Journal of Tropical Medicine and Hygiene. 83 (3). Wu, J.Y.; Lun, Z.R.; James, A.A.; Chen, X.G. (2010).`,
+    url: `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929067`
   }
 ];
 const RefList = () => (
