@@ -1,11 +1,11 @@
 module.exports = {
   extends: ['react-tools', 'airbnb', 'prettier'],
-  plugins: ['cypress', 'prettier'],
+  plugins: ['cypress'],
   env: {
     'cypress/globals': true
   },
   rules: {
-    "prettier/prettier": "error",
+    'prettier/prettier': 'error',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
@@ -16,7 +16,7 @@ module.exports = {
     'react/jsx-curly-brace-presence': 0,
     'no-restricted-globals': 0,
     indent: ['error', 2],
-    quotes: ["error", "backtick"],
+    quotes: ['error', 'backtick'],
     'import/no-extraneous-dependencies': 0,
     'react/prop-types': 2,
     'react/forbid-prop-types': 0,

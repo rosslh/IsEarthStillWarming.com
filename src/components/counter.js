@@ -46,7 +46,7 @@ const Counter = ({ currentCo2, currentTemp, currentSlr }) => (
       <div>
         <div>Global Sea Level Rise</div>
         <strong id="currentSlrCounter">+{currentSlr}mm/year</strong>
-      </div>      
+      </div>
     </div>
   </ContentWrapper>
 );

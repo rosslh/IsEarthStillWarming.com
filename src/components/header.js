@@ -89,8 +89,10 @@ const Header = props => (
       `}
     >
       This website is kept up-to-date with climate data provided by NASA and
-      Scripps Institution of Oceanography.<br />
-      Altimetry data are provided by the NOAA Laboratory for Satellite Altimetry.
+      Scripps Institution of Oceanography.
+      <br />
+      Altimetry data are provided by the NOAA Laboratory for Satellite
+      Altimetry.
     </div>
   </header>
 );
