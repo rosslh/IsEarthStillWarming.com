@@ -252,9 +252,20 @@ class Home extends Component {
             <p>
               Other already-visible impacts of global warming include worldwide
               glacier and sea ice melting, which contributes to sea level rise.
-              <Cite name="natGeo" /> Some regions have experienced severe
-              drought, leading to food-and-water shortages as well as wildfires.
+              <Cite name="natGeo" /> However, thermal expansion is a larger
+              component in this, contributing 70-75% of sea level rise.
+              <Cite name="ipcc" /> Some regions have experienced severe drought,
+              leading to food-and-water shortages as well as wildfires.
               <Cite name="natGeo" />
+            </p>
+            <p>
+              The changing climate will also impact our global health. A study
+              by the World Health Organization estimated the effect of climate
+              change on human health.
+              <Cite name="who" /> Climate change was estimated to have been
+              responsible for 3% of diarrhoea, 3% of malaria, and 3.8% of dengue
+              fever deaths worldwide in 2004. Total attributable mortality was
+              about 0.2% of deaths in 2004; of these, 85% were child deaths.
             </p>
             <h2>Works Cited</h2>
             <RefList />
