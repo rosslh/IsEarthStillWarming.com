@@ -250,6 +250,22 @@ class Home extends Component {
               </strong>
             </div>
             <p>
+              The changing climate will is likely to increase the prevalence of disease.
+              Global increases in temperature are estimated to alter the
+              distribution of insects that are known vectors for pathogens, such as
+              mosquitos.
+              <Cite name="pathogenMigration" /> Studies in China show that increasing
+              temperatures positively affect the viability of disease transfer by
+              decreasing the viral incubation time in vectors -- leading to increased
+              infection rates.
+              <Cite name="viralIncubation" />
+              The World Health Organization estimated that climate change has been 
+              responsible for 3% of diarrhoea, 3% of malaria, and 3.8% of dengue fever
+              deaths worldwide in 2004. Total attributable mortality was about 0.2% of
+              deaths in 2004; of these, 85% were child deaths.
+              <Cite name="who" />
+            </p>
+            <p>
               Other already-visible impacts of global warming include worldwide
               glacier and sea ice melting, which contributes to sea level rise.
               <Cite name="natGeo" /> However, thermal expansion is a larger
@@ -257,15 +273,6 @@ class Home extends Component {
               <Cite name="ipcc" /> Some regions have experienced severe drought,
               leading to food-and-water shortages as well as wildfires.
               <Cite name="natGeo" />
-            </p>
-            <p>
-              The changing climate will also impact our global health. A study
-              by the World Health Organization estimated the effect of climate
-              change on human health.
-              <Cite name="who" /> Climate change was estimated to have been
-              responsible for 3% of diarrhoea, 3% of malaria, and 3.8% of dengue
-              fever deaths worldwide in 2004. Total attributable mortality was
-              about 0.2% of deaths in 2004; of these, 85% were child deaths.
             </p>
             <h2>Works Cited</h2>
             <RefList />
