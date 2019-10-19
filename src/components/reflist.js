@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
+import { redExtraLight, redLight } from '../utils/colors';
 
 export const citations = [
   {
@@ -79,10 +80,17 @@ const RefList = () => (
     {citations.map(x => (
       <li
         css={css`
-          text-indent: -2rem;
-          margin-left: 2rem;
-          padding-bottom: 1.5rem;
+          text-indent: -1.5rem;
           word-break: break-all;
+          padding: 0.5rem 1rem 0.5rem 2.5rem;
+          margin: 0 -1rem 0.5rem;
+
+          :target {
+            border: 1px solid ${redLight}44;
+            border-radius: 10px;
+            background-color: ${redExtraLight};
+            box-shadow: rgba(00, 00, 00, 0.2) 0px 2px 12px 0px;
+          }
         `}
         key={x.name}
         id={`ref-${x.name}`}
