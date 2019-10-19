@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { lighten, desaturate } from 'unitransform';
 import { css } from '@emotion/core';
@@ -18,6 +18,7 @@ class Home extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
     const figureWrapperStyle = css`
       width: 80%;
@@ -48,7 +49,7 @@ class Home extends Component {
       backgroundColor: desaturate(lighten(red, 20), 30)
     };
     return (
-      <Fragment>
+      <>
         <Header
           currentCo2={this.props.latestCo2Value}
           currentSlr={this.props.latestSlrValue}
@@ -78,23 +79,28 @@ class Home extends Component {
             <ShareLinks />
             <h2>What is global warming?</h2>
             <p>
-              Global warming is the trend of Earth{`'`}s temperature rising at
-              an unprecedented rate starting in the mid 20th century.
+              Global warming is the trend of Earth
+              {`'`}
+              s temperature rising at an unprecedented rate starting in the mid
+              20th century.
               <Cite name="nasa" />
             </p>
             <p>
-              Though gradual changes to Earth{`'`}s climate have happened in the
-              past, this latest trend has been primarily caused by the release
-              of carbon dioxide (<CO2 />) into the atmosphere by burning fossil
-              fuels.
+              Though gradual changes to Earth
+              {`'`}
+              s climate have happened in the past, this latest trend has been
+              primarily caused by the release of carbon dioxide (
+              <CO2 />
+              ) into the atmosphere by burning fossil fuels.
               <Cite name="nasa" /> <CO2 /> is a <em>greenhouse gas</em>, meaning
-              it traps heat in Earth{`'`}s atmosphere rather than allowing it to
-              radiate into space.
+              it traps heat in Earth
+              {`'`}
+              s atmosphere rather than allowing it to radiate into space.
               <Cite name="nasa" />
             </p>
             <p>
-              Since the mid 1950s, Earth{`'`}s temperature has had a clear
-              positive trend (see fig. 1).
+              Since the mid 1950s, Earth
+              {`'`}s temperature has had a clear positive trend (see fig. 1).
             </p>
             <div css={figureWrapperStyle}>
               <div>
@@ -129,19 +135,24 @@ class Home extends Component {
                 />
               </div>
               <strong>
-                Figure 1<Cite name="tempData" />
+                Figure 1
+                <Cite name="tempData" />
               </strong>
             </div>
             <p>
               The amount Earth has warmed is measured against the average
-              pre-industrial global temperature. As of{` `}
+              pre-industrial global temperature. As of
+              {` `}
               <span id="latestTempYear">{this.props.latestTempYear}</span>,
-              Earth{`'`}s temperature is approximately{` `}
+              Earth
+              {`'`}s temperature is approximately
+              {` `}
               <span id="latestTempValue">{this.props.latestTempValue}</span>
               °C above pre-industrial levels.
-              <Cite name="tempData" /> If the planet{`'`}s temperature continues
-              to rise, we can expect many environmental and societal impacts,
-              the most significant of which we will explain in this paper.
+              <Cite name="tempData" /> If the planet
+              {`'`}s temperature continues to rise, we can expect many
+              environmental and societal impacts, the most significant of which
+              we will explain in this paper.
             </p>
             <p>
               In late 2015, 184 nations were party to the Paris Climate Accord,
@@ -155,23 +166,35 @@ class Home extends Component {
               In 2018, the UN released a report detailing the potential impacts
               of human-induced climate change and possible preventative
               measures. Its key finding was that staying below the 1.5°C target
-              is possible, but would require {`"`}rapid, far-reaching, and
-              unprecedented changes in all aspects of society{`"`}.
+              is possible, but would require {`"`}
+              rapid, far-reaching, and unprecedented changes in all aspects of
+              society
+              {`"`}
+              .
               <Cite name="1.5C-press-release" /> Human carbon emissions would
               need to decrease by 45% from 2010 levels by 2030, and reach net
               zero by 2050.
               <Cite name="1.5C" />
             </p>
             <p>
-              The primary cause of global warming is the human emission of{` `}
-              <CO2 /> into the atmosphere. This <CO2 /> is produced by burning
-              fossil fuels, mostly from electricity production, agriculture,
-              industry, and vehicles with internal combustion engines.
-              <Cite name="emissionsData" /> As of{` `}
+              The primary cause of global warming is the human emission of
+              {` `}
+              <CO2 /> into the atmosphere. This
+              <CO2 />
+              {` `}
+              is produced by burning fossil fuels, mostly from electricity
+              production, agriculture, industry, and vehicles with internal
+              combustion engines.
+              <Cite name="emissionsData" />
+              {` `}
+              As of
+              {` `}
               <span id="latestCo2Year">{this.props.latestCo2Year}</span>, the
-              atmosphere{`'`}s carbon concentration is{` `}
-              <span id="latestCo2Value">{this.props.latestCo2Value}</span>ppm
-              (see fig. 2).
+              atmosphere
+              {`'`}s carbon concentration is
+              {` `}
+              <span id="latestCo2Value">{this.props.latestCo2Value}</span>
+              ppm (see fig. 2).
               <Cite name="co2After1958" />
             </p>
             <div css={figureWrapperStyle}>
@@ -207,17 +230,20 @@ class Home extends Component {
                 />
               </div>
               <strong>
-                Figure 2<Cite name="co2After1958" />
+                Figure 2
+                <Cite name="co2After1958" />
                 <Cite name="co2Before1958" />
               </strong>
             </div>
             <p>
-              Since <CO2 /> abundance in the atmosphere is directly linked to
-              the Earth{`'`}s temperature increase, limiting atmospheric carbon
-              has been identified as vital to mitigating global warming. As part
-              of the Kyoto Protocol climate convention, scientists have
-              identified 450ppm as a good upper limit for carbon concentration
-              in order to keep global warming below +2°C.
+              Since <CO2 />
+              {` `}
+              abundance in the atmosphere is directly linked to the Earth
+              {`'`}s temperature increase, limiting atmospheric carbon has been
+              identified as vital to mitigating global warming. As part of the
+              Kyoto Protocol climate convention, scientists have 450ppm as a
+              good upper limit for carbon concentration in order to keep global
+              warming below +2°C.
             </p>
             <h2>Effects of global warming</h2>
             <p>
@@ -228,9 +254,13 @@ class Home extends Component {
               by how hot Earth gets; reaching 2°C above the pre-industrial
               average would put millions more people at risk than if global
               warming was limited to 1.5°C.
-              <Cite name="1.5C" /> Generally speaking, {`"`}countries in the
-              tropics and Southern Hemisphere subtropics are projected to
-              experience the largest impacts on economic growth.{`"`}
+              <Cite name="1.5C" />
+              {` `}
+              Generally speaking,
+              {`"`}
+              countries in the tropics and Southern Hemisphere subtropics are
+              projected to experience the largest impacts on economic growth.
+              {`"`}
               <Cite name="1.5C" />
             </p>
             <p>
@@ -242,27 +272,29 @@ class Home extends Component {
             </p>
             <div css={figureWrapperStyle}>
               <div>
-                <img src={'assets/risks.png'} alt="risks of climate change" />
+                <img src={`assets/risks.png`} alt="risks of climate change" />
               </div>
               <strong>
-                Figure 3<Cite name="guardian" />
+                Figure 3
+                <Cite name="guardian" />
                 <Cite name="1.5C" />
               </strong>
             </div>
             <p>
-              The changing climate will is likely to increase the prevalence of disease.
-              Global increases in temperature are estimated to alter the
-              distribution of insects that are known vectors for pathogens, such as
-              mosquitos.
-              <Cite name="pathogenMigration" /> Studies in China show that increasing
-              temperatures positively affect the viability of disease transfer by
-              decreasing the viral incubation time in vectors -- leading to increased
-              infection rates.
+              The changing climate will is likely to increase the prevalence of
+              disease. Global increases in temperature are estimated to alter
+              the distribution of insects that are known vectors for pathogens,
+              such as mosquitos.
+              <Cite name="pathogenMigration" /> Studies in China show that
+              increasing temperatures positively affect the viability of disease
+              transfer by decreasing the viral incubation time in vectors --
+              leading to increased infection rates.
               <Cite name="viralIncubation" />
-              The World Health Organization estimated that climate change has been 
-              responsible for 3% of diarrhoea, 3% of malaria, and 3.8% of dengue fever
-              deaths worldwide in 2004. Total attributable mortality was about 0.2% of
-              deaths in 2004; of these, 85% were child deaths.
+              The World Health Organization estimated that climate change has
+              been responsible for 3% of diarrhoea, 3% of malaria, and 3.8% of
+              dengue fever deaths worldwide in 2004. Total attributable
+              mortality was about 0.2% of deaths in 2004; of these, 85% were
+              child deaths.
               <Cite name="who" />
             </p>
             <p>
@@ -270,21 +302,24 @@ class Home extends Component {
               glacier and sea ice melting, which contributes to sea level rise.
               <Cite name="natGeo" /> However, thermal expansion is a larger
               component in this, contributing 70-75% of sea level rise.
-              <Cite name="ipcc" /> Some regions have experienced severe drought,
-              leading to food-and-water shortages as well as wildfires.
+              <Cite name="ipcc" />
+              {` `}
+              Some regions have experienced severe drought, leading to
+              food-and-water shortages as well as wildfires.
               <Cite name="natGeo" />
             </p>
             <h2>Works Cited</h2>
             <RefList />
           </article>
         </ContentWrapper>
-      </Fragment>
+      </>
     );
   }
 }
 
 Home.propTypes = {
   latestCo2Value: PropTypes.number,
+  latestSlrValue: PropTypes.number,
   latestTempValue: PropTypes.number,
   temp: PropTypes.arrayOf(PropTypes.object),
   latestTempYear: PropTypes.number,

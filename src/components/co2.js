@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 export default () => (
-  <Fragment>
-    CO<sub>2</sub>
-  </Fragment>
+  <>
+    CO
+    <sub>2</sub>
+  </>
 );

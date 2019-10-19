@@ -37,15 +37,24 @@ const Counter = ({ currentCo2, currentTemp, currentSlr }) => (
         <div>
           Atmospheric <CO2 />
         </div>
-        <strong id="currentCo2Counter">{currentCo2}ppm</strong>
+        <strong id="currentCo2Counter">
+          {currentCo2}
+          ppm
+        </strong>
       </div>
       <div>
         <div>Global temperature anomaly</div>
-        <strong id="currentTempCounter">+{currentTemp}°C</strong>
+        <strong id="currentTempCounter">
+          +{currentTemp}
+          °C
+        </strong>
       </div>
       <div>
         <div>Global Sea Level Rise</div>
-        <strong id="currentSlrCounter">+{currentSlr}mm/year</strong>
+        <strong id="currentSlrCounter">
+          +{currentSlr}
+          mm/year
+        </strong>
       </div>
     </div>
   </ContentWrapper>

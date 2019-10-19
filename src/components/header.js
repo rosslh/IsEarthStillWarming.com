@@ -2,7 +2,7 @@ import React from 'react';
 import { lighten } from 'unitransform';
 import { css } from '@emotion/core';
 
-import Counter from '../components/counter';
+import Counter from './counter';
 import { red, redDark } from '../utils/colors';
 import ContentWrapper from './contentWrapper';
 import fire from '../../public/assets/fire-icon.svg';
