@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['react-tools', 'airbnb', 'prettier'],
-  plugins: ['cypress'],
+  plugins: ['cypress', 'prettier'],
   env: {
     'cypress/globals': true
   },
