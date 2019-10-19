@@ -19,7 +19,7 @@
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000",
-    "format": "eslint --fix src/**/*.js",
+    "format": "eslint --fix ./src",
     "cyTest": "cypress run",
     "buildTestServer": "serve dist -p 3939",
     "test": "server-test buildTestServer 3939 cyTest"
