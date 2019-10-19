@@ -27,7 +27,7 @@ const Cite = ({ name }) => {
         aria-haspopup="true"
         type="error"
         effect="solid"
-        delayHide={1000}
+        delayHide={500}
         css={css`
           max-width: 350px;
           line-height: 1.5;
@@ -39,14 +39,6 @@ const Cite = ({ name }) => {
         `}
       >
         <p>{citation.citation}</p>
-
-        {citation.url && (
-          <p>
-            <a href={citation.url} rel="external noopener">
-              More information
-            </a>
-          </p>
-        )}
       </ReactTooltip>
     </sup>
   );
