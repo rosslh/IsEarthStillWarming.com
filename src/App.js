@@ -1,13 +1,13 @@
 import React from 'react';
 import { Root, Routes, addPrefetchExcludes, Head } from 'react-static';
 //
-import { Router, Link } from '@reach/router';
+import { Router } from '@reach/router';
 
 import { css } from '@emotion/core';
 import 'modern-normalize/modern-normalize.css';
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(['dynamic']);
+addPrefetchExcludes([`dynamic`]);
 
 function App() {
   return (

@@ -1,5 +1,5 @@
-import axios from "axios";
-import csv from "csvtojson";
+import axios from 'axios';
+import csv from 'csvtojson';
 
 const dateFromYear = year => Math.trunc(Number(year));
 
@@ -106,7 +106,7 @@ export default {
           latestCo2Value: co2.find(value => value.x === latestCo2Year).y,
           latestTempValue: temp.find(value => value.x === latestTempYear).y,
           latestSlrYear,
-          latestSlrValue: slr.find(value => value.x == latestSlrYear).y
+          latestSlrValue: slr.find(value => value.x === latestSlrYear).y
         })
       }
     ];

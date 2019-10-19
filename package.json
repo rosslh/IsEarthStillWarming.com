@@ -8,7 +8,7 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "eslint --fix",
+      "npm run format",
       "git add"
     ]
   },
@@ -19,8 +19,7 @@
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000",
-    "format": "prettier src/**/*.js --write",
-    "eslint": "eslint \"src/**/*.js\"",
+    "format": "eslint --fix src/**/*.js",
     "cyTest": "cypress run",
     "buildTestServer": "serve dist -p 3939",
     "test": "server-test buildTestServer 3939 cyTest"
@@ -46,27 +45,27 @@
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.6",
+    "axios": "^0.18.0",
     "babel-eslint": "^10.0.2",
+    "csvtojson": "^2.0.8",
+    "cypress": "^3.1.4",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-config-react-app": "^5.0.2",
     "eslint-config-react-tools": "^1.1.7",
     "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-flowtype": "^4.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "serve": "^11.2.0",
-    "@emotion/babel-preset-css-prop": "^10.0.6",
-    "axios": "^0.18.0",
-    "csvtojson": "^2.0.8",
-    "cypress": "^3.1.4",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-cypress": "^2.7.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "prettier": "^1.16.0",
+    "serve": "^11.2.0",
     "start-server-and-test": "^1.10.6"
   }
 }
