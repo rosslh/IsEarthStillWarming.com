@@ -90,7 +90,7 @@ const RefList = () => (
         {x.citation}
         {` `}
         {x.url && (
-          <a href={x.url} rel="external noopener">
+          <a href={x.url} rel="external noopener" target="_blank">
             More information
           </a>
         )}
