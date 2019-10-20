@@ -81,7 +81,7 @@ const RefList = () => (
       <li
         css={css`
           text-indent: -1.5rem;
-          word-break: break-all;
+          word-break: break-word;
           padding: 0.5rem 1rem 0.5rem 2.5rem;
           margin: 0 -1rem 0.5rem;
           transition: border 0.7s 0.8s, border-radius 0.7s 0.8s,
