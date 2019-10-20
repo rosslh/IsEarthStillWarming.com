@@ -84,9 +84,13 @@ const RefList = () => (
           word-break: break-all;
           padding: 0.5rem 1rem 0.5rem 2.5rem;
           margin: 0 -1rem 0.5rem;
-
+          transition: border 0.7s 0.8s, border-radius 0.7s 0.8s,
+            background-color 0.7s 0.8s, box-shadow 0.7s 0.8s;
+          border: 1px solid transparent;
+                      
           :target {
-            border: 1px solid ${redLight}44;
+            border-color: ${redLight};
+            border-color: ${redLight}44;
             border-radius: 10px;
             background-color: ${redExtraLight};
             box-shadow: rgba(00, 00, 00, 0.2) 0px 2px 12px 0px;
