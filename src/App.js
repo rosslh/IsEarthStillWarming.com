@@ -3,7 +3,7 @@ import { Root, Routes, addPrefetchExcludes, Head } from 'react-static';
 //
 import { Router } from '@reach/router';
 
-import { css } from '@emotion/core';
+import { css, Global } from '@emotion/core';
 import 'modern-normalize/modern-normalize.css';
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
@@ -104,6 +104,13 @@ function App() {
           }
         `}
       >
+        <Global
+          styles={css`
+            html {
+              scroll-behavior: smooth;
+            }
+          `}
+        />
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
             <Routes path="*" />
