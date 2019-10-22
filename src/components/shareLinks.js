@@ -6,90 +6,147 @@ import {
   TwitterShareButton,
   RedditShareButton
 } from 'react-share';
-
 import {
   FaRedditAlien,
   FaFacebookF,
   FaLinkedinIn,
-  FaTwitter
+  FaTwitter,
+  FaShare
 } from 'react-icons/fa';
 
-const ShareLinks = () => {
-  const description = `IsEarthStillWarming.com: Global warming information and data`;
-  const url = `https://isearthstillwarming.com`;
-  return (
-    <ClassNames>
-      {({ css: style }) => (
-        <div
+import { red } from '../utils/colors';
+
+const ShareButtons = () => {
+  const shareUrl = `https://isearthstillwarming.com`;
+  const title = `IsEarthStillWarming.com`;
+  const fullTitle = `IsEarthStillWarming.com: Global warming information and data`;
+
+  const share = () =>
+    navigator.share({
+      url: shareUrl,
+      text: 'Global warming information and data',
+      title: title
+    });
+
+  if (navigator && !navigator.share) {
+    return (
+      <div
+        css={css`
+          display: flex;
+          @media (max-width: 700px) {
+            justify-content: center;
+          }
+          justify-content: flex-end;
+          margin-top: 1.5rem;
+          margin-bottom: -1.5rem;
+        `}
+      >
+        <button
           css={css`
-            padding-top: 1rem;
-            display: flex;
-            justify-content: flex-end;
+            font-size: 0.8rem;
+            height: 1.75rem;
+            padding: 0 0.5rem;
+            border-radius: 4px;
+            border: none;
+            color: ${red};
+            border: 1px solid ${red};
+            font-weight: bold;
+            box-sizing: content-box;
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
             align-items: center;
-            .SocialMediaShareButton {
-              cursor: pointer;
-              :hover {
-                opacity: 0.9;
-              }
-              margin: 0 0.3rem;
-              color: white;
-              display: inline-block;
-              height: 1.8rem;
-              width: 1.8rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border-radius: 50%;
-              overflow: hidden;
+            background-color: white;
+            :hover {
+              opacity: 0.8;
+            }
+            svg {
+              margin-right: 0.4rem;
             }
           `}
+          onClick={share}
         >
-          <span
+          <FaShare />
+          Share
+        </button>
+      </div>
+    );
+  } else {
+    return (
+      <ClassNames>
+        {({ css: style }) => (
+          <div
             css={css`
-              padding-right: 0.4rem;
+              margin-bottom: -1rem;
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              .SocialMediaShareButton {
+                cursor: pointer;
+                :hover {
+                  opacity: 0.9;
+                }
+                margin: 0 0.3rem;
+                color: white;
+                height: 1.6rem;
+                width: 1.6rem;
+                font-size: 0.9rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                overflow: hidden;
+              }
             `}
           >
-            Share:
-          </span>
-          <FacebookShareButton
-            className={style`
+            <span
+              css={css`
+                padding-right: 0.4rem;
+              `}
+            >
+              Share:
+            </span>
+            <FacebookShareButton
+              className={style`
               background-color: #3B579D;
             `}
-            url={url}
-            quote={description}
-          >
-            <FaFacebookF />
-          </FacebookShareButton>
-          <TwitterShareButton
-            className={style`
+              url={shareUrl}
+              quote={fullTitle}
+            >
+              <FaFacebookF />
+            </FacebookShareButton>
+            <TwitterShareButton
+              className={style`
               background-color: #2CAAE1;
             `}
-            url={url}
-            title={description}
-          >
-            <FaTwitter />
-          </TwitterShareButton>
-          <RedditShareButton
-            className={style`
-              background-color: #FF4500;
+              url={shareUrl}
+              title={fullTitle}
+            >
+              <FaTwitter />
+            </TwitterShareButton>
+            <RedditShareButton
+              className={style`
+              background-color: #FF4500 !important;
             `}
-            title={description}
-            url={url}
-          >
-            <FaRedditAlien />
-          </RedditShareButton>
-          <LinkedinShareButton
-            className={style`
+              title={fullTitle}
+              url={shareUrl}
+            >
+              <FaRedditAlien />
+            </RedditShareButton>
+            <LinkedinShareButton
+              className={style`
               background-color: #007BB6;
             `}
-            url={url}
-          >
-            <FaLinkedinIn />
-          </LinkedinShareButton>
-        </div>
-      )}
-    </ClassNames>
-  );
+              url={shareUrl}
+            >
+              <FaLinkedinIn />
+            </LinkedinShareButton>
+          </div>
+        )}
+      </ClassNames>
+    );
+  }
 };
 
-export default ShareLinks;
+export default ShareButtons;
