@@ -22,13 +22,17 @@ const ShareButtons = () => {
   const fullTitle = `IsEarthStillWarming.com: Global warming information and data`;
 
   const share = () =>
-    navigator.share({
+    window.navigator.share({
       url: shareUrl,
       text: 'Global warming information and data',
       title: title
     });
 
-  if (navigator && !navigator.share) {
+  if (
+    typeof window !== 'undefined' &&
+    window.navigator &&
+    window.navigator.share
+  ) {
     return (
       <div
         css={css`
