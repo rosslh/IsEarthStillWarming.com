@@ -34,7 +34,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.10.2",
     "react-chartjs-2": "^2.8.0",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15",
     "react-icons": "^3.7.0",
     "react-share": "^3.0.1",
