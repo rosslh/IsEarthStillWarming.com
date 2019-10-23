@@ -88,11 +88,11 @@ const Header = props => (
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
-      This website is kept up-to-date with climate data provided by{' '}
+      This website is kept up-to-date with climate data from{' '}
       <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
         NASA
       </a>{' '}
-      and
+      and{' '}
       <a
         href="https://scripps.ucsd.edu/"
         target="_blank"
@@ -108,7 +108,7 @@ const Header = props => (
         rel="noopener noreferrer"
       >
         NOAA Laboratory for Satellite Altimetry
-    </a>
+      </a>
     </div>
   </header>
 );
