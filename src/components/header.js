@@ -107,9 +107,8 @@ const Header = props => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        NOAA Laboratory for Satellite
-      </a>{' '}
-      Altimetry.
+        NOAA Laboratory for Satellite Altimetry
+    </a>
     </div>
   </header>
 );

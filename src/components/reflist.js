@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
+import { redExtraLight, redLight } from '../utils/colors';
 
 export const citations = [
   {
@@ -46,6 +47,26 @@ export const citations = [
     name: `natGeo`,
     citation: `“Global Warming Effects.” National Geographic, National Geographic, 14 Jan. 2019, www.nationalgeographic.com/environment/global-warming/global-warming-effects/.`,
     url: `https://www.nationalgeographic.com/environment/global-warming/global-warming-effects/`
+  },
+  {
+    name: `pathogenMigration`,
+    citation: `"Crop pests and pathogens move polewards in a warming world". Nature Climate Change. Daniel P. Bebber; Mark A. T. Ramotowski; Sarah J. Gurr (2013). `,
+    url: `https://www.nature.com/articles/nclimate1990`
+  },
+  {
+    name: `viralIncubation`,
+    citation: `"Review: dengue fever in mainland China". American Journal of Tropical Medicine and Hygiene. 83 (3). Wu, J.Y.; Lun, Z.R.; James, A.A.; Chen, X.G. (2010).`,
+    url: `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929067`
+  },
+  {
+    name: `ipcc`,
+    citation: `Meehl, G.A., T.F. Stocker, W.D. Collins, P. Friedlingstein, A.T. Gaye, J.M. Gregory, A. Kitoh, R. Knutti, J.M. Murphy, A. Noda, S.C.B. Raper, I.G. Watterson, A.J. Weaver and Z.-C. Zhao, 2007: Global Climate Projections. In: Climate Change 2007: The Physical Science Basis. Contribution of Working Group I to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change [Solomon, S., D. Qin, M. Manning, Z. Chen, M. Marquis, K.B. Averyt, M. Tignor and H.L. Miller (eds.)]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA`,
+    url: `https://archive.ipcc.ch/publications_and_data/ar4/wg1/en/ch10.html`
+  },
+  {
+    name: `who`,
+    citation: `"Global Health Risks." World Health Organization, 2009.`,
+    url: `https://www.who.int/healthinfo/global_burden_disease/GlobalHealthRisks_report_part2.pdf`
   }
 ];
 const RefList = () => (
@@ -59,10 +80,21 @@ const RefList = () => (
     {citations.map(x => (
       <li
         css={css`
-          text-indent: -2rem;
-          margin-left: 2rem;
-          padding-bottom: 1.5rem;
-          word-break: break-all;
+          text-indent: -1.5rem;
+          word-break: break-word;
+          padding: 0.5rem 1rem 0.5rem 2.5rem;
+          margin: 0 -1rem 0.5rem;
+          transition: border 0.7s 0.8s, border-radius 0.7s 0.8s,
+            background-color 0.7s 0.8s, box-shadow 0.7s 0.8s;
+          border: 1px solid transparent;
+                      
+          :target {
+            border-color: ${redLight};
+            border-color: ${redLight}44;
+            border-radius: 10px;
+            background-color: ${redExtraLight};
+            box-shadow: rgba(00, 00, 00, 0.2) 0px 2px 12px 0px;
+          }
         `}
         key={x.name}
         id={`ref-${x.name}`}

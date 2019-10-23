@@ -4,6 +4,7 @@ screenshotsFolder
 screenshots
 videosFolder
 videos
+artifacts
 
 # Logs
 logs
@@ -85,5 +86,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-artifacts/react-static-templates.js
-artifacts/react-static-templates.js
