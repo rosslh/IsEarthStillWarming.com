@@ -2,7 +2,7 @@ import React from 'react';
 import { lighten } from 'unitransform';
 import { css } from '@emotion/core';
 
-import Counter from '../components/counter';
+import Counter from './counter';
 import { red, redDark } from '../utils/colors';
 import ContentWrapper from './contentWrapper';
 import fire from '../../public/assets/fire-icon.svg';
@@ -61,7 +61,7 @@ const Header = props => (
             a {
               display: inline-block;
               margin: 0 6px;
-              &:first-child {
+              &:first-of-type {
                 margin-left: 0;
               }
             }
@@ -80,7 +80,7 @@ const Header = props => (
     <Counter {...props} />
     <div
       css={css`
-        color: ${lighten(red, 40)};
+        color: ${lighten(red, 48)};
         font-size: 15px !important;
         text-align: center;
         margin-top: 0.5rem;
@@ -88,8 +88,28 @@ const Header = props => (
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
-      This website is kept up-to-date with climate data provided by <a href="https://www.nasa.gov/" target="_blank" rel="noopener">NASA</a> and
-      <a href="https://scripps.ucsd.edu/" target="_blank" rel="noopener">Scripps Institution of Oceanography</a>
+      This website is kept up-to-date with climate data provided by{' '}
+      <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
+        NASA
+      </a>{' '}
+      and
+      <a
+        href="https://scripps.ucsd.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Scripps Institution of Oceanography
+      </a>
+      <br />
+      Altimetry data are provided by the{' '}
+      <a
+        href="https://www.star.nesdis.noaa.gov/sod/lsa/index.php"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        NOAA Laboratory for Satellite
+      </a>{' '}
+      Altimetry.
     </div>
   </header>
 );
