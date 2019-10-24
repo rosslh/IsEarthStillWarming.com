@@ -45,7 +45,7 @@
     "unitransform": "^1.0.5"
   },
   "devDependencies": {
-    "@emotion/babel-preset-css-prop": "^10.0.6",
+    "@emotion/babel-preset-css-prop": "^10.0.22",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.2",
     "csvtojson": "^2.0.8",
