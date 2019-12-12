@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['react-tools', 'airbnb', 'prettier'],
-  plugins: ['cypress'],
+  extends: ['react-tools', 'airbnb', 'plugin:prettier/recommended', 'prettier/react'],
+  plugins: ['cypress', 'react', 'prettier'],
   env: {
     'cypress/globals': true
   },
@@ -22,6 +22,9 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/require-default-props': 0,
     'react/jsx-filename-extension': 0,
+    'react/destructuring-assignment': 1,
+    'react/jsx-props-no-spreading': 1,
+    'react/no-unescaped-entities': 1,
     'class-methods-use-this': 0,
     'global-require': 0
   }

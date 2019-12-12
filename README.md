@@ -19,4 +19,4 @@ Contributors are welcome! Open an issue or create a pull request.
 - Install with `npm i`
 - Run build with `npm run start`
 - Test with `npm run test`
-- Format code with `npm run prettier`
+- Format code with `npm run format`
