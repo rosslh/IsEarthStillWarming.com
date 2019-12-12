@@ -25,7 +25,7 @@ const Cite = ({ name }) => {
       <ReactTooltip
         id={`tooltip-${name}-${tooltipId}`}
         aria-haspopup="true"
-        type="error"
+        type="dark"
         effect="solid"
         delayHide={500}
         css={css`
