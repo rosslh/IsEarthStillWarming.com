@@ -4,11 +4,11 @@ on:
     branches:
       - master
   schedule:
-    - cron: '1 */12 * * *'
+    - cron: "1 */12 * * *"
 
 jobs:
   TestAndDeploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 10.x
