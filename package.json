@@ -38,7 +38,7 @@
     "react-hot-loader": "^4.12.15",
     "react-icons": "^3.7.0",
     "react-share": "^3.0.1",
-    "react-static": "^7.2.0",
+    "react-static": "^7.3.0",
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sitemap": "^7.2.0",
     "react-static-plugin-source-filesystem": "^7.2.0",
