@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.22",
-    "axios": "^0.18.0",
+    "axios": "^0.19.2",
     "babel-eslint": "^10.0.2",
     "csvtojson": "^2.0.8",
     "cypress": "^3.1.4",
