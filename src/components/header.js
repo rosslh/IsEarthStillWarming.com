@@ -59,8 +59,8 @@ const Header = props => (
         <nav
           css={css`
             a {
-              display: inline-block;
-              margin: 0 6px;
+              display: flex;
+              align-items: center;
               &:first-of-type {
                 margin-left: 0;
               }
@@ -72,7 +72,13 @@ const Header = props => (
             rel="noopener noreferrer"
             href="https://github.com/rosslh/isearthstillwarming.com"
           >
-            GitHub
+            <img
+              css={css`
+                height: 20px;
+              `}
+              src={`assets/GitHub-Mark-Light-32px.png`}
+              alt="risks of climate change"
+            />
           </a>
         </nav>
       </ContentWrapper>
@@ -84,7 +90,7 @@ const Header = props => (
         font-size: 15px !important;
         text-align: center;
         margin-top: 0.5rem;
-        padding: 1.5rem 0 2.5rem;
+        padding: 1.5rem 1rem 2.5rem 1rem;
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
