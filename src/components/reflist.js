@@ -67,6 +67,11 @@ export const citations = [
     name: `who`,
     citation: `"Global Health Risks." World Health Organization, 2009.`,
     url: `https://www.who.int/healthinfo/global_burden_disease/GlobalHealthRisks_report_part2.pdf`
+  },
+  {
+    name: `speciesExtinction`,
+    citation: `"How does climate change cause extinction?". Abigail E. Cahill, Matthew E. Aiello-Lammens, M. Caitlin Fisher-Reid, Xia Hua, Caitlin J. Karanewsky, Hae Yeong Ryu, Gena C. Sbeglia, Fabrizio Spagnolo, John B. Waldron, Omar Warsi and John J. Wiens. (2013)`,
+    url: `https://royalsocietypublishing.org/doi/10.1098/rspb.2012.1890#d3e1498`
   }
 ];
 const RefList = () => (
