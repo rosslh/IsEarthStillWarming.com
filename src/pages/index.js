@@ -299,10 +299,12 @@ class Home extends Component {
             </p>
             <p>
               Global biodiversity comes under major threat from climate change
-              as the complex interactions of changing environments increase extinction
-              pressure on species. A review in 2013 reveals that there may be numerous
-              extinctions within the next 100 years, during which other extinction
-              pressures may present.
+              as changing environments increase extinction pressure on species.
+              A review in 2013 reveals that changing environments may lead to
+              the extinction of thousands of species within the next 100 years.
+              The proximate causes of such extinctions include biotic and
+              abiotic factors, such as limited physiological tolerance to high
+              temperatures and changing species interactions.
               <Cite name="speciesExtinction" />
             </p>
             <p>

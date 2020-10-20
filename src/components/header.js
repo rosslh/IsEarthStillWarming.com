@@ -94,11 +94,12 @@ const Header = props => (
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
-      This website is kept up-to-date with climate data from{' '}
+      This website is kept up-to-date with climate data from{` `}
       <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
         NASA
-      </a>{' '}
-      and{' '}
+      </a>
+      {` `}
+      and{` `}
       <a
         href="https://scripps.ucsd.edu/"
         target="_blank"
@@ -107,7 +108,7 @@ const Header = props => (
         Scripps Institution of Oceanography
       </a>
       <br />
-      Altimetry data are provided by the{' '}
+      Altimetry data are provided by the{` `}
       <a
         href="https://www.star.nesdis.noaa.gov/sod/lsa/index.php"
         target="_blank"
