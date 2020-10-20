@@ -281,7 +281,7 @@ class Home extends Component {
               </strong>
             </div>
             <p>
-              The changing climate will is likely to increase the prevalence of
+              The changing climate is likely to increase the prevalence of
               disease. Global increases in temperature are estimated to alter
               the distribution of insects that are known vectors for pathogens,
               such as mosquitos.
@@ -296,6 +296,16 @@ class Home extends Component {
               mortality was about 0.2% of deaths in 2004; of these, 85% were
               child deaths.
               <Cite name="who" />
+            </p>
+            <p>
+              Global biodiversity comes under major threat from climate change
+              as changing environments increase extinction pressure on species.
+              A review in 2013 reveals that changing environments may lead to
+              the extinction of thousands of species within the next 100 years.
+              The proximate causes of such extinctions include biotic and
+              abiotic factors, such as limited physiological tolerance to high
+              temperatures and changing species interactions.
+              <Cite name="speciesExtinction" />
             </p>
             <p>
               Other already-visible impacts of global warming include worldwide
