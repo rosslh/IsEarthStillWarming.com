@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 import ContentWrapper from './contentWrapper';
 import CO2 from './co2';
 
-const Counter = ({ currentCo2, currentTemp, currentSlr }) => (
+const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
   <ContentWrapper
     style={`
       padding: 0;
@@ -56,6 +56,12 @@ const Counter = ({ currentCo2, currentTemp, currentSlr }) => (
           mm/year
         </strong>
       </div>
+      <div>
+        <div>Arctic Sea Ice Minimum</div>
+        <strong id="currentIceMeltCounter">
+          {currentIceMelt}M km<sup>2</sup>
+        </strong>
+      </div>
     </div>
   </ContentWrapper>
 );
@@ -63,7 +69,8 @@ const Counter = ({ currentCo2, currentTemp, currentSlr }) => (
 Counter.propTypes = {
   currentCo2: PropTypes.number.isRequired,
   currentTemp: PropTypes.number.isRequired,
-  currentSlr: PropTypes.number.isRequired
+  currentSlr: PropTypes.number.isRequired,
+  currentIceMelt: PropTypes.number.isRequired
 };
 
 export default Counter;

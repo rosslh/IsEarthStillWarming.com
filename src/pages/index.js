@@ -52,8 +52,9 @@ class Home extends Component {
       <>
         <Header
           currentCo2={this.props.latestCo2Value}
-          currentSlr={this.props.latestSlrValue}
           currentTemp={this.props.latestTempValue}
+          currentSlr={this.props.latestSlrValue}
+          currentIceMelt={this.props.latestIceMeltValue}
         />
         <ContentWrapper>
           <article
@@ -329,8 +330,9 @@ class Home extends Component {
 
 Home.propTypes = {
   latestCo2Value: PropTypes.number,
-  latestSlrValue: PropTypes.number,
   latestTempValue: PropTypes.number,
+  latestSlrValue: PropTypes.number,
+  latestIceMeltValue: PropTypes.number,
   temp: PropTypes.arrayOf(PropTypes.object),
   latestTempYear: PropTypes.number,
   latestCo2Year: PropTypes.number,
