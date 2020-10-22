@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { lighten } from 'unitransform';
 import { css } from '@emotion/core';
 
@@ -7,7 +8,7 @@ import { red, redDark } from '../utils/colors';
 import ContentWrapper from './contentWrapper';
 import fire from '../../public/assets/fire-icon.svg';
 
-const Header = props => (
+const Header = ({ currentCo2, currentTemp, currentSlr }) => (
   <header
     css={css`
       background-color: ${red};
@@ -83,7 +84,11 @@ const Header = props => (
         </nav>
       </ContentWrapper>
     </div>
-    <Counter {...props} />
+    <Counter
+      currentCo2={currentCo2}
+      currentTemp={currentTemp}
+      currentSlr={currentSlr}
+    />
     <div
       css={css`
         color: ${lighten(red, 48)};
@@ -119,5 +124,11 @@ const Header = props => (
     </div>
   </header>
 );
+
+Header.propTypes = {
+  currentCo2: PropTypes.number.isRequired,
+  currentTemp: PropTypes.number.isRequired,
+  currentSlr: PropTypes.number.isRequired
+};
 
 export default Header;
