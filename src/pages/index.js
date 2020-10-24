@@ -321,6 +321,9 @@ class Home extends Component {
             <h2>Works Cited</h2>
             <RefList />
           </article>
+             <footer>
+             &#169; isearthstillwarming.com
+             </footer>
         </ContentWrapper>
       </>
     );
