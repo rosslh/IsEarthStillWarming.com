@@ -344,6 +344,7 @@ Home.propTypes = {
   co2: PropTypes.arrayOf(PropTypes.object),
   temp: PropTypes.arrayOf(PropTypes.object),
   latestCo2Value: PropTypes.number,
+  slrTrend: PropTypes.number,
   latestTempValue: PropTypes.number,
   latestSlrValue: PropTypes.number,
   latestCo2Year: PropTypes.number,
