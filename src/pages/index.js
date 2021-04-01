@@ -48,12 +48,24 @@ class Home extends Component {
       borderColor: lighten(red, 10),
       backgroundColor: desaturate(lighten(red, 20), 30)
     };
+
+    const {
+      co2,
+      temp,
+      latestCo2Value,
+      latestTempValue,
+      slrTrend,
+      latestCo2Year,
+      latestTempYear,
+      tenYearWarming
+    } = this.props;
+
     return (
       <>
         <Header
-          currentCo2={this.props.latestCo2Value}
-          currentSlr={this.props.slrTrend}
-          currentTemp={this.props.latestTempValue}
+          currentCo2={latestCo2Value}
+          currentTemp={latestTempValue}
+          currentSlr={slrTrend}
         />
         <ContentWrapper>
           <article
@@ -75,7 +87,10 @@ class Home extends Component {
             >
               Is global warming still happening?
             </h2>
-            <IsEarthWarming {...this.props} />
+            <IsEarthWarming
+              tenYearWarming={tenYearWarming}
+              latestTempValue={latestTempValue}
+            />
             <ShareLinks />
             <h2>What is global warming?</h2>
             <p>
@@ -109,7 +124,7 @@ class Home extends Component {
                     datasets: [
                       {
                         label: `Global average temperature`,
-                        data: this.props.temp,
+                        data: temp,
                         ...datasetOptions
                       }
                     ]
@@ -143,11 +158,10 @@ class Home extends Component {
               The amount Earth has warmed is measured against the average
               pre-industrial global temperature. As of
               {` `}
-              <span id="latestTempYear">{this.props.latestTempYear}</span>,
-              Earth
+              <span id="latestTempYear">{latestTempYear}</span>, Earth
               {`'`}s temperature is approximately
               {` `}
-              <span id="latestTempValue">{this.props.latestTempValue}</span>
+              <span id="latestTempValue">{latestTempValue}</span>
               °C above pre-industrial levels.
               <Cite name="tempData" /> If the planet
               {`'`}s temperature continues to rise, we can expect many
@@ -189,11 +203,10 @@ class Home extends Component {
               {` `}
               As of
               {` `}
-              <span id="latestCo2Year">{this.props.latestCo2Year}</span>, the
-              atmosphere
+              <span id="latestCo2Year">{latestCo2Year}</span>, the atmosphere
               {`'`}s carbon concentration is
               {` `}
-              <span id="latestCo2Value">{this.props.latestCo2Value}</span>
+              <span id="latestCo2Value">{latestCo2Value}</span>
               ppm (see fig. 2).
               <Cite name="co2After1958" />
             </p>
@@ -204,7 +217,7 @@ class Home extends Component {
                     datasets: [
                       {
                         label: `Atmospheric CO2`,
-                        data: this.props.co2,
+                        data: co2,
                         ...datasetOptions
                       }
                     ]
@@ -328,13 +341,14 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  latestCo2Value: PropTypes.number,
-  slrTrend: PropTypes.number,
-  latestTempValue: PropTypes.number,
+  co2: PropTypes.arrayOf(PropTypes.object),
   temp: PropTypes.arrayOf(PropTypes.object),
-  latestTempYear: PropTypes.number,
+  latestCo2Value: PropTypes.number,
+  latestTempValue: PropTypes.number,
+  slrTrend: PropTypes.number,
   latestCo2Year: PropTypes.number,
-  co2: PropTypes.arrayOf(PropTypes.object)
+  latestTempYear: PropTypes.number,
+  tenYearWarming: PropTypes.number.isRequired
 };
 
 export default withRouteData(Home);
