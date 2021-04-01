@@ -5,9 +5,10 @@
 
 ## Scope
 
-The goal of this webpage is to provide a high-level overview of what global warming is: how it's caused, how much the Earth has warmed, and its observed and predicted effects.
+This webpage intends to provide an acurate overview about gloabl warming and it's observed and predicted effects.
+It also provides information about how it is caused and how rapidly the earth is warming up.
 
-Contributors are welcome! Open an issue or create a pull request.
+Contributors are always welcome! Open an issue or create a pull request.
 
 ## Code
 
