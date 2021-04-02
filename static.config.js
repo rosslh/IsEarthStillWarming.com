@@ -33,7 +33,7 @@ const getTemp = async () => {
     Math.round(
       (temp.find(value => value.x === latestTempYear).y -
         temp.find(value => value.x === latestTempYear - 10).y) *
-      100
+        100
     ) / 100;
 
   return { temp, latestTempYear, tenYearWarming };
@@ -121,7 +121,6 @@ export default {
           tenYearWarming,
           latestCo2Value: co2.find(value => value.x === latestCo2Year).y,
           latestTempValue: temp.find(value => value.x === latestTempYear).y,
-          latestSlrValue: slr.find(value => value.x === latestSlrYear).y,
           latestIceMeltValue: iceMelt.find(
             value => value.x === latestIceMeltYear
           ).y,
