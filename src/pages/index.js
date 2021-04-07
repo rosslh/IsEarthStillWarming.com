@@ -147,8 +147,6 @@ class Home extends Component {
                       ]
                     },
                     tooltips: {
-                      // mode: 'index',
-                      // intersect: false,
                       callbacks: {
                         label: tooltipItem =>
                           `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`
@@ -248,8 +246,6 @@ class Home extends Component {
                       ]
                     },
                     tooltips: {
-                      // mode: 'index',
-                      // intersect: false,
                       callbacks: {
                         label: tooltipItem =>
                           `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`
