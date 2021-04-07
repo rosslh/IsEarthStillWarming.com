@@ -147,12 +147,8 @@ class Home extends Component {
                       ]
                     },
                     tooltips: {
-                      // mode: 'index',
-                      // intersect: false,
-                      callbacks: {
-                        label: tooltipItem =>
-                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`
-                      }
+                      mode: `index`,
+                      intersect: false
                     }
                   }}
                 />
@@ -248,12 +244,8 @@ class Home extends Component {
                       ]
                     },
                     tooltips: {
-                      // mode: 'index',
-                      // intersect: false,
-                      callbacks: {
-                        label: tooltipItem =>
-                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`
-                      }
+                      mode: `index`,
+                      intersect: false
                     }
                   }}
                 />
