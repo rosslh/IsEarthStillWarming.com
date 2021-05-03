@@ -147,6 +147,10 @@ class Home extends Component {
                           }
                         }
                       ]
+                    },
+                    tooltips: {
+                      mode: `index`,
+                      intersect: false
                     }
                   }}
                 />
@@ -240,6 +244,10 @@ class Home extends Component {
                           }
                         }
                       ]
+                    },
+                    tooltips: {
+                      mode: `index`,
+                      intersect: false
                     }
                   }}
                 />
