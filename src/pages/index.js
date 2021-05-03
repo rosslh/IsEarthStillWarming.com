@@ -56,6 +56,7 @@ class Home extends Component {
       latestTempValue,
       slrTrend,
       latestCo2Year,
+      latestIceMeltValue,
       latestTempYear,
       tenYearWarming
     } = this.props;
@@ -66,6 +67,7 @@ class Home extends Component {
           currentCo2={latestCo2Value}
           currentTemp={latestTempValue}
           currentSlr={slrTrend}
+          currentIceMelt={latestIceMeltValue}
         />
         <ContentWrapper>
           <article
@@ -151,6 +153,8 @@ class Home extends Component {
                         label: tooltipItem =>
                           `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`
                       }
+                      mode: `index`,
+                      intersect: false
                     }
                   }}
                 />
@@ -250,6 +254,8 @@ class Home extends Component {
                         label: tooltipItem =>
                           `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`
                       }
+                      mode: `index`,
+                      intersect: false
                     }
                   }}
                 />
@@ -357,9 +363,10 @@ Home.propTypes = {
   temp: PropTypes.arrayOf(PropTypes.object),
   latestCo2Value: PropTypes.number,
   latestTempValue: PropTypes.number,
+  latestIceMeltValue: PropTypes.number,
+  latestTempYear: PropTypes.number,
   slrTrend: PropTypes.number,
   latestCo2Year: PropTypes.number,
-  latestTempYear: PropTypes.number,
   tenYearWarming: PropTypes.number.isRequired
 };
 

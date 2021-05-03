@@ -33,7 +33,7 @@ const getTemp = async () => {
     Math.round(
       (temp.find(value => value.x === latestTempYear).y -
         temp.find(value => value.x === latestTempYear - 10).y) *
-      100
+        100
     ) / 100;
 
   return { temp, latestTempYear, tenYearWarming };
@@ -74,6 +74,31 @@ const getSlr = async () => {
   return Number(results[1]);
 };
 
+const getIceMelt = async () => {
+  let { data: iceMelt } = await axios.get(
+    `https://climate.nasa.gov/system/internal_resources/details/original/2264_N_09_extent_v3.0.csv`
+  );
+
+  iceMelt = await csv({ noheader: true }).fromString(
+    iceMelt.replace(/".*"\n/g, ``)
+  );
+
+  iceMelt = iceMelt
+    .filter(
+      x =>
+        x.field1 &&
+        x.field5 &&
+        !isNaN(x.field1) &&
+        !isNaN(x.field5) &&
+        dateFromYear(x.field1) > minYear
+    )
+    .map(x => ({ x: dateFromYear(x.field1), y: Number(x.field5) }));
+
+  const latestIceMeltYear = Math.max(...iceMelt.map(val => val.x));
+
+  return { iceMelt, latestIceMeltYear };
+};
+
 export default {
   getRoutes: async () => {
     const { temp, latestTempYear, tenYearWarming } = await getTemp();
@@ -81,6 +106,8 @@ export default {
     const { co2, latestCo2Year } = await getCo2();
 
     const slrTrend = await getSlr();
+
+    const { iceMelt, latestIceMeltYear } = await getIceMelt();
 
     return [
       {
@@ -94,6 +121,9 @@ export default {
           tenYearWarming,
           latestCo2Value: co2.find(value => value.x === latestCo2Year).y,
           latestTempValue: temp.find(value => value.x === latestTempYear).y,
+          latestIceMeltValue: iceMelt.find(
+            value => value.x === latestIceMeltYear
+          ).y,
           slrTrend
         })
       }
