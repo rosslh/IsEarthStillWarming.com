@@ -8,7 +8,7 @@ import { red, redDark } from '../utils/colors';
 import ContentWrapper from './contentWrapper';
 import fire from '../../public/assets/fire-icon.svg';
 
-const Header = ({ currentCo2, currentTemp, currentSlr }) => (
+const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
   <header
     css={css`
       background-color: ${red};
@@ -88,6 +88,7 @@ const Header = ({ currentCo2, currentTemp, currentSlr }) => (
       currentCo2={currentCo2}
       currentTemp={currentTemp}
       currentSlr={currentSlr}
+      currentIceMelt={currentIceMelt}
     />
     <div
       css={css`
@@ -128,7 +129,8 @@ const Header = ({ currentCo2, currentTemp, currentSlr }) => (
 Header.propTypes = {
   currentCo2: PropTypes.number.isRequired,
   currentTemp: PropTypes.number.isRequired,
-  currentSlr: PropTypes.number.isRequired
+  currentSlr: PropTypes.number.isRequired,
+  currentIceMelt: PropTypes.number.isRequired
 };
 
 export default Header;
