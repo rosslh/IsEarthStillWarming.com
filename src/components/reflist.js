@@ -80,7 +80,7 @@ const RefList = () => (
       list-style-position: inside;
       margin: 0;
       padding: 0;
-      font-size: 80%;
+      font-size: 90%;
     `}
   >
     {citations.map(x => (
