@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 import { rotate } from 'unitransform';
 import { red } from '../utils/colors';
 
-const getColor = isGreen => (isGreen ? rotate(red, 115) : red);
+const getColor = (isGreen) => (isGreen ? rotate(red, 115) : red);
 
 const Stamp = ({ children, green }) => (
   <div>
@@ -36,7 +36,7 @@ const Stamp = ({ children, green }) => (
 
 Stamp.propTypes = {
   green: PropTypes.bool,
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
 };
 
 export default Stamp;

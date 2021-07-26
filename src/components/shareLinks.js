@@ -4,14 +4,14 @@ import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  RedditShareButton
+  RedditShareButton,
 } from 'react-share';
 import {
   FaRedditAlien,
   FaFacebookF,
   FaLinkedinIn,
   FaTwitter,
-  FaShare
+  FaShare,
 } from 'react-icons/fa';
 
 import { red } from '../utils/colors';
@@ -21,17 +21,16 @@ const ShareButtons = () => {
   const title = `IsEarthStillWarming.com`;
   const fullTitle = `IsEarthStillWarming.com: Global warming information and data`;
 
-  const share = () =>
-    window.navigator.share({
-      url: shareUrl,
-      text: `Global warming information and data`,
-      title
-    });
+  const share = () => window.navigator.share({
+    url: shareUrl,
+    text: `Global warming information and data`,
+    title,
+  });
 
   if (
-    typeof window !== `undefined` &&
-    window.navigator &&
-    window.navigator.share
+    typeof window !== `undefined`
+    && window.navigator
+    && window.navigator.share
   ) {
     return (
       <div

@@ -8,7 +8,9 @@ import { red, redDark } from '../utils/colors';
 import ContentWrapper from './contentWrapper';
 import fire from '../../public/assets/fire-icon.svg';
 
-const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
+const Header = ({
+  currentCo2, currentTemp, currentSlr, currentIceMelt,
+}) => (
   <header
     css={css`
       background-color: ${red};
@@ -100,12 +102,14 @@ const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
         font-family: 'Open Sans', sans-serif !important;
       `}
     >
-      This website is kept up-to-date with climate data from{` `}
+      This website is kept up-to-date with climate data from
+      {` `}
       <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
         NASA
       </a>
       {` `}
-      and{` `}
+      and
+      {` `}
       <a
         href="https://scripps.ucsd.edu/"
         target="_blank"
@@ -114,7 +118,8 @@ const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
         Scripps Institution of Oceanography
       </a>
       <br />
-      Altimetry data are provided by the{` `}
+      Altimetry data are provided by the
+      {` `}
       <a
         href="https://www.star.nesdis.noaa.gov/sod/lsa/index.php"
         target="_blank"
@@ -130,7 +135,7 @@ Header.propTypes = {
   currentCo2: PropTypes.number.isRequired,
   currentTemp: PropTypes.number.isRequired,
   currentSlr: PropTypes.number.isRequired,
-  currentIceMelt: PropTypes.number.isRequired
+  currentIceMelt: PropTypes.number.isRequired,
 };
 
 export default Header;

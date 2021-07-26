@@ -1,5 +1,7 @@
 import React from 'react';
-import { Root, Routes, addPrefetchExcludes, Head } from 'react-static';
+import {
+  Root, Routes, addPrefetchExcludes, Head,
+} from 'react-static';
 //
 import { Router } from '@reach/router';
 

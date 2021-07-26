@@ -1,11 +1,10 @@
 module.exports = {
-  extends: ['react-tools', 'airbnb', 'plugin:prettier/recommended', 'prettier/react'],
-  plugins: ['cypress', 'react', 'prettier'],
+  extends: ['react-tools', 'airbnb'],
+  plugins: ['cypress', 'react'],
   env: {
     'cypress/globals': true
   },
   rules: {
-    'prettier/prettier': 'error',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {

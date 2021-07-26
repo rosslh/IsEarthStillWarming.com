@@ -10,7 +10,7 @@ const Cite = ({ name }) => (
       padding: 0 1px;
     `}
   >
-    <a href={`#ref-${name}`}>{citations.findIndex(x => x.name === name) + 1}</a>
+    <a href={`#ref-${name}`}>{citations.findIndex((x) => x.name === name) + 1}</a>
   </sup>
 );
 

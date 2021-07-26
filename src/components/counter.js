@@ -4,7 +4,9 @@ import { css } from '@emotion/core';
 import ContentWrapper from './contentWrapper';
 import CO2 from './co2';
 
-const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
+const Counter = ({
+  currentCo2, currentTemp, currentSlr, currentIceMelt,
+}) => (
   <ContentWrapper
     style={`
       padding: 0;
@@ -35,7 +37,9 @@ const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
     >
       <div>
         <div>
-          Atmospheric <CO2 />
+          Atmospheric
+          {` `}
+          <CO2 />
         </div>
         <strong id="currentCo2Counter">
           {currentCo2}
@@ -45,21 +49,25 @@ const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
       <div>
         <div>Global temperature anomaly</div>
         <strong id="currentTempCounter">
-          +{currentTemp}
+          +
+          {currentTemp}
           °C
         </strong>
       </div>
       <div>
         <div>Global Sea Level Rise</div>
         <strong id="currentSlrCounter">
-          +{currentSlr}
+          +
+          {currentSlr}
           mm/year
         </strong>
       </div>
       <div>
         <div>Arctic Sea Ice Minimum</div>
         <strong id="currentIceMeltCounter">
-          {currentIceMelt}M km<sup>2</sup>
+          {currentIceMelt}
+          M km
+          <sup>2</sup>
         </strong>
       </div>
     </div>
@@ -70,7 +78,7 @@ Counter.propTypes = {
   currentCo2: PropTypes.number.isRequired,
   currentTemp: PropTypes.number.isRequired,
   currentSlr: PropTypes.number.isRequired,
-  currentIceMelt: PropTypes.number.isRequired
+  currentIceMelt: PropTypes.number.isRequired,
 };
 
 export default Counter;

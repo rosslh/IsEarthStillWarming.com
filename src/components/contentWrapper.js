@@ -20,7 +20,7 @@ const ContentWrapper = ({ children, style }) => (
 
 ContentWrapper.propTypes = {
   children: PropTypes.any,
-  style: PropTypes.string
+  style: PropTypes.string,
 };
 
 export default ContentWrapper;

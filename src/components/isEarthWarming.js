@@ -10,7 +10,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
   const currentYear = new Date().getFullYear();
   const target = latestTempValue >= 1.5 ? 2 : 1.5;
   const projectedYear = Math.trunc(
-    currentYear + (target - latestTempValue) / (tenYearWarming / 10)
+    currentYear + (target - latestTempValue) / (tenYearWarming / 10),
   );
   const styles = css`
     display: flex;
@@ -30,7 +30,9 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
       <div css={styles}>
         <Stamp>Yes</Stamp>
         <p>
-          Over the past 10 years, Earth{`'`}s average temperature has risen by
+          Over the past 10 years, Earth
+          {`'`}
+          s average temperature has risen by
           {` `}
           <span id="tenYearWarming">{tenYearWarming}</span>
           °C.
@@ -49,7 +51,9 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
       <div css={styles}>
         <Stamp green>Maybe?</Stamp>
         <p>
-          Over the past 10 years, Earth{`'`}s temperature has only risen by
+          Over the past 10 years, Earth
+          {`'`}
+          s temperature has only risen by
           {` `}
           <span id="tenYearWarming">{tenYearWarming}</span>
           °C.
@@ -62,7 +66,9 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
     <div css={styles}>
       <Stamp green>No</Stamp>
       <p>
-        Over the past 10 years, Earth{`'`}s temperature has dropped by
+        Over the past 10 years, Earth
+        {`'`}
+        s temperature has dropped by
         {` `}
         <span id="tenYearWarming">{Math.abs(tenYearWarming)}</span>
         °C.
@@ -74,7 +80,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
 
 IsEarthWarming.propTypes = {
   tenYearWarming: PropTypes.number.isRequired,
-  latestTempValue: PropTypes.number.isRequired
+  latestTempValue: PropTypes.number.isRequired,
 };
 
 export default IsEarthWarming;

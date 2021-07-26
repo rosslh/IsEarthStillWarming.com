@@ -46,7 +46,7 @@ class Home extends Component {
     `;
     const datasetOptions = {
       borderColor: lighten(red, 10),
-      backgroundColor: desaturate(lighten(red, 20), 30)
+      backgroundColor: desaturate(lighten(red, 20), 30),
     };
 
     const {
@@ -58,7 +58,7 @@ class Home extends Component {
       latestCo2Year,
       latestIceMeltValue,
       latestTempYear,
-      tenYearWarming
+      tenYearWarming,
     } = this.props;
 
     return (
@@ -109,7 +109,14 @@ class Home extends Component {
               primarily caused by the release of carbon dioxide (
               <CO2 />
               ) into the atmosphere by burning fossil fuels.
-              <Cite name="nasa" /> <CO2 /> is a <em>greenhouse gas</em>, meaning
+              <Cite name="nasa" />
+              {` `}
+              <CO2 />
+              {` `}
+              is a
+              {` `}
+              <em>greenhouse gas</em>
+              , meaning
               it traps heat in Earth
               {`'`}
               s atmosphere rather than allowing it to radiate into space.
@@ -117,7 +124,8 @@ class Home extends Component {
             </p>
             <p>
               Since the mid 1950s, Earth
-              {`'`}s temperature has had a clear positive trend (see fig. 1).
+              {`'`}
+              s temperature has had a clear positive trend (see fig. 1).
             </p>
             <div css={figureWrapperStyle}>
               <div>
@@ -127,35 +135,34 @@ class Home extends Component {
                       {
                         label: `Global average temperature`,
                         data: temp,
-                        ...datasetOptions
-                      }
-                    ]
+                        ...datasetOptions,
+                      },
+                    ],
                   }}
                   options={{
                     legend: {
-                      display: false
+                      display: false,
                     },
                     scales: {
                       yAxes: [
                         {
                           ticks: {
-                            callback: value => `${value}°C`
+                            callback: (value) => `${value}°C`,
                           },
                           scaleLabel: {
                             display: true,
-                            labelString: `Global average temperature`
-                          }
-                        }
-                      ]
+                            labelString: `Global average temperature`,
+                          },
+                        },
+                      ],
                     },
                     tooltips: {
                       callbacks: {
-                        label: tooltipItem =>
-                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`
+                        label: (tooltipItem) => `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`,
                       },
                       mode: `index`,
-                      intersect: false
-                    }
+                      intersect: false,
+                    },
                   }}
                 />
               </div>
@@ -168,13 +175,18 @@ class Home extends Component {
               The amount Earth has warmed is measured against the average
               pre-industrial global temperature. As of
               {` `}
-              <span id="latestTempYear">{latestTempYear}</span>, Earth
-              {`'`}s temperature is approximately
+              <span id="latestTempYear">{latestTempYear}</span>
+              , Earth
+              {`'`}
+              s temperature is approximately
               {` `}
               <span id="latestTempValue">{latestTempValue}</span>
               °C above pre-industrial levels.
-              <Cite name="tempData" /> If the planet
-              {`'`}s temperature continues to rise, we can expect many
+              <Cite name="tempData" />
+              {` `}
+              If the planet
+              {`'`}
+              s temperature continues to rise, we can expect many
               environmental and societal impacts, the most significant of which
               we will explain in this paper.
             </p>
@@ -190,12 +202,16 @@ class Home extends Component {
               In 2018, the UN released a report detailing the potential impacts
               of human-induced climate change and possible preventative
               measures. Its key finding was that staying below the 1.5°C target
-              is possible, but would require {`"`}
+              is possible, but would require
+              {` `}
+              {`"`}
               rapid, far-reaching, and unprecedented changes in all aspects of
               society
               {`"`}
               .
-              <Cite name="1.5C-press-release" /> Human carbon emissions would
+              <Cite name="1.5C-press-release" />
+              {` `}
+              Human carbon emissions would
               need to decrease by 45% from 2010 levels by 2030, and reach net
               zero by 2050.
               <Cite name="1.5C" />
@@ -203,7 +219,9 @@ class Home extends Component {
             <p>
               The primary cause of global warming is the human emission of
               {` `}
-              <CO2 /> into the atmosphere. This
+              <CO2 />
+              {` `}
+              into the atmosphere. This
               <CO2 />
               {` `}
               is produced by burning fossil fuels, mostly from electricity
@@ -213,8 +231,10 @@ class Home extends Component {
               {` `}
               As of
               {` `}
-              <span id="latestCo2Year">{latestCo2Year}</span>, the atmosphere
-              {`'`}s carbon concentration is
+              <span id="latestCo2Year">{latestCo2Year}</span>
+              , the atmosphere
+              {`'`}
+              s carbon concentration is
               {` `}
               <span id="latestCo2Value">{latestCo2Value}</span>
               ppm (see fig. 2).
@@ -228,35 +248,34 @@ class Home extends Component {
                       {
                         label: `Atmospheric CO2`,
                         data: co2,
-                        ...datasetOptions
-                      }
-                    ]
+                        ...datasetOptions,
+                      },
+                    ],
                   }}
                   options={{
                     legend: {
-                      display: false
+                      display: false,
                     },
                     scales: {
                       yAxes: [
                         {
                           ticks: {
-                            callback: value => `${value}ppm`
+                            callback: (value) => `${value}ppm`,
                           },
                           scaleLabel: {
                             display: true,
-                            labelString: `Atmospheric CO2 concentration`
-                          }
-                        }
-                      ]
+                            labelString: `Atmospheric CO2 concentration`,
+                          },
+                        },
+                      ],
                     },
                     tooltips: {
                       callbacks: {
-                        label: tooltipItem =>
-                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`
+                        label: (tooltipItem) => `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`,
                       },
                       mode: `index`,
-                      intersect: false
-                    }
+                      intersect: false,
+                    },
                   }}
                 />
               </div>
@@ -267,10 +286,13 @@ class Home extends Component {
               </strong>
             </div>
             <p>
-              Since <CO2 />
+              Since
+              {` `}
+              <CO2 />
               {` `}
               abundance in the atmosphere is directly linked to the Earth
-              {`'`}s temperature increase, limiting atmospheric carbon has been
+              {`'`}
+              s temperature increase, limiting atmospheric carbon has been
               identified as vital to mitigating global warming. As part of the
               Kyoto Protocol climate convention, scientists have 450ppm as a
               good upper limit for carbon concentration in order to keep global
@@ -281,7 +303,9 @@ class Home extends Component {
               Global warming will impact a wide range of issues including
               health, livelihoods, food security, water supply, human security,
               and economic growth.
-              <Cite name="1.5C" /> The severity of these impacts is determined
+              <Cite name="1.5C" />
+              {` `}
+              The severity of these impacts is determined
               by how hot Earth gets; reaching 2°C above the pre-industrial
               average would put millions more people at risk than if global
               warming was limited to 1.5°C.
@@ -297,7 +321,9 @@ class Home extends Component {
             <p>
               The UN projects more frequent weather extremes (both heavy rain
               and drought) and temperature extremes due to global warming.
-              <Cite name="1.5C" /> The most immediate risk to the environment is
+              <Cite name="1.5C" />
+              {` `}
+              The most immediate risk to the environment is
               the dying-off of coral reefs- a process that has already started
               on a large scale (see fig. 3).
             </p>
@@ -316,7 +342,9 @@ class Home extends Component {
               disease. Global increases in temperature are estimated to alter
               the distribution of insects that are known vectors for pathogens,
               such as mosquitos.
-              <Cite name="pathogenMigration" /> Studies in China show that
+              <Cite name="pathogenMigration" />
+              {` `}
+              Studies in China show that
               increasing temperatures positively affect the viability of disease
               transfer by decreasing the viral incubation time in vectors --
               leading to increased infection rates.
@@ -341,7 +369,9 @@ class Home extends Component {
             <p>
               Other already-visible impacts of global warming include worldwide
               glacier and sea ice melting, which contributes to sea level rise.
-              <Cite name="natGeo" /> However, thermal expansion is a larger
+              <Cite name="natGeo" />
+              {` `}
+              However, thermal expansion is a larger
               component in this, contributing 70-75% of sea level rise.
               <Cite name="ipcc" />
               {` `}
@@ -367,7 +397,7 @@ Home.propTypes = {
   latestTempYear: PropTypes.number,
   slrTrend: PropTypes.number,
   latestCo2Year: PropTypes.number,
-  tenYearWarming: PropTypes.number.isRequired
+  tenYearWarming: PropTypes.number.isRequired,
 };
 
 export default withRouteData(Home);
