@@ -73,6 +73,16 @@ export const citations = [
     citation: `"How does climate change cause extinction?". Abigail E. Cahill, Matthew E. Aiello-Lammens, M. Caitlin Fisher-Reid, Xia Hua, Caitlin J. Karanewsky, Hae Yeong Ryu, Gena C. Sbeglia, Fabrizio Spagnolo, John B. Waldron, Omar Warsi and John J. Wiens. (2013)`,
     url: `https://royalsocietypublishing.org/doi/10.1098/rspb.2012.1890#d3e1498`,
   },
+  {
+    name: `zoonoticDisease`,
+    citation: `Mark Everard, Paul Johnston, David Santillo, Chad Staddon, The role of ecosystems in mitigation and management of Covid-19 and other zoonoses, Environmental Science & Policy, Volume 111, 2020, Pages 7-17, ISSN 1462-9011`,
+    url: `https://doi.org/10.1016/j.envsci.2020.05.017`,
+  },
+  {
+    name: `zoonoticDiseaseTwo`,
+    citation: `Arora NK, Mishra J. COVID-19 and importance of environmental sustainability [published online ahead of print, 2020 May 13]. Environmental Sustainability. 2020;1-3. doi:10.1007/s42398-020-00107-z`,
+    url: `https://doi.org/10.1007/s42398-020-00107-z`,
+  },
 ];
 const RefList = () => (
   <ol

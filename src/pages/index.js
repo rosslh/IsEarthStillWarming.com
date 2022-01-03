@@ -367,6 +367,22 @@ class Home extends Component {
               <Cite name="speciesExtinction" />
             </p>
             <p>
+              As the threat to biodiversity looms, so does the increase of zoonotic
+              disease across the globe. A greater biodiversity gives pathogens less
+              room to dominate and spread, and as humans exploit and degrade these
+              vital ecosystems, conditions become more favorable to these hosts,
+              vectors, and pathogens.
+              <Cite name="zoonoticDisease" />
+              {` `}
+              With the rise of COVID-19 and its effects
+              being heavily felt world-wide, it is unmistakably clear that the
+              spread of these zoonotic diseases is a major outcome of our overexploitation
+              of natural resources and vital habitats. As demand for meat and land
+              increase, massive deforestation has significantly raised human contact
+              with wild animals and their body fluids which may be vectors for pathogens.
+              <Cite name="zoonoticDiseaseTwo" />
+            </p>
+            <p>
               Other already-visible impacts of global warming include worldwide
               glacier and sea ice melting, which contributes to sea level rise.
               <Cite name="natGeo" />
