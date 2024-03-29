@@ -62,7 +62,7 @@
     "eslint-plugin-react": "^7.16.0",
     "husky": "^4.3.0",
     "lint-staged": "^9.4.2",
-    "serve": "^11.2.0",
+    "serve": "^14.2.1",
     "start-server-and-test": "^1.10.6"
   }
 }
