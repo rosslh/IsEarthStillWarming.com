@@ -2,20 +2,20 @@ name: Tests
 on:
   push:
     branches:
-      - '*'
-      - '*/*'
+      - "*"
+      - "*/*"
       - "dependabot/*/*/*"
-      - '!master' # excludes master
+      - "!master" # excludes master
 
 jobs:
   Test:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
       - name: npm install and build
         run: |
           npm install
@@ -23,6 +23,3 @@ jobs:
       - name: test
         run: |
           npm run test
-      - name: deploy
-        run: |
-          curl -X POST -d {} ${{ secrets.BUILD_HOOK }}
