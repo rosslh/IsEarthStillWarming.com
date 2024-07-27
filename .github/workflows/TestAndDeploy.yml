@@ -10,14 +10,14 @@ jobs:
   TestAndDeploy:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version-file: ".nvmrc"
       - name: npm install and build
         run: |
-          npm i
+          npm ci
           npm run build
       - name: test
         run: |

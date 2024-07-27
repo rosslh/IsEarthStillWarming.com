@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
-import Stamp from './stamp';
-import Cite from './cite';
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "@emotion/react";
+import Stamp from "./stamp";
+import Cite from "./cite";
 
 const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
   const warmedBy = tenYearWarming;
@@ -10,7 +10,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
   const currentYear = new Date().getFullYear();
   const target = latestTempValue >= 1.5 ? 2 : 1.5;
   const projectedYear = Math.trunc(
-    currentYear + (target - latestTempValue) / (tenYearWarming / 10),
+    currentYear + (target - latestTempValue) / (tenYearWarming / 10)
   );
   const styles = css`
     display: flex;
@@ -31,8 +31,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
         <Stamp>Yes</Stamp>
         <p>
           Over the past 10 years, Earth
-          {`'`}
-          s average temperature has risen by
+          {`'`}s average temperature has risen by
           {` `}
           <span id="tenYearWarming">{tenYearWarming}</span>
           °C.
@@ -52,8 +51,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
         <Stamp green>Maybe?</Stamp>
         <p>
           Over the past 10 years, Earth
-          {`'`}
-          s temperature has only risen by
+          {`'`}s temperature has only risen by
           {` `}
           <span id="tenYearWarming">{tenYearWarming}</span>
           °C.
@@ -67,8 +65,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
       <Stamp green>No</Stamp>
       <p>
         Over the past 10 years, Earth
-        {`'`}
-        s temperature has dropped by
+        {`'`}s temperature has dropped by
         {` `}
         <span id="tenYearWarming">{Math.abs(tenYearWarming)}</span>
         °C.

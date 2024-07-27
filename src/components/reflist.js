@@ -1,6 +1,6 @@
-import React from 'react';
-import { css } from '@emotion/core';
-import { redExtraLight, redLight } from '../utils/colors';
+import React from "react";
+import { css } from "@emotion/react";
+import { redExtraLight, redLight } from "../utils/colors";
 
 export const citations = [
   {

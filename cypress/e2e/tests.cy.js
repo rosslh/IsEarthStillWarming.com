@@ -1,5 +1,5 @@
 describe(`Unit test the landing page`, () => {
-  it(`loads`, () => {
+  beforeEach(() => {
     cy.visit(`/`);
   });
   it(`has latest CO2 value`, () => {
@@ -7,7 +7,7 @@ describe(`Unit test the landing page`, () => {
       cy
         .get(`#latestCo2Value`)
         .invoke(`text`)
-        .then(text => {
+        .then((text) => {
           assert(!isNaN(text));
         })
     );
@@ -18,7 +18,7 @@ describe(`Unit test the landing page`, () => {
       cy
         .get(`#latestTempValue`)
         .invoke(`text`)
-        .then(text => {
+        .then((text) => {
           assert(!isNaN(text));
         })
     );
@@ -29,7 +29,7 @@ describe(`Unit test the landing page`, () => {
       cy
         .get(`#latestCo2Year`)
         .invoke(`text`)
-        .then(text => {
+        .then((text) => {
           assert(!isNaN(text));
         })
     );
@@ -40,7 +40,7 @@ describe(`Unit test the landing page`, () => {
       cy
         .get(`#latestTempYear`)
         .invoke(`text`)
-        .then(text => {
+        .then((text) => {
           assert(!isNaN(text));
         })
     );
@@ -51,7 +51,7 @@ describe(`Unit test the landing page`, () => {
       cy
         .get(`#tenYearWarming`)
         .invoke(`text`)
-        .then(text => {
+        .then((text) => {
           assert(!isNaN(text));
         })
     );
@@ -62,7 +62,7 @@ describe(`Unit test the landing page`, () => {
       cy
         .get(`#stamp`)
         .invoke(`text`)
-        .then(text => {
+        .then((text) => {
           assert(text);
         })
     );

@@ -1,16 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { lighten } from 'unitransform';
-import { css } from '@emotion/core';
+import React from "react";
+import PropTypes from "prop-types";
+import { lighten } from "unitransform";
+import { css } from "@emotion/react";
 
-import Counter from './counter';
-import { red, redDark } from '../utils/colors';
-import ContentWrapper from './contentWrapper';
-import fire from '../../public/assets/fire-icon.svg';
+import Counter from "./counter";
+import { red, redDark } from "../utils/colors";
+import ContentWrapper from "./contentWrapper";
+import fire from "../../public/assets/fire-icon.svg";
 
-const Header = ({
-  currentCo2, currentTemp, currentSlr, currentIceMelt,
-}) => (
+const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
   <header
     css={css`
       background-color: ${red};
@@ -99,7 +97,7 @@ const Header = ({
         text-align: center;
         margin-top: 0.5rem;
         padding: 1.5rem 1rem 2.5rem 1rem;
-        font-family: 'Open Sans', sans-serif !important;
+        font-family: "Open Sans", sans-serif !important;
       `}
     >
       This website is kept up-to-date with climate data from

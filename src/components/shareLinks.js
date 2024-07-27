@@ -1,36 +1,37 @@
-import React from 'react';
-import { css, ClassNames } from '@emotion/core';
+import React from "react";
+import { css, ClassNames } from "@emotion/react";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   RedditShareButton,
-} from 'react-share';
+} from "react-share";
 import {
   FaRedditAlien,
   FaFacebookF,
   FaLinkedinIn,
   FaTwitter,
   FaShare,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
-import { red } from '../utils/colors';
+import { red } from "../utils/colors";
 
 const ShareButtons = () => {
   const shareUrl = `https://isearthstillwarming.com`;
   const title = `IsEarthStillWarming.com`;
   const fullTitle = `IsEarthStillWarming.com: Global warming information and data`;
 
-  const share = () => window.navigator.share({
-    url: shareUrl,
-    text: `Global warming information and data`,
-    title,
-  });
+  const share = () =>
+    window.navigator.share({
+      url: shareUrl,
+      text: `Global warming information and data`,
+      title,
+    });
 
   if (
-    typeof window !== `undefined`
-    && window.navigator
-    && window.navigator.share
+    typeof window !== `undefined` &&
+    window.navigator &&
+    window.navigator.share
   ) {
     return (
       <div
@@ -86,16 +87,16 @@ const ShareButtons = () => {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            .SocialMediaShareButton {
+            .react-share__ShareButton {
               cursor: pointer;
               :hover {
                 opacity: 0.9;
               }
               margin: 0 0.3rem;
-              color: white;
+              color: white !important;
               height: 1.6rem;
               width: 1.6rem;
-              font-size: 0.9rem;
+              font-size: 0.9rem !important;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -113,7 +114,7 @@ const ShareButtons = () => {
           </span>
           <FacebookShareButton
             className={style`
-              background-color: #3B579D;
+              background-color: #3B579D !important;
             `}
             url={shareUrl}
             quote={fullTitle}
@@ -122,7 +123,7 @@ const ShareButtons = () => {
           </FacebookShareButton>
           <TwitterShareButton
             className={style`
-              background-color: #2CAAE1;
+              background-color: #2CAAE1 !important;
             `}
             url={shareUrl}
             title={fullTitle}
@@ -140,7 +141,7 @@ const ShareButtons = () => {
           </RedditShareButton>
           <LinkedinShareButton
             className={style`
-              background-color: #007BB6;
+              background-color: #007BB6 !important;
             `}
             url={shareUrl}
           >

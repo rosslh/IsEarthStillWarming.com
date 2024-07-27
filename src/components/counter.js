@@ -1,12 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
-import ContentWrapper from './contentWrapper';
-import CO2 from './co2';
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "@emotion/react";
+import ContentWrapper from "./contentWrapper";
+import CO2 from "./co2";
 
-const Counter = ({
-  currentCo2, currentTemp, currentSlr, currentIceMelt,
-}) => (
+const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
   <ContentWrapper
     style={`
       padding: 0;
@@ -49,24 +47,21 @@ const Counter = ({
       <div>
         <div>Global temperature anomaly</div>
         <strong id="currentTempCounter">
-          +
-          {currentTemp}
+          +{currentTemp}
           °C
         </strong>
       </div>
       <div>
         <div>Global Sea Level Rise</div>
         <strong id="currentSlrCounter">
-          +
-          {currentSlr}
+          +{currentSlr}
           mm/year
         </strong>
       </div>
       <div>
         <div>Arctic Sea Ice Minimum</div>
         <strong id="currentIceMeltCounter">
-          {currentIceMelt}
-          M km
+          {currentIceMelt}M km
           <sup>2</sup>
         </strong>
       </div>

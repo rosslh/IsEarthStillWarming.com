@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
-import React, { memo } from 'react';
-import { citations } from './reflist';
+import PropTypes from "prop-types";
+import { css } from "@emotion/react";
+import React, { memo } from "react";
+import { citations } from "./reflist";
 
 const Cite = ({ name }) => (
   <sup
@@ -10,7 +10,9 @@ const Cite = ({ name }) => (
       padding: 0 1px;
     `}
   >
-    <a href={`#ref-${name}`}>{citations.findIndex((x) => x.name === name) + 1}</a>
+    <a href={`#ref-${name}`}>
+      {citations.findIndex((x) => x.name === name) + 1}
+    </a>
   </sup>
 );
 

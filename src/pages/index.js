@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { lighten, desaturate } from 'unitransform';
-import { css } from '@emotion/core';
-import { withRouteData } from 'react-static';
-import { Scatter } from 'react-chartjs-2';
-import Cite from '../components/cite';
-import RefList from '../components/reflist';
-import IsEarthWarming from '../components/isEarthWarming';
-import Header from '../components/header';
-import CO2 from '../components/co2';
-import ContentWrapper from '../components/contentWrapper';
-import { red } from '../utils/colors';
-import ShareLinks from '../components/shareLinks';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { lighten, desaturate } from "unitransform";
+import { css } from "@emotion/react";
+import { withRouteData } from "react-static";
+import { Scatter } from "react-chartjs-2";
+import Cite from "../components/cite";
+import RefList from "../components/reflist";
+import IsEarthWarming from "../components/isEarthWarming";
+import Header from "../components/header";
+import CO2 from "../components/co2";
+import ContentWrapper from "../components/contentWrapper";
+import { red } from "../utils/colors";
+import ShareLinks from "../components/shareLinks";
 
 class Home extends Component {
   constructor(props) {
@@ -23,19 +23,19 @@ class Home extends Component {
     const figureWrapperStyle = css`
       width: 80%;
       margin: 3rem auto;
-      >div{
-        padding 1.5rem;
-        box-shadow:rgba(00, 00, 00, 0.2) 0px 6px 16px 0px;
+      > div {
+        padding: 1.5rem;
+        box-shadow: rgba(00, 00, 00, 0.2) 0px 6px 16px 0px;
         border-radius: 5px;
         > img {
           width: 100%;
         }
-      @media (max-width: 700px) {
-        padding: 0;
-        box-shadow: none;
+        @media (max-width: 700px) {
+          padding: 0;
+          box-shadow: none;
+        }
       }
-      }
-      >strong {
+      > strong {
         margin-top: 1.5rem;
         display: block;
         text-align: center;
@@ -113,19 +113,15 @@ class Home extends Component {
               {` `}
               <CO2 />
               {` `}
-              is a
-              {` `}
-              <em>greenhouse gas</em>
-              , meaning
-              it traps heat in Earth
+              is a{` `}
+              <em>greenhouse gas</em>, meaning it traps heat in Earth
               {`'`}
               s atmosphere rather than allowing it to radiate into space.
               <Cite name="nasa" />
             </p>
             <p>
               Since the mid 1950s, Earth
-              {`'`}
-              s temperature has had a clear positive trend (see fig. 1).
+              {`'`}s temperature has had a clear positive trend (see fig. 1).
             </p>
             <div css={figureWrapperStyle}>
               <div>
@@ -158,7 +154,8 @@ class Home extends Component {
                     },
                     tooltips: {
                       callbacks: {
-                        label: (tooltipItem) => `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`,
+                        label: (tooltipItem) =>
+                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`,
                       },
                       mode: `index`,
                       intersect: false,
@@ -175,18 +172,15 @@ class Home extends Component {
               The amount Earth has warmed is measured against the average
               pre-industrial global temperature. As of
               {` `}
-              <span id="latestTempYear">{latestTempYear}</span>
-              , Earth
-              {`'`}
-              s temperature is approximately
+              <span id="latestTempYear">{latestTempYear}</span>, Earth
+              {`'`}s temperature is approximately
               {` `}
               <span id="latestTempValue">{latestTempValue}</span>
               °C above pre-industrial levels.
               <Cite name="tempData" />
               {` `}
               If the planet
-              {`'`}
-              s temperature continues to rise, we can expect many
+              {`'`}s temperature continues to rise, we can expect many
               environmental and societal impacts, the most significant of which
               we will explain in this paper.
             </p>
@@ -211,9 +205,8 @@ class Home extends Component {
               .
               <Cite name="1.5C-press-release" />
               {` `}
-              Human carbon emissions would
-              need to decrease by 45% from 2010 levels by 2030, and reach net
-              zero by 2050.
+              Human carbon emissions would need to decrease by 45% from 2010
+              levels by 2030, and reach net zero by 2050.
               <Cite name="1.5C" />
             </p>
             <p>
@@ -231,10 +224,8 @@ class Home extends Component {
               {` `}
               As of
               {` `}
-              <span id="latestCo2Year">{latestCo2Year}</span>
-              , the atmosphere
-              {`'`}
-              s carbon concentration is
+              <span id="latestCo2Year">{latestCo2Year}</span>, the atmosphere
+              {`'`}s carbon concentration is
               {` `}
               <span id="latestCo2Value">{latestCo2Value}</span>
               ppm (see fig. 2).
@@ -271,7 +262,8 @@ class Home extends Component {
                     },
                     tooltips: {
                       callbacks: {
-                        label: (tooltipItem) => `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`,
+                        label: (tooltipItem) =>
+                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`,
                       },
                       mode: `index`,
                       intersect: false,
@@ -291,8 +283,7 @@ class Home extends Component {
               <CO2 />
               {` `}
               abundance in the atmosphere is directly linked to the Earth
-              {`'`}
-              s temperature increase, limiting atmospheric carbon has been
+              {`'`}s temperature increase, limiting atmospheric carbon has been
               identified as vital to mitigating global warming. As part of the
               Kyoto Protocol climate convention, scientists have 450ppm as a
               good upper limit for carbon concentration in order to keep global
@@ -305,10 +296,9 @@ class Home extends Component {
               and economic growth.
               <Cite name="1.5C" />
               {` `}
-              The severity of these impacts is determined
-              by how hot Earth gets; reaching 2°C above the pre-industrial
-              average would put millions more people at risk than if global
-              warming was limited to 1.5°C.
+              The severity of these impacts is determined by how hot Earth gets;
+              reaching 2°C above the pre-industrial average would put millions
+              more people at risk than if global warming was limited to 1.5°C.
               <Cite name="1.5C" />
               {` `}
               Generally speaking,
@@ -323,9 +313,9 @@ class Home extends Component {
               and drought) and temperature extremes due to global warming.
               <Cite name="1.5C" />
               {` `}
-              The most immediate risk to the environment is
-              the dying-off of coral reefs- a process that has already started
-              on a large scale (see fig. 3).
+              The most immediate risk to the environment is the dying-off of
+              coral reefs- a process that has already started on a large scale
+              (see fig. 3).
             </p>
             <div css={figureWrapperStyle}>
               <div>
@@ -344,10 +334,10 @@ class Home extends Component {
               such as mosquitos.
               <Cite name="pathogenMigration" />
               {` `}
-              Studies in China show that
-              increasing temperatures positively affect the viability of disease
-              transfer by decreasing the viral incubation time in vectors --
-              leading to increased infection rates.
+              Studies in China show that increasing temperatures positively
+              affect the viability of disease transfer by decreasing the viral
+              incubation time in vectors -- leading to increased infection
+              rates.
               <Cite name="viralIncubation" />
               The World Health Organization estimated that climate change has
               been responsible for 3% of diarrhoea, 3% of malaria, and 3.8% of
@@ -367,19 +357,20 @@ class Home extends Component {
               <Cite name="speciesExtinction" />
             </p>
             <p>
-              As the threat to biodiversity looms, so does the increase of zoonotic
-              disease across the globe. A greater biodiversity gives pathogens less
-              room to dominate and spread, and as humans exploit and degrade these
-              vital ecosystems, conditions become more favorable to these hosts,
-              vectors, and pathogens.
+              As the threat to biodiversity looms, so does the increase of
+              zoonotic disease across the globe. A greater biodiversity gives
+              pathogens less room to dominate and spread, and as humans exploit
+              and degrade these vital ecosystems, conditions become more
+              favorable to these hosts, vectors, and pathogens.
               <Cite name="zoonoticDisease" />
               {` `}
-              With the rise of COVID-19 and its effects
-              being heavily felt world-wide, it is unmistakably clear that the
-              spread of these zoonotic diseases is a major outcome of our overexploitation
-              of natural resources and vital habitats. As demand for meat and land
-              increase, massive deforestation has significantly raised human contact
-              with wild animals and their body fluids which may be vectors for pathogens.
+              With the rise of COVID-19 and its effects being heavily felt
+              world-wide, it is unmistakably clear that the spread of these
+              zoonotic diseases is a major outcome of our overexploitation of
+              natural resources and vital habitats. As demand for meat and land
+              increase, massive deforestation has significantly raised human
+              contact with wild animals and their body fluids which may be
+              vectors for pathogens.
               <Cite name="zoonoticDiseaseTwo" />
             </p>
             <p>
@@ -387,8 +378,8 @@ class Home extends Component {
               glacier and sea ice melting, which contributes to sea level rise.
               <Cite name="natGeo" />
               {` `}
-              However, thermal expansion is a larger
-              component in this, contributing 70-75% of sea level rise.
+              However, thermal expansion is a larger component in this,
+              contributing 70-75% of sea level rise.
               <Cite name="ipcc" />
               {` `}
               Some regions have experienced severe drought, leading to

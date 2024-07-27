@@ -1,12 +1,10 @@
-import React from 'react';
-import {
-  Root, Routes, addPrefetchExcludes, Head,
-} from 'react-static';
+import React from "react";
+import { Root, Routes, addPrefetchExcludes, Head } from "react-static";
 //
-import { Router } from '@reach/router';
+import { Router } from "@reach/router";
 
-import { css, Global } from '@emotion/core';
-import 'modern-normalize/modern-normalize.css';
+import { css, Global } from "@emotion/react";
+import "modern-normalize/modern-normalize.css";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes([`dynamic`]);
@@ -15,6 +13,12 @@ function App() {
   return (
     <Root>
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Spectral:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
         <title>Global warming information and data</title>
         <meta
           name="description"
@@ -81,16 +85,15 @@ function App() {
       </Head>
       <div
         css={css`
-          @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Spectral:400,400i');
           line-height: 1.6;
           *:not(p) {
-            font-family: 'Open Sans', sans-serif;
+            font-family: "Open Sans", sans-serif;
           }
           p {
-            font-family: 'Spectral', serif;
+            font-family: "Spectral", serif;
             font-size: 18px;
             * {
-              font-family: 'Spectral', serif;
+              font-family: "Spectral", serif;
             }
           }
           h1 {
