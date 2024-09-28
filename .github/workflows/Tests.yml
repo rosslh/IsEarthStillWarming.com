@@ -5,7 +5,7 @@ on:
       - "*"
       - "*/*"
       - "dependabot/*/*/*"
-      - "!master" # excludes master
+      - "!main"
 
 jobs:
   Test:

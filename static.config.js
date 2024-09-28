@@ -3,6 +3,7 @@ import csv from "csvtojson";
 import https from "https";
 import fs from "fs/promises";
 import path from "path";
+import regression from "regression";
 
 const dateFromYear = (year) => Math.trunc(Number(year));
 
@@ -159,15 +160,49 @@ const getSlr = async () => {
     }
   }
 
-  const regexp = /#trend = ([0-9.]+) mm\/year/;
+  const lines = slrData.split("\n");
+  const dataPoints = [];
 
-  const results = [...slrData.match(regexp)];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith("#") || line === "") {
+      continue;
+    }
+    const values = line.split(",");
+    const year = parseFloat(values[0]);
+    let seaLevelAnomaly = null;
+    for (let j = 1; j < values.length; j++) {
+      if (values[j] && values[j] !== "") {
+        seaLevelAnomaly = parseFloat(values[j]);
+        break;
+      }
+    }
+    if (!isNaN(year) && seaLevelAnomaly !== null && !isNaN(seaLevelAnomaly)) {
+      dataPoints.push({ year, seaLevelAnomaly });
+    }
+  }
 
-  return Number(results[1]);
+  const latestYear = dataPoints[dataPoints.length - 1].year;
+  const cutoffYear = latestYear - 5;
+
+  const recentDataPoints = dataPoints.filter(
+    (point) => point.year >= cutoffYear
+  );
+
+  const regressionData = recentDataPoints.map((point) => [
+    point.year,
+    point.seaLevelAnomaly,
+  ]);
+
+  const result = regression.linear(regressionData);
+
+  const yearlyChange = result.equation[0];
+
+  return yearlyChange;
 };
 
-const getIceMelt = async () => {
-  let iceMeltData;
+const getSeaIceMinimumTrend = async () => {
+  let seaIceMinumumsData;
   try {
     const response = await axios.get(
       `https://climate.nasa.gov/system/internal_resources/details/original/2264_N_09_extent_v3.0.csv`,
@@ -179,42 +214,60 @@ const getIceMelt = async () => {
         },
       }
     );
-    iceMeltData = response.data;
-    await writeCachedData("ice-melt.csv", iceMeltData);
+    seaIceMinumumsData = response.data;
+    await writeCachedData("ice-melt.csv", seaIceMinumumsData);
   } catch (error) {
     console.warn("Error fetching ice melt data, using cached data");
-    iceMeltData = await readCachedData("ice-melt.csv");
-    if (!iceMeltData) {
+    seaIceMinumumsData = await readCachedData("ice-melt.csv");
+    if (!seaIceMinumumsData) {
       throw new Error("Failed to fetch ice melt data and no cache available");
     }
   }
 
-  let iceMelt = await csv({ noheader: true }).fromString(
-    iceMeltData.replace(/".*"\n/g, ``)
+  let seaIceMinumums = await csv({
+    noheader: true,
+    headers: ["year", "mo", "data-type", "region", "extent", "area"],
+  }).fromString(seaIceMinumumsData.replace(/".*"\n/g, ``));
+
+  seaIceMinumums = seaIceMinumums
+    .filter((x) => x.year && x.extent && !isNaN(x.year) && !isNaN(x.extent))
+    .map((x) => ({ x: Number(x.year), y: Number(x.extent) }));
+
+  const uniqueYears = [...new Set(seaIceMinumums.map((entry) => entry.x))].sort(
+    (a, b) => a - b
   );
 
-  iceMelt = iceMelt
-    .filter(
-      (x) =>
-        x.field1 &&
-        x.field5 &&
-        !isNaN(x.field1) &&
-        !isNaN(x.field5) &&
-        dateFromYear(x.field1) > minYear
-    )
-    .map((x) => ({ x: dateFromYear(x.field1), y: Number(x.field5) }));
+  const last5Years = uniqueYears.slice(-5);
 
-  const latestIceMeltYear = Math.max(...iceMelt.map((val) => val.x));
+  const last5YearsData = seaIceMinumums.filter((entry) =>
+    last5Years.includes(entry.x)
+  );
 
-  return { iceMelt, latestIceMeltYear };
+  if (last5YearsData.length < 2) {
+    throw new Error("Not enough data to compute regression");
+  }
+
+  const regressionData = last5YearsData.map((entry) => [entry.x, entry.y]);
+
+  const result = regression.linear(regressionData);
+
+  const slope = result.equation[0];
+
+  const averageExtent =
+    last5YearsData.reduce((sum, entry) => sum + entry.y, 0) /
+    last5YearsData.length;
+
+  const percentageChangePerYear = (slope / averageExtent) * 100;
+
+  return Math.round((percentageChangePerYear + Number.EPSILON) * 100) / 100;
 };
 
 export default {
   getRoutes: async () => {
     const { temp, latestTempYear, tenYearWarming } = await getTemp();
     const { co2, latestCo2Year } = await getCo2();
-    const slrTrend = await getSlr();
-    const { iceMelt, latestIceMeltYear } = await getIceMelt();
+    const seaLevelTrend = await getSlr();
+    const seaIceMinimumTrend = await getSeaIceMinimumTrend();
     return [
       {
         path: `/`,
@@ -225,12 +278,11 @@ export default {
           latestCo2Year,
           latestTempYear,
           tenYearWarming,
-          latestCo2Value: co2.find((value) => value.x === latestCo2Year).y,
-          latestTempValue: temp.find((value) => value.x === latestTempYear).y,
-          latestIceMeltValue: iceMelt.find(
-            (value) => value.x === latestIceMeltYear
-          ).y,
-          slrTrend,
+          currentCo2: co2.find((value) => value.x === latestCo2Year).y,
+          currentTemp: temp.find((value) => value.x === latestTempYear).y,
+          seaIceMinimumTrend,
+          seaLevelTrend,
+          lastUpdatedAt: new Date(),
         }),
       },
     ];

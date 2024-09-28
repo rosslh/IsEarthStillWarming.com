@@ -2,7 +2,7 @@ name: Test and deploy
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: "1 */12 * * *"
 

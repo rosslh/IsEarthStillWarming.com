@@ -5,7 +5,7 @@ describe(`Unit test the landing page`, () => {
   it(`has latest CO2 value`, () => {
     assert(
       cy
-        .get(`#latestCo2Value`)
+        .get(`#currentCo2`)
         .invoke(`text`)
         .then((text) => {
           assert(!isNaN(text));
@@ -16,7 +16,7 @@ describe(`Unit test the landing page`, () => {
   it(`has latest temperature value`, () => {
     assert(
       cy
-        .get(`#latestTempValue`)
+        .get(`#currentTemp`)
         .invoke(`text`)
         .then((text) => {
           assert(!isNaN(text));

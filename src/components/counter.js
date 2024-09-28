@@ -4,11 +4,15 @@ import { css } from "@emotion/react";
 import ContentWrapper from "./contentWrapper";
 import CO2 from "./co2";
 
-const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
+const Counter = ({
+  currentCo2,
+  currentTemp,
+  seaLevelTrend,
+  seaIceMinimumTrend,
+}) => (
   <ContentWrapper
     style={`
       padding: 0;
-      margin-top: .5rem;
       text-align: center;
     `}
   >
@@ -17,10 +21,16 @@ const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+
+        @media (max-width: 500px) {
+          flex-direction: column;
+          flex-wrap: none;
+        }
+
         > div {
           flex-grow: 1
           min-height: 80px;
-          padding: 2rem 1.5rem 0;
+          padding: 2rem 1rem 0;
           > div {
             font-size: 0.9rem;
           }
@@ -45,24 +55,23 @@ const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
         </strong>
       </div>
       <div>
-        <div>Global temperature anomaly</div>
+        <div>Temperature anomaly</div>
         <strong id="currentTempCounter">
           +{currentTemp}
           °C
         </strong>
       </div>
       <div>
-        <div>Global Sea Level Rise</div>
-        <strong id="currentSlrCounter">
-          +{currentSlr}
-          mm/year
+        <div>Global Sea Level</div>
+        <strong id="seaLevelTrendCounter">
+          +{seaLevelTrend}
+          mm / year
         </strong>
       </div>
       <div>
         <div>Arctic Sea Ice Minimum</div>
-        <strong id="currentIceMeltCounter">
-          {currentIceMelt}M km
-          <sup>2</sup>
+        <strong id="seaIceMinimumTrendCounter">
+          {seaIceMinimumTrend}% / year
         </strong>
       </div>
     </div>
@@ -72,8 +81,8 @@ const Counter = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
 Counter.propTypes = {
   currentCo2: PropTypes.number.isRequired,
   currentTemp: PropTypes.number.isRequired,
-  currentSlr: PropTypes.number.isRequired,
-  currentIceMelt: PropTypes.number.isRequired,
+  seaLevelTrend: PropTypes.number.isRequired,
+  seaIceMinimumTrend: PropTypes.number.isRequired,
 };
 
 export default Counter;
