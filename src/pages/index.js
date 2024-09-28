@@ -52,22 +52,24 @@ class Home extends Component {
     const {
       co2,
       temp,
-      latestCo2Value,
-      latestTempValue,
-      slrTrend,
+      currentCo2,
+      currentTemp,
+      seaLevelTrend,
       latestCo2Year,
-      latestIceMeltValue,
+      seaIceMinimumTrend,
       latestTempYear,
       tenYearWarming,
+      lastUpdatedAt,
     } = this.props;
 
     return (
       <>
         <Header
-          currentCo2={latestCo2Value}
-          currentTemp={latestTempValue}
-          currentSlr={slrTrend}
-          currentIceMelt={latestIceMeltValue}
+          currentCo2={currentCo2}
+          currentTemp={currentTemp}
+          seaLevelTrend={seaLevelTrend}
+          seaIceMinimumTrend={seaIceMinimumTrend}
+          lastUpdatedAt={lastUpdatedAt}
         />
         <ContentWrapper>
           <article
@@ -91,7 +93,7 @@ class Home extends Component {
             </h2>
             <IsEarthWarming
               tenYearWarming={tenYearWarming}
-              latestTempValue={latestTempValue}
+              currentTemp={currentTemp}
             />
             <ShareLinks />
             <h2>What is global warming?</h2>
@@ -175,14 +177,14 @@ class Home extends Component {
               <span id="latestTempYear">{latestTempYear}</span>, Earth
               {`'`}s temperature is approximately
               {` `}
-              <span id="latestTempValue">{latestTempValue}</span>
+              <span id="currentTemp">{currentTemp}</span>
               °C above pre-industrial levels.
               <Cite name="tempData" />
               {` `}
               If the planet
               {`'`}s temperature continues to rise, we can expect many
               environmental and societal impacts, the most significant of which
-              we will explain in this paper.
+              we will explain here.
             </p>
             <p>
               In late 2015, 184 nations were party to the Paris Climate Accord,
@@ -215,6 +217,7 @@ class Home extends Component {
               <CO2 />
               {` `}
               into the atmosphere. This
+              {` `}
               <CO2 />
               {` `}
               is produced by burning fossil fuels, mostly from electricity
@@ -227,7 +230,7 @@ class Home extends Component {
               <span id="latestCo2Year">{latestCo2Year}</span>, the atmosphere
               {`'`}s carbon concentration is
               {` `}
-              <span id="latestCo2Value">{latestCo2Value}</span>
+              <span id="currentCo2">{currentCo2}</span>
               ppm (see fig. 2).
               <Cite name="co2After1958" />
             </p>
@@ -405,11 +408,11 @@ class Home extends Component {
 Home.propTypes = {
   co2: PropTypes.arrayOf(PropTypes.object),
   temp: PropTypes.arrayOf(PropTypes.object),
-  latestCo2Value: PropTypes.number,
-  latestTempValue: PropTypes.number,
-  latestIceMeltValue: PropTypes.number,
+  currentCo2: PropTypes.number,
+  currentTemp: PropTypes.number,
+  seaIceMinimumTrend: PropTypes.number,
   latestTempYear: PropTypes.number,
-  slrTrend: PropTypes.number,
+  seaLevelTrend: PropTypes.number,
   latestCo2Year: PropTypes.number,
   tenYearWarming: PropTypes.number.isRequired,
 };

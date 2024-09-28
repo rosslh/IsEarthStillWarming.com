@@ -4,13 +4,13 @@ import { css } from "@emotion/react";
 import Stamp from "./stamp";
 import Cite from "./cite";
 
-const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
+const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
   const warmedBy = tenYearWarming;
   const citation = <Cite name="tempData" />;
   const currentYear = new Date().getFullYear();
-  const target = latestTempValue >= 1.5 ? 2 : 1.5;
+  const target = currentTemp >= 1.5 ? 2 : 1.5;
   const projectedYear = Math.trunc(
-    currentYear + (target - latestTempValue) / (tenYearWarming / 10)
+    currentYear + (target - currentTemp) / (tenYearWarming / 10)
   );
   const styles = css`
     display: flex;
@@ -37,7 +37,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
           °C.
           {citation}
           {` `}
-          {latestTempValue < 2
+          {currentTemp < 2
             ? `At this rate, global warming will surpass the +${target}°C
               limit set by the Paris Climate Agreement by ${projectedYear}.`
             : ``}
@@ -77,7 +77,7 @@ const IsEarthWarming = ({ tenYearWarming, latestTempValue }) => {
 
 IsEarthWarming.propTypes = {
   tenYearWarming: PropTypes.number.isRequired,
-  latestTempValue: PropTypes.number.isRequired,
+  currentTemp: PropTypes.number.isRequired,
 };
 
 export default IsEarthWarming;

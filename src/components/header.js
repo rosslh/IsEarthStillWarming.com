@@ -5,10 +5,17 @@ import { css } from "@emotion/react";
 
 import Counter from "./counter";
 import { red, redDark } from "../utils/colors";
+import { formatDate } from "../utils/formatDate";
 import ContentWrapper from "./contentWrapper";
 import fire from "../../public/assets/fire-icon.svg";
 
-const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
+const Header = ({
+  currentCo2,
+  currentTemp,
+  seaLevelTrend,
+  seaIceMinimumTrend,
+  lastUpdatedAt,
+}) => (
   <header
     css={css`
       background-color: ${red};
@@ -87,27 +94,26 @@ const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
     <Counter
       currentCo2={currentCo2}
       currentTemp={currentTemp}
-      currentSlr={currentSlr}
-      currentIceMelt={currentIceMelt}
+      seaLevelTrend={seaLevelTrend}
+      seaIceMinimumTrend={seaIceMinimumTrend}
     />
     <div
       css={css`
         color: ${lighten(red, 48)};
         font-size: 15px !important;
         text-align: center;
-        margin-top: 0.5rem;
-        padding: 1.5rem 1rem 2.5rem 1rem;
+        margin: 0 auto;
+        padding: 2rem 0;
         font-family: "Open Sans", sans-serif !important;
+        max-width: 530px;
       `}
     >
-      This website is kept up-to-date with climate data from
+      This website is kept updated with data from
       {` `}
       <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
         NASA
       </a>
-      {` `}
-      and
-      {` `}
+      ,{` `}
       <a
         href="https://scripps.ucsd.edu/"
         target="_blank"
@@ -115,9 +121,7 @@ const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
       >
         Scripps Institution of Oceanography
       </a>
-      <br />
-      Altimetry data are provided by the
-      {` `}
+      , and{" "}
       <a
         href="https://www.star.nesdis.noaa.gov/sod/lsa/index.php"
         target="_blank"
@@ -125,6 +129,14 @@ const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
       >
         NOAA Laboratory for Satellite Altimetry
       </a>
+      .
+      <div
+        css={css`
+          margin-top: 1rem;
+        `}
+      >
+        Last updated on {formatDate(lastUpdatedAt)}
+      </div>
     </div>
   </header>
 );
@@ -132,8 +144,8 @@ const Header = ({ currentCo2, currentTemp, currentSlr, currentIceMelt }) => (
 Header.propTypes = {
   currentCo2: PropTypes.number.isRequired,
   currentTemp: PropTypes.number.isRequired,
-  currentSlr: PropTypes.number.isRequired,
-  currentIceMelt: PropTypes.number.isRequired,
+  seaLevelTrend: PropTypes.number.isRequired,
+  seaIceMinimumTrend: PropTypes.number.isRequired,
 };
 
 export default Header;

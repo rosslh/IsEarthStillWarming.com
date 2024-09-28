@@ -1,11 +1,20 @@
-# IsEarthStillWarming.com
+<p align="center">
+  <a href="https://isearthstillwarming.com">
+    <img src="https://raw.githubusercontent.com/rosslh/isearthstillwarming.com/main/icon.png" height="50px" width="50px" alt="IsEarthStillWarming.com icon">
+  </a>
+</p>
 
-[IsEarthStillWarming.com](https://isearthstillwarming.com/) is a website dedicated to providing an accurate and up-to-date overview of global warming, its observed effects, and future predictions. Its mission is to offer clear, science-based information to help people understand the current state of our planet's climate.
+<h1 align="center">IsEarthStillWarming.com</h1>
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/rosslh/IsEarthStillWarming.com/TestAndDeploy.yml?style=flat-square&label=Test%20and%20deploy)](https://github.com/rosslh/IsEarthStillWarming.com/actions/runs/9440610044/workflow)
-![Netlify](https://img.shields.io/netlify/2a39ad88-4c75-4139-897c-8f5a76802fad?style=flat-square&label=Netlify)
-![Uptime Robot status](https://img.shields.io/uptimerobot/status/m792388130-707e241ab307578543308734?up_message=online&style=flat-square&label=Status)
-![Uptime Robot ratio (30 days)](<https://img.shields.io/uptimerobot/ratio/m792388130-707e241ab307578543308734?style=flat-square&label=Uptime%20(1mo)>)
+<p align="center">
+  <a href="https://isearthstillwarming.com">IsEarthStillWarming.com</a> is a website dedicated to providing an accurate and up-to-date overview of global warming, its observed effects, and future predictions. Its mission is to offer clear, science-based information to help people understand the current state of our planet's climate.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/actions/workflow/status/rosslh/IsEarthStillWarming.com/TestAndDeploy.yml?style=flat-square&label=Checks" alt="GitHub branch check runs">
+  <img src="https://img.shields.io/uptimerobot/status/m792388130-707e241ab307578543308734?up_message=online&style=flat-square&label=Status" alt="Uptime Robot status">
+  <img src="https://img.shields.io/uptimerobot/ratio/m792388130-707e241ab307578543308734?style=flat-square&label=Uptime%20(1mo)" alt="Uptime Robot ratio (30 days)">
+</p>
 
 ## Overview
 
@@ -19,13 +28,15 @@ The website covers several key aspects of climate change:
 
 We strive to present this information in an accessible and easy-to-understand format, making it valuable for both casual readers and those seeking more in-depth knowledge.
 
+<img src="https://raw.githubusercontent.com/rosslh/isearthstillwarming.com/main/exampleImage" alt="Example image" width="700" />
+
 ## Data Sources
 
 To ensure the highest level of accuracy, the website is regularly updated with climate data from reputable scientific institutions:
 
-- [NASA](https://www.nasa.gov/): Provides comprehensive global climate data and research
-- [Scripps Institution of Oceanography](https://scripps.ucsd.edu/): Offers valuable oceanic and atmospheric data
-- [NOAA Laboratory for Satellite Altimetry](https://www.star.nesdis.noaa.gov/sod/lsa/index.php): Supplies crucial altimetry data for sea level monitoring
+- [NASA](https://www.nasa.gov/): Provides global temperature and arctic sea ice minimum data
+- [Scripps Institution of Oceanography](https://scripps.ucsd.edu/): Provides data on the concentration of CO2 in the atmosphere
+- [NOAA Laboratory for Satellite Altimetry](https://www.star.nesdis.noaa.gov/sod/lsa/index.php): Provides altimetry data for global sea level rise
 
 By using data from these trusted sources, we aim to present the most current and reliable information on climate change.
 

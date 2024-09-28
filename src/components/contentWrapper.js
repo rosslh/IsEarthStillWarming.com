@@ -7,7 +7,7 @@ const ContentWrapper = ({ children, style }) => (
     css={css`
       max-width: 850px;
       width: 80%;
-      margin: 0 auto 2em;
+      margin: 0 auto;
       @media (max-width: 700px) {
         width: 90%;
       }
