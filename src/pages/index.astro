@@ -1,0 +1,81 @@
+---
+import Home from '../components/index/index.jsx';
+import "../assets/modern-normalize.css";
+import "../assets/app.css";
+import { getData } from '../utils/getData';
+
+const data = await getData();
+---
+
+<html lang="en">
+  <head>
+    <title>Global warming information and data</title>
+    <meta
+      name="description"
+      content="Up-to-date global climate information"
+    />
+
+    <meta itemProp="name" content="Global warming information and data" />
+    <meta
+      itemProp="description"
+      content="Up-to-date global climate information"
+    />
+    <meta
+      itemProp="image"
+      content="https://isearthstillwarming.com/assets/siteImage.png"
+    />
+
+    <meta property="og:url" content="https://isearthstillwarming.com" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Global warming information and data"
+    />
+    <meta
+      property="og:description"
+      content="Up-to-date global climate information"
+    />
+    <meta
+      property="og:image"
+      content="https://isearthstillwarming.com/assets/siteImage.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Global warming information and data"
+    />
+    <meta
+      name="twitter:description"
+      content="Up-to-date global climate information"
+    />
+    <meta
+      name="twitter:image"
+      content="https://isearthstillwarming.com/assets/siteImage.png"
+    />
+
+    <meta charSet="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+  </head>
+  <body>
+    <main>
+      <Home client:load {...data} />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+.figureWrapper {
+  width: 80%;
+  margin: 3rem auto;
+  > div {
+    padding: 1.5rem;
+    box-shadow: rgba(00, 00, 00, 0.2) 0px 6px 16px 0px;
+    border-radius: 5px;
+    > img {
+      width: 100%;
+    }
+    @media (max-width: 700px) {
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+  > strong {
+    margin-top: 1.5rem;
+    display: block;
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    width: 98%;
+  }
+}
+
+.article {
+  svg {
+    margin: 0 auto;
+    display: block;
+
+    :global(.mg-active-datapoint-container) {
+      transform: translate(-200px, 0);
+    }
+  }
+
+  .worksCitedHeader {
+    margin-top: 4%;
+    font-size: 1.2em;
+  }
+}

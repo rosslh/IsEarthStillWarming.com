@@ -51,5 +51,5 @@ By using data from these trusted sources, we aim to present the most current and
 
 ### Project Structure
 
-- Data fetching is in `static.config.js`
-- Page content is in `src/pages/index.js`
+- Data fetching is in `utils/getData.js`
+- Page content is in `src/components/index.jsx`

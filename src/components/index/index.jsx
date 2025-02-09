@@ -1,17 +1,33 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { lighten, desaturate } from "unitransform";
-import { css } from "@emotion/react";
-import { withRouteData } from "react-static";
+import Cite from "../cite/cite";
+import RefList from "../reflist/reflist";
+import IsEarthWarming from "../isEarthWarming/isEarthWarming";
+import Header from "../header/header";
+import CO2 from "../co2/co2";
+import ContentWrapper from "../contentWrapper/contentWrapper";
+import ShareLinks from "../shareLinks/shareLinks";
+import style from "./index.module.scss";
+import { red } from "../../utils/colors";
+import {
+  Chart as ChartJS,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+  Ticks,
+} from "chart.js";
 import { Scatter } from "react-chartjs-2";
-import Cite from "../components/cite";
-import RefList from "../components/reflist";
-import IsEarthWarming from "../components/isEarthWarming";
-import Header from "../components/header";
-import CO2 from "../components/co2";
-import ContentWrapper from "../components/contentWrapper";
-import { red } from "../utils/colors";
-import ShareLinks from "../components/shareLinks";
+import risks from "../../assets/risks.png";
+
+ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
+
+const datasetOptions = {
+  borderColor: lighten(red, 10),
+  backgroundColor: desaturate(lighten(red, 20), 30),
+};
 
 class Home extends Component {
   constructor(props) {
@@ -20,35 +36,6 @@ class Home extends Component {
   }
 
   render() {
-    const figureWrapperStyle = css`
-      width: 80%;
-      margin: 3rem auto;
-      > div {
-        padding: 1.5rem;
-        box-shadow: rgba(00, 00, 00, 0.2) 0px 6px 16px 0px;
-        border-radius: 5px;
-        > img {
-          width: 100%;
-        }
-        @media (max-width: 700px) {
-          padding: 0;
-          box-shadow: none;
-        }
-      }
-      > strong {
-        margin-top: 1.5rem;
-        display: block;
-        text-align: center;
-      }
-      @media (max-width: 700px) {
-        width: 98%;
-      }
-    `;
-    const datasetOptions = {
-      borderColor: lighten(red, 10),
-      backgroundColor: desaturate(lighten(red, 20), 30),
-    };
-
     const {
       co2,
       temp,
@@ -72,23 +59,8 @@ class Home extends Component {
           lastUpdatedAt={lastUpdatedAt}
         />
         <ContentWrapper>
-          <article
-            css={css`
-              svg {
-                margin: 0 auto;
-                display: block;
-                .mg-active-datapoint-container {
-                  transform: translate(-200px, 0);
-                }
-              }
-            `}
-          >
-            <h2
-              css={css`
-                margin-top: 0;
-                padding-top: 0;
-              `}
-            >
+          <article className={style.article}>
+            <h2 className={style.stillHappeningHeader}>
               Is global warming still happening?
             </h2>
             <IsEarthWarming
@@ -125,42 +97,55 @@ class Home extends Component {
               Since the mid 1950s, Earth
               {`'`}s temperature has had a clear positive trend (see fig. 1).
             </p>
-            <div css={figureWrapperStyle}>
+            <div className={style.figureWrapper}>
               <div>
                 <Scatter
                   data={{
                     datasets: [
                       {
-                        label: `Global average temperature`,
+                        label: "Global average temperature",
                         data: temp,
                         ...datasetOptions,
                       },
                     ],
                   }}
                   options={{
-                    legend: {
-                      display: false,
+                    plugins: {
+                      legend: {
+                        display: false,
+                      },
+                      tooltip: {
+                        callbacks: {
+                          label: (tooltipItem) =>
+                            `${tooltipItem.parsed.x}, ${tooltipItem.parsed.y}°C`,
+                        },
+                        mode: `index`,
+                        intersect: false,
+                      },
                     },
                     scales: {
-                      yAxes: [
-                        {
-                          ticks: {
-                            callback: (value) => `${value}°C`,
-                          },
-                          scaleLabel: {
-                            display: true,
-                            labelString: `Global average temperature`,
+                      x: {
+                        ticks: {
+                          callback: function (value) {
+                            return Math.round(value);
                           },
                         },
-                      ],
-                    },
-                    tooltips: {
-                      callbacks: {
-                        label: (tooltipItem) =>
-                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}°C`,
                       },
-                      mode: `index`,
-                      intersect: false,
+                      y: {
+                        ticks: {
+                          callback: function (value, index, ticks) {
+                            return `${Ticks.formatters.numeric.apply(this, [
+                              value,
+                              index,
+                              ticks,
+                            ])}°C`;
+                          },
+                        },
+                        title: {
+                          display: true,
+                          text: "Global average temperature",
+                        },
+                      },
                     },
                   }}
                 />
@@ -234,42 +219,55 @@ class Home extends Component {
               ppm (see fig. 2).
               <Cite name="co2After1958" />
             </p>
-            <div css={figureWrapperStyle}>
+            <div className={style.figureWrapper}>
               <div>
                 <Scatter
                   data={{
                     datasets: [
                       {
-                        label: `Atmospheric CO2`,
+                        label: "Atmospheric CO2 concentration",
                         data: co2,
                         ...datasetOptions,
                       },
                     ],
                   }}
                   options={{
-                    legend: {
-                      display: false,
+                    plugins: {
+                      legend: {
+                        display: false,
+                      },
+                      tooltip: {
+                        callbacks: {
+                          label: (tooltipItem) =>
+                            `${tooltipItem.parsed.x}, ${tooltipItem.parsed.y}ppm`,
+                        },
+                        mode: `index`,
+                        intersect: false,
+                      },
                     },
                     scales: {
-                      yAxes: [
-                        {
-                          ticks: {
-                            callback: (value) => `${value}ppm`,
-                          },
-                          scaleLabel: {
-                            display: true,
-                            labelString: `Atmospheric CO2 concentration`,
+                      x: {
+                        ticks: {
+                          callback: function (value) {
+                            return Math.round(value);
                           },
                         },
-                      ],
-                    },
-                    tooltips: {
-                      callbacks: {
-                        label: (tooltipItem) =>
-                          `${tooltipItem.xLabel}, ${tooltipItem.yLabel}ppm`,
                       },
-                      mode: `index`,
-                      intersect: false,
+                      y: {
+                        ticks: {
+                          callback: function (value, index, ticks) {
+                            return `${Ticks.formatters.numeric.apply(this, [
+                              value,
+                              index,
+                              ticks,
+                            ])}ppm`;
+                          },
+                        },
+                        title: {
+                          display: true,
+                          text: "Atmospheric CO2 concentration",
+                        },
+                      },
                     },
                   }}
                 />
@@ -320,9 +318,9 @@ class Home extends Component {
               coral reefs- a process that has already started on a large scale
               (see fig. 3).
             </p>
-            <div css={figureWrapperStyle}>
+            <div className={style.figureWrapper}>
               <div>
-                <img src={`assets/risks.png`} alt="risks of climate change" />
+                <img src={risks.src} alt="risks of climate change" />
               </div>
               <strong>
                 Figure 3
@@ -389,14 +387,7 @@ class Home extends Component {
               food-and-water shortages as well as wildfires.
               <Cite name="natGeo" />
             </p>
-            <h2
-              css={css`
-                margin-top: 4%;
-                font-size: 1.2em;
-              `}
-            >
-              Works Cited
-            </h2>
+            <h2 className={style.worksCitedHeader}>Works Cited</h2>
             <RefList />
           </article>
         </ContentWrapper>
@@ -417,4 +408,4 @@ Home.propTypes = {
   tenYearWarming: PropTypes.number.isRequired,
 };
 
-export default withRouteData(Home);
+export default Home;

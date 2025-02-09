@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { css } from "@emotion/react";
-import ContentWrapper from "./contentWrapper";
-import CO2 from "./co2";
+import ContentWrapper from "../contentWrapper/contentWrapper";
+import CO2 from "../co2/co2";
+import style from "./counter.module.scss";
 
 const Counter = ({
   currentCo2,
@@ -10,39 +10,8 @@ const Counter = ({
   seaLevelTrend,
   seaIceMinimumTrend,
 }) => (
-  <ContentWrapper
-    style={`
-      padding: 0;
-      text-align: center;
-    `}
-  >
-    <div
-      css={css`
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-
-        @media (max-width: 500px) {
-          flex-direction: column;
-          flex-wrap: none;
-        }
-
-        > div {
-          flex-grow: 1
-          min-height: 80px;
-          padding: 2rem 1rem 0;
-          > div {
-            font-size: 0.9rem;
-          }
-          > strong {
-            padding-top: 0.75rem;
-            display: block;
-            font-weight: bold;
-            font-size: 1.5rem;
-          }
-        }
-      `}
-    >
+  <ContentWrapper className={style.contentWrapper}>
+    <div className={style.counter}>
       <div>
         <div>
           Atmospheric

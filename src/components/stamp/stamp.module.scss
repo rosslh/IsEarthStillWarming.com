@@ -1,0 +1,22 @@
+.stamp {
+  font-size: 3rem;
+  min-width: 7rem;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  text-transform: uppercase;
+  border-radius: 12% / 22%;
+  letter-spacing: 2px;
+  font-family: Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace !important;
+  color: #c10000;
+  border: 0.5rem double #c10000;
+  transform: rotate(3deg);
+  font-size: 2rem;
+  margin: 0.8rem 2rem;
+
+  &.green {
+    color: #1ea63e;
+    border-color: #1ea63e;
+  }
+}

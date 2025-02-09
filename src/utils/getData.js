@@ -262,29 +262,21 @@ const getSeaIceMinimumTrend = async () => {
   return Math.round((percentageChangePerYear + Number.EPSILON) * 100) / 100;
 };
 
-export default {
-  getRoutes: async () => {
-    const { temp, latestTempYear, tenYearWarming } = await getTemp();
-    const { co2, latestCo2Year } = await getCo2();
-    const seaLevelTrend = await getSlr();
-    const seaIceMinimumTrend = await getSeaIceMinimumTrend();
-    return [
-      {
-        path: `/`,
-        template: `src/pages/index.js`,
-        getData: () => ({
-          co2,
-          temp,
-          latestCo2Year,
-          latestTempYear,
-          tenYearWarming,
-          currentCo2: co2.find((value) => value.x === latestCo2Year).y,
-          currentTemp: temp.find((value) => value.x === latestTempYear).y,
-          seaIceMinimumTrend,
-          seaLevelTrend,
-          lastUpdatedAt: new Date(),
-        }),
-      },
-    ];
-  },
+export const getData = async () => {
+  const { temp, latestTempYear, tenYearWarming } = await getTemp();
+  const { co2, latestCo2Year } = await getCo2();
+  const seaLevelTrend = await getSlr();
+  const seaIceMinimumTrend = await getSeaIceMinimumTrend();
+  return {
+    co2,
+    temp,
+    latestCo2Year,
+    latestTempYear,
+    tenYearWarming,
+    currentCo2: co2.find((value) => value.x === latestCo2Year).y,
+    currentTemp: temp.find((value) => value.x === latestTempYear).y,
+    seaIceMinimumTrend,
+    seaLevelTrend,
+    lastUpdatedAt: new Date(),
+  };
 };

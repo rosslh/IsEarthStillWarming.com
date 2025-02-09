@@ -90,3 +90,5 @@ typings/
 # .DS_Store files
 .DS_Store
 **/.DS_Store
+
+.astro

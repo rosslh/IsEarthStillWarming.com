@@ -1,6 +1,5 @@
 import React from "react";
-import { css } from "@emotion/react";
-import { redExtraLight, redLight } from "../utils/colors";
+import style from "./reflist.module.scss";
 
 export const citations = [
   {
@@ -85,36 +84,9 @@ export const citations = [
   },
 ];
 const RefList = () => (
-  <ol
-    css={css`
-      list-style-position: inside;
-      margin: 0;
-      padding: 0;
-      font-size: 90%;
-    `}
-  >
+  <ol className={style.refList}>
     {citations.map((x) => (
-      <li
-        css={css`
-          text-indent: -1.5rem;
-          word-break: break-word;
-          padding: 0.5rem 1rem 0.5rem 2.5rem;
-          margin: 0 -1rem 0.5rem;
-          transition: border 0.7s 0.8s, border-radius 0.7s 0.8s,
-            background-color 0.7s 0.8s, box-shadow 0.7s 0.8s;
-          border: 1px solid transparent;
-
-          :target {
-            border-color: ${redLight};
-            border-color: ${redLight}44;
-            border-radius: 10px;
-            background-color: ${redExtraLight};
-            box-shadow: rgba(00, 00, 00, 0.2) 0px 2px 12px 0px;
-          }
-        `}
-        key={x.name}
-        id={`ref-${x.name}`}
-      >
+      <li className={style.refItem} key={x.name} id={`ref-${x.name}`}>
         {x.citation}
         {` `}
         {x.url && (

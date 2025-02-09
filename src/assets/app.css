@@ -1,0 +1,21 @@
+* {
+    line-height: 1.6;
+}
+
+p {
+    font-size: 18px;
+}
+
+h1 {
+    padding: 1.75rem 0 1rem;
+}
+
+h2 {
+    padding: 1.75rem 0 0;
+    font-weight: 600;
+}
+
+h3 {
+    padding: 0.75rem 0 0;
+    font-weight: 600;
+}

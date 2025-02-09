@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { css } from "@emotion/react";
-import Stamp from "./stamp";
-import Cite from "./cite";
+import Stamp from "../stamp/stamp";
+import Cite from "../cite/cite";
+import style from "./isEarthWarming.module.scss";
 
 const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
   const warmedBy = tenYearWarming;
@@ -12,22 +12,10 @@ const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
   const projectedYear = Math.trunc(
     currentYear + (target - currentTemp) / (tenYearWarming / 10)
   );
-  const styles = css`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    > p {
-      display: inline-block;
-      flex-grow: 1;
-      flex-shrink: 1;
-      margin: 0;
-      flex-basis: 400px;
-    }
-  `;
+
   if (warmedBy > 0.1) {
     return (
-      <div css={styles}>
+      <div className={style.wrapper}>
         <Stamp>Yes</Stamp>
         <p>
           Over the past 10 years, Earth
@@ -47,7 +35,7 @@ const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
   }
   if (warmedBy > 0) {
     return (
-      <div css={styles}>
+      <div className={style.wrapper}>
         <Stamp green>Maybe?</Stamp>
         <p>
           Over the past 10 years, Earth
@@ -61,7 +49,7 @@ const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
     );
   }
   return (
-    <div css={styles}>
+    <div className={style.wrapper}>
       <Stamp green>No</Stamp>
       <p>
         Over the past 10 years, Earth

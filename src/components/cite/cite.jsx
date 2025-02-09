@@ -1,15 +1,10 @@
 import PropTypes from "prop-types";
-import { css } from "@emotion/react";
 import React, { memo } from "react";
-import { citations } from "./reflist";
+import { citations } from "../reflist/reflist";
+import style from "./cite.module.scss";
 
 const Cite = ({ name }) => (
-  <sup
-    css={css`
-      font-weight: regular;
-      padding: 0 1px;
-    `}
-  >
+  <sup className={style.cite}>
     <a href={`#ref-${name}`}>
       {citations.findIndex((x) => x.name === name) + 1}
     </a>
