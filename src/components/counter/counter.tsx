@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import ContentWrapper from "../contentWrapper/contentWrapper";
 import CO2 from "../co2/co2";
 import style from "./counter.module.scss";
@@ -9,6 +8,11 @@ const Counter = ({
   currentTemp,
   seaLevelTrend,
   seaIceMinimumTrend,
+}: {
+  currentCo2: number;
+  currentTemp: number;
+  seaLevelTrend: number;
+  seaIceMinimumTrend: number;
 }) => (
   <ContentWrapper className={style.contentWrapper}>
     <div className={style.counter}>
@@ -46,12 +50,5 @@ const Counter = ({
     </div>
   </ContentWrapper>
 );
-
-Counter.propTypes = {
-  currentCo2: PropTypes.number.isRequired,
-  currentTemp: PropTypes.number.isRequired,
-  seaLevelTrend: PropTypes.number.isRequired,
-  seaIceMinimumTrend: PropTypes.number.isRequired,
-};
 
 export default Counter;

@@ -10,7 +10,9 @@
     "serve": "serve dist -p 3000",
     "cyTest": "cypress run",
     "buildTestServer": "serve dist -p 3939",
-    "test": "server-test buildTestServer 3939 cyTest"
+    "test": "server-test buildTestServer 3939 cyTest",
+    "tsc": "tsc",
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
@@ -26,16 +28,21 @@
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.3.0",
-    "react-share": "^5.2.0",
-    "unitransform": "^1.0.5"
+    "react-share": "^5.2.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/regression": "^2.0.6",
     "axios": "^1.7.7",
     "csvtojson": "^2.0.10",
     "cypress": "^13.17.0",
+    "eslint": "^9.20.1",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.15.0",
     "regression": "^2.0.1",
     "sass-embedded": "^1.83.4",
     "serve": "^14.2.3",
-    "start-server-and-test": "^2.0.8"
+    "start-server-and-test": "^2.0.8",
+    "typescript-eslint": "^8.24.1"
   }
 }

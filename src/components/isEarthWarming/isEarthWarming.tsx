@@ -1,10 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Stamp from "../stamp/stamp";
 import Cite from "../cite/cite";
 import style from "./isEarthWarming.module.scss";
 
-const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
+const IsEarthWarming = ({
+  tenYearWarming,
+  currentTemp,
+}: {
+  tenYearWarming: number;
+  currentTemp: number;
+}) => {
   const warmedBy = tenYearWarming;
   const citation = <Cite name="tempData" />;
   const currentYear = new Date().getFullYear();
@@ -61,11 +66,6 @@ const IsEarthWarming = ({ tenYearWarming, currentTemp }) => {
       </p>
     </div>
   );
-};
-
-IsEarthWarming.propTypes = {
-  tenYearWarming: PropTypes.number.isRequired,
-  currentTemp: PropTypes.number.isRequired,
 };
 
 export default IsEarthWarming;

@@ -29,10 +29,10 @@ const ShareButtons = () => {
   if (
     typeof window !== `undefined` &&
     window.navigator &&
-    window.navigator.share
+    "share" in window.navigator
   ) {
     return (
-      <div classname={style.navigatorShare}>
+      <div className={style.navigatorShare}>
         <button type="button" onClick={share}>
           <FaShare />
           Share
@@ -43,11 +43,7 @@ const ShareButtons = () => {
   return (
     <div className={style.legacyShare}>
       <span className={style.shareLabel}>Share:</span>
-      <FacebookShareButton
-        className={style.facebook}
-        url={shareUrl}
-        quote={fullTitle}
-      >
+      <FacebookShareButton className={style.facebook} url={shareUrl}>
         <FaFacebookF />
       </FacebookShareButton>
       <TwitterShareButton

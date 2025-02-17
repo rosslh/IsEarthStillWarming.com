@@ -1,0 +1,24 @@
+name: Type check
+on:
+  push:
+    branches:
+      - "*"
+      - "*/*"
+      - "dependabot/*/*/*"
+
+jobs:
+  TypeCheck:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run build
+      - name: tsc
+        run: |
+          npm run tsc

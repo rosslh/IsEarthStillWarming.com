@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import Counter from "../counter/counter";
 import ContentWrapper from "../contentWrapper/contentWrapper";
@@ -14,6 +13,12 @@ const Header = ({
   seaLevelTrend,
   seaIceMinimumTrend,
   lastUpdatedAt,
+}: {
+  currentCo2: number;
+  currentTemp: number;
+  seaLevelTrend: number;
+  seaIceMinimumTrend: number;
+  lastUpdatedAt: Date;
 }) => (
   <header className={style.header}>
     <div>
@@ -69,12 +74,5 @@ const Header = ({
     </div>
   </header>
 );
-
-Header.propTypes = {
-  currentCo2: PropTypes.number.isRequired,
-  currentTemp: PropTypes.number.isRequired,
-  seaLevelTrend: PropTypes.number.isRequired,
-  seaIceMinimumTrend: PropTypes.number.isRequired,
-};
 
 export default Header;

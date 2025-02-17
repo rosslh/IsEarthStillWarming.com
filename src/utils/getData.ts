@@ -3,13 +3,13 @@ import csv from "csvtojson";
 import https from "https";
 import fs from "fs/promises";
 import path from "path";
-import regression from "regression";
+import regression, { type DataPoint } from "regression";
 
-const dateFromYear = (year) => Math.trunc(Number(year));
+const dateFromYear = (year: string) => Math.trunc(Number(year));
 
 const minYear = 1700;
 
-const readCachedData = async (filename) => {
+const readCachedData = async (filename: string) => {
   try {
     const filePath = path.join("./dataCaches", filename);
     const data = await fs.readFile(filePath, "utf-8");
@@ -20,7 +20,7 @@ const readCachedData = async (filename) => {
   }
 };
 
-const writeCachedData = async (filename, data) => {
+const writeCachedData = async (filename: string, data: string) => {
   try {
     if (process.env.CI) {
       console.log("CI environment detected, skipping cache write");
@@ -49,7 +49,7 @@ const getTemp = async () => {
     );
     tempData = response.data;
     await writeCachedData("temp.txt", tempData);
-  } catch (error) {
+  } catch (_error) {
     console.warn("Error fetching temperature data, using cached data");
     tempData = await readCachedData("temp.txt");
     if (!tempData) {
@@ -104,7 +104,7 @@ const getCo2 = async () => {
     );
     co2Data = response.data;
     await writeCachedData("co2.csv", co2Data);
-  } catch (error) {
+  } catch (_error) {
     console.warn("Error fetching CO2 data, using cached data");
     co2Data = await readCachedData("co2.csv");
     if (!co2Data) {
@@ -150,7 +150,7 @@ const getSlr = async () => {
     );
     slrData = response.data;
     await writeCachedData("slr.csv", slrData);
-  } catch (error) {
+  } catch (_error) {
     console.warn("Error fetching sea level rise data, using cached data");
     slrData = await readCachedData("slr.csv");
     if (!slrData) {
@@ -189,7 +189,7 @@ const getSlr = async () => {
     (point) => point.year >= cutoffYear
   );
 
-  const regressionData = recentDataPoints.map((point) => [
+  const regressionData: DataPoint[] = recentDataPoints.map((point) => [
     point.year,
     point.seaLevelAnomaly,
   ]);
@@ -216,7 +216,7 @@ const getSeaIceMinimumTrend = async () => {
     );
     seaIceMinumumsData = response.data;
     await writeCachedData("ice-melt.csv", seaIceMinumumsData);
-  } catch (error) {
+  } catch (_error) {
     console.warn("Error fetching ice melt data, using cached data");
     seaIceMinumumsData = await readCachedData("ice-melt.csv");
     if (!seaIceMinumumsData) {
@@ -247,7 +247,10 @@ const getSeaIceMinimumTrend = async () => {
     throw new Error("Not enough data to compute regression");
   }
 
-  const regressionData = last5YearsData.map((entry) => [entry.x, entry.y]);
+  const regressionData: DataPoint[] = last5YearsData.map((entry) => [
+    entry.x,
+    entry.y,
+  ]);
 
   const result = regression.linear(regressionData);
 
