@@ -19,13 +19,18 @@ export const citations = [
   },
   {
     name: `nasa`,
-    citation: `"Global Climate Change." NASA Global Climate Change and Global Warming: Vital Signs of the Planet. Jet Propulsion Laboratory / National Aeronautics and Space Administration, 15 June 2008. Web. 14 Jan. 2015. <http://climate.nasa.gov/>.`,
+    citation: `"Global Climate Change." NASA Global Climate Change and Global Warming: Vital Signs of the Planet. Jet Propulsion Laboratory / National Aeronautics and Space Administration, 15 June 2008. Web. 14 Jan. 2015.`,
     url: `https://climate.nasa.gov/`,
   },
   {
     name: `co2After1958`,
-    citation: `C. D. Keeling, S. C. Piper, R. B. Bacastow, M. Wahlen, T. P. Whorf, M. Heimann, and H. A. Meijer, Exchanges of atmospheric CO2 and 13CO2 with the terrestrial biosphere and oceans from 1978 to 2000. I. Global aspects, SIO Reference Series, No. 01-06, Scripps Institution of Oceanography, San Diego, 88 pages, 2001. <http://escholarship.org/uc/item/09v319r9>.`,
+    citation: `C. D. Keeling, S. C. Piper, R. B. Bacastow, M. Wahlen, T. P. Whorf, M. Heimann, and H. A. Meijer, Exchanges of atmospheric CO2 and 13CO2 with the terrestrial biosphere and oceans from 1978 to 2000. I. Global aspects, SIO Reference Series, No. 01-06, Scripps Institution of Oceanography, San Diego, 88 pages, 2001.`,
     url: `http://scrippsco2.ucsd.edu/data/atmospheric_co2/icecore_merged_products`,
+  },
+  {
+    name: `noaaCo2`,
+    citation: `“GGGRN Data - CO2.” Global Monitoring Laboratory, NOAA`,
+    url: `https://gml.noaa.gov/ccgg/data/getdata.php?gas=co2`,
   },
   {
     name: `co2Before1958`,
@@ -34,12 +39,12 @@ export const citations = [
   },
   {
     name: `tempData`,
-    citation: `“Global Surface Temperature | NASA Global Climate Change.” NASA, NASA, 3 May 2018, <https://climate.nasa.gov/vital-signs/global-temperature/>.`,
+    citation: `“Global Surface Temperature | NASA Global Climate Change.” NASA, NASA, 3 May 2018.`,
     url: `https://climate.nasa.gov/vital-signs/global-temperature/`,
   },
   {
     name: `emissionsData`,
-    citation: `“Global Greenhouse Gas Emissions Data.” Global Greenhouse Gas Emissions Data, Environmental Protection Agency, 13 Apr. 2017, <https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data>.`,
+    citation: `“Global Greenhouse Gas Emissions Data.” Global Greenhouse Gas Emissions Data, Environmental Protection Agency, 13 Apr. 2017.`,
     url: `https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data`,
   },
   {

@@ -225,6 +225,7 @@ const Home: React.FC<HomeProps> = ({
             <span id="currentCo2">{currentCo2}</span>
             ppm (see fig. 2).
             <Cite name="co2After1958" />
+            <Cite name="noaaCo2" />
           </p>
           <div className={style.figureWrapper}>
             <div>
@@ -247,6 +248,7 @@ const Home: React.FC<HomeProps> = ({
             <strong>
               Figure 2
               <Cite name="co2After1958" />
+              <Cite name="noaaCo2" />
               <Cite name="co2Before1958" />
             </strong>
           </div>

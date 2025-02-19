@@ -23,7 +23,7 @@ const Counter = ({
           <CO2 />
         </div>
         <strong id="currentCo2Counter">
-          {currentCo2}
+          {Math.round(currentCo2)}
           ppm
         </strong>
       </div>

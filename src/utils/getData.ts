@@ -88,12 +88,16 @@ const getTemp = async () => {
   return { temp, latestTempYear, tenYearWarming };
 };
 
+type NoaaEntry = { x: number; y: number; count: number };
+type NoaaEntries = Record<number, NoaaEntry>;
+
 const getCo2 = async () => {
   const agent = new https.Agent({
     rejectUnauthorized: false,
   });
 
-  let co2Data;
+  // Fetch Scripps CO2 data
+  let scrippsCo2Data;
   try {
     const response = await axios.get(
       `https://scrippsco2.ucsd.edu/assets/data/atmospheric/merged_ice_core_mlo_spo/merged_ice_core_yearly.csv`,
@@ -102,21 +106,43 @@ const getCo2 = async () => {
         httpsAgent: agent,
       }
     );
-    co2Data = response.data;
-    await writeCachedData("co2.csv", co2Data);
+    scrippsCo2Data = response.data;
+    await writeCachedData("scripps-co2.csv", scrippsCo2Data);
   } catch (_error) {
-    console.warn("Error fetching CO2 data, using cached data");
-    co2Data = await readCachedData("co2.csv");
-    if (!co2Data) {
-      throw new Error("Failed to fetch CO2 data and no cache available");
+    console.warn("Error fetching Scripps CO2 data, using cached data");
+    scrippsCo2Data = await readCachedData("scripps-co2.csv");
+    if (!scrippsCo2Data) {
+      throw new Error(
+        "Failed to fetch Scripps CO2 data and no cache available"
+      );
     }
   }
 
-  let co2 = await csv({ noheader: true }).fromString(
-    co2Data.replace(/".*"\n/g, ``)
+  // Fetch NOAA CO2 data
+  let noaaCo2Data;
+  try {
+    const response = await axios.get(
+      "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt",
+      {
+        timeout: 10000,
+      }
+    );
+    noaaCo2Data = response.data;
+    await writeCachedData("noaa-co2.txt", noaaCo2Data);
+  } catch (_error) {
+    console.warn("Error fetching NOAA CO2 data, using cached data");
+    noaaCo2Data = await readCachedData("noaa-co2.txt");
+    if (!noaaCo2Data) {
+      throw new Error("Failed to fetch NOAA CO2 data and no cache available");
+    }
+  }
+
+  // Process Scripps data
+  let scrippsCo2 = await csv({ noheader: true }).fromString(
+    scrippsCo2Data.replace(/".*"\n/g, ``)
   );
 
-  co2 = co2
+  scrippsCo2 = scrippsCo2
     .filter(
       (x) =>
         x.field1 &&
@@ -127,8 +153,70 @@ const getCo2 = async () => {
     )
     .map((x) => ({
       x: dateFromYear(x.field1),
-      y: Math.trunc(Number(x.field2)),
+      y: Number(x.field2),
     }));
+
+  // Process NOAA data
+  const noaaCo2Lines = noaaCo2Data.split("\n");
+  const noaaCo2 = noaaCo2Lines
+    .filter((line: string) => !line.startsWith("#") && line.trim().length > 0)
+    .map((line: string) => {
+      const [year, _month, _date, average, _deseasonalized] = line
+        .trim()
+        .split(/\s+/);
+      return {
+        x: Number(year),
+        y: Number(average),
+      };
+    })
+    .filter(
+      (entry: { x: number; y: number }) =>
+        !isNaN(entry.x) && !isNaN(entry.y) && entry.x > minYear
+    );
+
+  // Group NOAA data by year and calculate yearly averages
+  const noaaYearlyData = (
+    Object.values(
+      noaaCo2.reduce((acc: NoaaEntries, curr: { x: number; y: number }) => {
+        if (!acc[curr.x]) {
+          acc[curr.x] = { x: curr.x, y: curr.y, count: 1 };
+        } else {
+          acc[curr.x].y += curr.y;
+          acc[curr.x].count += 1;
+        }
+        return acc;
+      }, {} as NoaaEntries)
+    ) as NoaaEntry[]
+  ).map(({ x, y, count }) => ({
+    x,
+    y: y / count,
+    count,
+  }));
+
+  // Merge both datasets
+  const mergedYears = new Set([
+    ...scrippsCo2.map((entry) => entry.x),
+    ...noaaYearlyData.map((entry) => entry.x),
+  ]);
+
+  const co2 = Array.from(mergedYears)
+    .map((year) => {
+      const scrippsEntry = scrippsCo2.find((entry) => entry.x === year);
+      const noaaEntry = noaaYearlyData.find((entry) => entry.x === year);
+
+      if (scrippsEntry && noaaEntry) {
+        return {
+          x: year,
+          y: Math.trunc((scrippsEntry.y + noaaEntry.y) / 2),
+        };
+      } else {
+        return {
+          x: year,
+          y: Math.trunc((scrippsEntry?.y || noaaEntry?.y) as number),
+        };
+      }
+    })
+    .sort((a, b) => a.x - b.x);
 
   const latestCo2Year = Math.max(...co2.map((val) => val.x));
 
@@ -276,7 +364,7 @@ export const getData = async () => {
     latestCo2Year,
     latestTempYear,
     tenYearWarming,
-    currentCo2: co2.find((value) => value.x === latestCo2Year).y,
+    currentCo2: co2.find((value) => value.x === latestCo2Year)?.y,
     currentTemp: temp.find((value) => value.x === latestTempYear).y,
     seaIceMinimumTrend,
     seaLevelTrend,

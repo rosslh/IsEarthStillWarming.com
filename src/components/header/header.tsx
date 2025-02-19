@@ -52,20 +52,16 @@ const Header = ({
         NASA
       </a>
       ,{` `}
+      <a href="https://noaa.gov/" target="_blank" rel="noopener noreferrer">
+        NOAA
+      </a>
+      , and{` `}
       <a
         href="https://scripps.ucsd.edu/"
         target="_blank"
         rel="noopener noreferrer"
       >
         Scripps Institution of Oceanography
-      </a>
-      , and{" "}
-      <a
-        href="https://www.star.nesdis.noaa.gov/sod/lsa/index.php"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        NOAA Laboratory for Satellite Altimetry
       </a>
       .
       <div className={style.lastUpdated}>

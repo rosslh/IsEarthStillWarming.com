@@ -36,9 +36,10 @@ We strive to present this information in an accessible and easy-to-understand fo
 
 To ensure the highest level of accuracy, the website is regularly updated with climate data from reputable scientific institutions:
 
+- [NOAA Mauna Loa Observatory](https://gml.noaa.gov/obop/mlo/): Provides data on the concentration of CO2 in the atmosphere
+- [NOAA Laboratory for Satellite Altimetry](https://www.star.nesdis.noaa.gov/sod/lsa/index.php): Provides altimetry data for global sea level rise
 - [NASA](https://www.nasa.gov/): Provides global temperature and arctic sea ice minimum data
 - [Scripps Institution of Oceanography](https://scripps.ucsd.edu/): Provides data on the concentration of CO2 in the atmosphere
-- [NOAA Laboratory for Satellite Altimetry](https://www.star.nesdis.noaa.gov/sod/lsa/index.php): Provides altimetry data for global sea level rise
 
 By using data from these trusted sources, we aim to present the most current and reliable information on climate change.
 
