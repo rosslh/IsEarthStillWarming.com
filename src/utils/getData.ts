@@ -293,7 +293,7 @@ const getSeaIceMinimumTrend = async () => {
   let seaIceMinumumsData;
   try {
     const response = await axios.get(
-      `https://climate.nasa.gov/system/internal_resources/details/original/2264_N_09_extent_v3.0.csv`,
+      `https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/N_09_extent_v4.0.csv`,
       {
         timeout: 10000,
         headers: {

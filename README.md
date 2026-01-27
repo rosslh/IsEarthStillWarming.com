@@ -7,7 +7,7 @@
 <h1 align="center">IsEarthStillWarming.com</h1>
 
 <p align="center">
-  <a href="https://isearthstillwarming.com">IsEarthStillWarming.com</a> is a website dedicated to providing an accurate and up-to-date overview of global warming, its observed effects, and future predictions. Its mission is to offer clear, science-based information to help people understand the current state of our planet's climate.
+  <a href="https://isearthstillwarming.com">IsEarthStillWarming.com</a> is a website dedicated to providing an accurate and up-to-date overview of global warming, its observed effects, and future predictions. It offers a clear, science-based information to help people understand the current state of our planet's climate.
 </p>
 
 <p align="center">
