@@ -38,7 +38,7 @@ const getTemp = async () => {
   let tempData;
   try {
     const response = await axios.get(
-      `https://data.giss.nasa.gov/gistemp/graphs/graph_data/Global_Mean_Estimates_based_on_Land_and_Ocean_Data/graph.txt`,
+      `https://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/Global_Mean_Estimates_based_on_Land_and_Ocean_Data/graph.txt`,
       {
         timeout: 10000,
         headers: {
@@ -49,8 +49,8 @@ const getTemp = async () => {
     );
     tempData = response.data;
     await writeCachedData("temp.txt", tempData);
-  } catch (_error) {
-    console.warn("Error fetching temperature data, using cached data");
+  } catch (error) {
+    console.warn("Error fetching temperature data, using cached data", error);
     tempData = await readCachedData("temp.txt");
     if (!tempData) {
       throw new Error(

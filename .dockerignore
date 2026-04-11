@@ -3,6 +3,5 @@ dist
 .git
 .github
 cypress
-dataCaches
 *.log
 .DS_Store
