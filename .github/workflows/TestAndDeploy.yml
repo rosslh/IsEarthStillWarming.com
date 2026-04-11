@@ -24,4 +24,6 @@ jobs:
           npm run test
       - name: deploy
         run: |
-          curl -X POST -d {} ${{ secrets.BUILD_HOOK }}
+          curl -fsS -X GET \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}" \
+            "${{ secrets.COOLIFY_DEPLOY_URL }}"
