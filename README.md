@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/github/actions/workflow/status/rosslh/IsEarthStillWarming.com/TestAndDeploy.yml?style=flat&label=Checks" alt="GitHub branch check runs">
   <img src="https://img.shields.io/uptimerobot/status/m792388130-707e241ab307578543308734?up_message=online&style=flat&label=Status" alt="Uptime Robot status">
   <img src="https://img.shields.io/uptimerobot/ratio/m792388130-707e241ab307578543308734?style=flat&label=Uptime%20(1mo)" alt="Uptime Robot ratio (30 days)">
-  <a href="https://mapledeploy.ca"><img src="https://mapledeploy.ca/api/badge/shields" alt="Hosted in Canada with MapleDeploy"></a>
+  <a href="https://mapledeploy.ca/?utm_source=badge&utm_medium=referral&utm_campaign=server-f1b4d852&utm_content=markdown-shields"><img src="https://mapledeploy.ca/api/badge/shields" alt="Hosted in Canada with MapleDeploy"></a>
 </p>
 
 ## Overview
