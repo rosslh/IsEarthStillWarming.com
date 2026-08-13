@@ -7,6 +7,7 @@ import CO2 from "../co2/co2";
 import ContentWrapper from "../contentWrapper/contentWrapper";
 import ShareLinks from "../shareLinks/shareLinks";
 import style from "./index.module.scss";
+import Footer from "../footer/footer";
 import {
   Chart as ChartJS,
   LinearScale,
@@ -363,6 +364,7 @@ const Home: React.FC<HomeProps> = ({
           <RefList />
         </article>
       </ContentWrapper>
+      <Footer />
     </>
   );
 };
